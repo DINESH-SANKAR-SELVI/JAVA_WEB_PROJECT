@@ -1,0 +1,209 @@
+*{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size:103%;
+}
+body{background-image: linear-gradient(260deg,#416a8a,#2d6977); color: white;}
+.window{
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 0.1fr 0.5fr 3fr 0.1fr;
+      position: relative;
+      bottom: 30px;
+}
+.nav nav ul{
+      display: flex;
+      justify-content: space-between;
+}
+.nav nav ul li{
+      list-style-type: none;
+}
+.bars{
+      position: relative;
+      top: 30px;
+      width:25px;
+}
+.bar{
+      width: 25px;
+      height: 4px;
+      background-color: white;
+      margin-top: 3px;
+      border-radius: 2px;
+}
+.content{
+      position: relative;
+      display: flex;
+      justify-content:space-around ;
+      /* background-color: rgb(1, 13, 14); */
+      bottom: 60px;
+}
+.quiz-index{
+      position:relative;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      margin:6%;
+      background-color: rgba(13, 136, 136, 0.664);
+      border-radius: 10%;
+      top: -10%;
+      height: 70%;
+      width:20%;
+      
+}
+.quiz-nav{
+position: relative;
+      padding: 10%;
+      margin: 15%;
+      text-align: center;
+      border-radius: 20%;
+      background-color: red;
+}
+
+
+.options{
+      display: flex;
+      position: relative;
+      flex-direction: column;
+}
+.options{
+      position: relative;
+      top: -200px;
+      display: inline;
+      margin-left: -20px;
+      margin-top: -16px; 
+      font-size: 20px;
+}
+.options li{
+      margin-top: 10px;
+}
+.options.active{
+      top:0px;
+}
+.window-quiz{
+      position: relative;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto auto auto;
+      grid-template-columns: auto;
+      /* background-color: navajowhite; */
+}
+pre{
+      display: inline;
+      font-size: larger;
+}
+.tot-time-points{
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      height: 10%;
+      bottom: 100%;
+}
+.client{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      bottom: 50px;
+      background-color: rgba(207, 235, 233, 0.411);
+      left: 5%;
+      top: 10px;
+      width: 130%;
+      height: 400px;
+      border-radius: 20px;
+}
+.quiz-base{
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      top: 12px;
+}
+.opt-submit{
+      position: relative;
+      display: flex;
+      /*background-color: #416a8a;*/
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+}
+.opt-submit > form{
+      display: flex;
+      position: inherit;
+      flex-direction: column;
+      /* align-items: center;
+      justify-content: center; */
+      /* margin: 2%; */
+      height: 80%;
+      /* background-color: #416a8a; */
+      left:-30%;
+      top: 0%;
+
+}
+.opt-submit > form > label{
+      /* background-color: aliceblue; */
+      padding: 5%;
+      /* font-size: small; */
+      
+}
+.submit-property{ 
+      display: flex;
+      position: relative;
+      /* background-color: aliceblue; */
+      width: 40%;
+      right: 10px;
+      top: 10%;
+      align-items: center;
+      justify-content: space-evenly;
+      color: aliceblue;
+      /* font-size: 1px; */
+}
+#submit-tot{
+
+      top: 100px;
+      /* left: 30%; */
+
+}
+button {
+      display: flex;
+      flex-direction: row;
+      position: inherit;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      background-color: rgba(255,255,255,0.2);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border-radius: 6px;
+      /* height: 70px; */
+      width: 150px;
+      margin: 4%;
+      padding: 10px;
+      /* left: 5%; */
+      font-size: large;
+}   
+label{
+      position: relative;
+      width: 150%;
+      height: 1px;
+      border: 2px solid rgba(255, 0, 0, 0.151);
+      margin: 10px;
+      left: 50%;
+      background-color: rgb(50, 83, 112); 
+      border-radius: 10px;
+}
+.opt{
+
+font-size: small;
+
+}
+@media (max-width:800px) {
+
+      label{
+            width: 160%;
+            left:10%;
+            font-size: small;
+      }
+      button {
+            left: 50px; 
+      }
+      .opt-submit{
+            left: 0%;
+      }
+}

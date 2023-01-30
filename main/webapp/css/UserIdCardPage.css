@@ -1,0 +1,132 @@
+*{color: white;}
+body{
+      position: relative;
+      background-image: linear-gradient(to left,#384e78, #5874dc);
+      width: auto;
+}
+.main{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 87vh;
+      align-items: center;
+      justify-content: space-around;
+}
+.window , .window1{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 60%;
+      width: 60%;
+      border-radius: 20px;
+
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      background-color: rgba(255,255,255,0.2) ;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+}
+.window1{
+      margin: 1%;
+}
+.profile{
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      height: 20%;
+      left: 20px;
+}
+.imgframe{
+      position: relative;
+      top: 10px;
+      height: 90%;
+      width : 6%;
+      /* bottom: 15%; */
+      border: 2px solid white;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.8);
+}
+.imgframe img{
+      position: relative;
+      top: 18%;
+      left: 15%;
+      height: 70%;
+      width: 70%;
+}
+h2,h6{
+      position: relative;
+      top: 20px;
+      left: 6px;
+      display: inline;
+}
+.details{
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+}
+.communication{
+      position: relative;
+      left: 40px;
+}
+.values{
+      position: relative;
+      right: 40px;
+}
+.id{
+      position: relative;
+      top:20px;
+      left: 30%;
+}
+button{
+      position: relative;
+      top: 20px;
+      height:30px ;
+      width: 100px;
+      border-radius: 6px;      
+      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      background-color: rgba(255, 255, 255, 0.4) ;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+}
+.password{
+      position: relative;
+      background-color: black;
+      width: 90%;
+      height: 30px;
+      top:10px;
+}
+.window1 > .password > .qr > h4{
+      position: relative;
+      top: 13px;
+}
+.window1 > .bhd {
+      position: relative;
+      left: 40%;
+}
+
+.window1 > .address {
+      position: relative;
+      right: 34%;
+}
+
+@media (max-width:900px) {
+      
+      *{font-size: small;}
+      .window , .window1{
+
+            width: 90%;
+      }
+      .imgframe{
+
+            width: auto;
+      }
+      .window1 > .address {
+
+            right: 25%;
+      }
+}

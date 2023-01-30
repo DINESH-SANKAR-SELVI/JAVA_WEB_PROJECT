@@ -1,0 +1,102 @@
+body{
+      background-image: linear-gradient(to right,#33539e,#2d82b5);
+}
+.window{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vw;
+	margin-top: -30px;
+}
+.content{
+      position: relative;
+      bottom: 14%;
+      /* background-color: rgba(255, 255, 255, 0.4);  */
+      border-radius: 10px;
+}
+.menuList{
+      display: grid;    
+      grid-auto-flow: column;
+      gap: 1.2rem;
+      overflow-y: hidden;
+      overscroll-behavior-x:contain;
+      scroll-snap-type:x mandatory;
+      scrollbar-width:thin;
+      scrollbar-color: rgba(180, 204, 206, 0.5) rgba(126, 130, 139, 0.4);
+}
+.selectionList{
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-rows:auto;
+      height: 480px;
+        /* background-color: rgba(80, 151, 173, 0.171); */
+      border-radius: 40px;
+      grid-auto-flow: row;
+      gap: 1.2rem;
+      overflow-x : hidden;
+      overscroll-behavior-y: contain;
+      scroll-snap-type: y mandatory;
+      scrollbar-width:none;
+}
+.recom-opt{
+      position: relative;
+      margin-top: 6px;
+      right: 0%;
+      height: 200px;
+      width: 80%;
+      background-image: linear-gradient(to right,#083557c5,#004e9a) ;
+      border-radius: 20px;
+      border: 1px solid rgba(78, 88, 32, 0.452);
+}
+.recom-title{
+      position: relative;
+      left: 10px;
+}
+.intro-subject{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 80%;
+      height: 60%;
+      right: -40px;
+      font-size: 18px;
+      /* background-color: black; */
+      gap: 1.2rem;
+      overflow-x : hidden;
+      overscroll-behavior-y: contain;
+      scroll-snap-type: y mandatory;
+      scrollbar-width:none; /*thin*/
+}
+.intro-subject p{
+      position: relative;
+      top: 20px;
+}
+.opt{
+      padding: 10px;
+      height: 10px;
+      width: 60px;
+      margin-bottom: 6px;
+      background-image: linear-gradient(to right,#207fb6de,#4e86a8e1);
+      text-align: center;
+      /* justify-content: center; */
+      border-radius: 15px;
+}
+@media (max-width:900px) {
+      .menuList{
+            scrollbar-width:none;
+      }
+      .content{
+            position: relative;
+            bottom:0%;
+      }
+      .recom-opt{
+            right: -6%;
+            width: 90%;
+            height: 150px;
+      }    
+      .selectionList{
+            margin-left: 110%;
+      }
+}

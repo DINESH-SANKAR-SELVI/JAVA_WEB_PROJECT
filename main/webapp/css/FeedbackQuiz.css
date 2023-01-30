@@ -1,0 +1,28 @@
+body{
+      background-image:radial-gradient(circle,#fd6574 ,#bb2d3b);
+}
+.feedback-window{  
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* background-color: white; */
+      justify-content: space-around;
+      height: 500px;
+      top: 100px;
+}
+.btn{
+      display: flex;
+}
+button{
+      position: relative;
+      left: -50px;
+      margin-right: 90%;
+      background-color: rgb(94, 252, 147);
+      color: rgb(73, 109, 109);
+
+      padding: 10px;
+
+      border: 2px solid rgba(194, 37, 37, 0.849);
+      border-radius: 10px;
+}

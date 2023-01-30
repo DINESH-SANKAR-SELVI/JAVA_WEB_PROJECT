@@ -1,0 +1,49 @@
+*{
+	padding: 0px;
+	color: white;
+}
+.window{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vw;
+	margin-top: -30px;
+}
+.nav nav ul{
+      display: flex;
+      justify-content: space-between;
+}
+.nav nav ul li{
+      list-style-type: none;
+}
+.bars{
+      position: relative;
+      top: 30px;
+      width:25px;
+}
+.bar{
+      width: 25px;
+      height: 4px;
+      background-color: white;
+      margin-top: 3px;
+      border-radius: 2px;
+}
+.options{
+      display: flex;
+      position: relative;
+      flex-direction: column;
+}
+.options{
+      position: relative;
+      top: -200px;
+      display: inline;
+      margin-left: 50px;
+      margin-top: -16px; 
+      font-size: 20px;
+}
+.options li{
+      margin-top: 10px;
+}
+.options.active{
+      top:0px;
+}
