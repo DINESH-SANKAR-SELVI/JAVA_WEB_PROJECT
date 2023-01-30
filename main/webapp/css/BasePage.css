@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+body{
+	background-image: linear-gradient(to right ,#000428,#004e92);
+}
+window{
+	height:100px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}

@@ -25,11 +25,11 @@
                   </div>
                   <div class="formPage">
 
-                        <form action="UserDetailsVerify" method="post">
-                                    <input type="text" name="USERNAME" id="USERNAME" maxlength="26" />
+                        <form action="UserVerify" method="post">
+                                    <input type="text" name="UserName" id="USERNAME" maxlength="26" />
                                     <label for="USERNAME" id="LABEL-NAME" >USER NAME (as Email) </label><br /> <br />
                                     
-                                    <input type="password" name="USERPASSWORD" id="USERPASSWORD" maxlength="26" />
+                                    <input type="password" name="UserPassword" id="USERPASSWORD" maxlength="26" />
                                     <label id="LABEL-PASSWORD" >USER PASSWORD</label>
                                     <p id="LABEL-FORGOT" ><a href="#" >Forgot Password...!</a></p>
                                     

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+#footerFooterNav{
+	
+	position:relative;
+	background-color:grey;
+	display:flex;
+	justify-content:space-around;
+	border: 3px solid black;
+	top:100vh;
+	width:99.5%;
+}
+
+.Notes > ul , .games > ul , .profile > ul , .contact > ul {	list-style-type:none; padding:6px;}
+
+.Notes > ul > li > a, .games > ul >li > a , .profile > ul > li > a , .contact > ul > li > a { text-decoration:none;color:white; } 
