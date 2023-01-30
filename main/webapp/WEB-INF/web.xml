@@ -9,4 +9,14 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>User</display-name>
+    <servlet-name>User</servlet-name>
+    <servlet-class>BlueMoon.User</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>User</servlet-name>
+    <url-pattern>/User</url-pattern>
+  </servlet-mapping>
 </web-app>
