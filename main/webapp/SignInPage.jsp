@@ -30,14 +30,14 @@
                   </div>
                   <div class="formPage">
 
-                        <form action="#" method="post">
-                                    <input type="text" name="USERNAME" id="USERNAME" maxlength="26" />
+                        <form action="AddUser" method="post">
+                                    <input type="text" name="UserName" id="USERNAME" maxlength="26" />
                                     <label for="USERNAME" id="LABEL-NAME" >USER NAME </label><br /><br />
                                     
-                                    <input type="date" name="USERBHD" id="USERBHD" />
+                                    <input type="date" name="UserBhd" id="USERBHD" />
                                     <label id="LABEL-BHD" >USER BIRTHDAY</label>
                                     
-                                    <select name="gender" id="USERGENDER" >
+                                    <select name="UserGender" id="GENDER" >
                                           <option style="color: red;font-weight: bold;" value="male" >MALE</option>
                                           <option style="color: rgb(230, 54, 84);font-weight: bold;" value="female">FEMALE</option>
                                     </select>
@@ -46,13 +46,13 @@
 
 
 
-                                    <input type="tel" name="USERNUMBER" id="USERNUMBER" maxlength="13" />
+                                    <input type="tel" name="UserPh" id="USERNUMBER" maxlength="13" />
                                     <label for="USERNUMBER" id="LABEL-NUMBER" >PHONE NUMBER  </label><br /> <br />
                                     
-                                    <input type="email" name="USEREMAIL" id="USEREMAIL" />
+                                    <input type="email" name="UserEmail" id="USEREMAIL" />
                                     <label id="LABEL-EMAIL" >EMAIL ADDRESS</label>
                                     
-                                    <select name="qualification" id="USERQUALI" >
+                                    <select name="UserQualifi" id="USERQUALI" >
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="SSLC" >SSLC</option>
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="HSC" >HSC</option>
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="ITI" >ITI</option>
@@ -64,10 +64,10 @@
 
 
 
-                                    <input type="text" name="USERPINCODE" id="USERPINCODE" maxlength="13" />
+                                    <input type="text" name="UserPinCode" id="USERPINCODE" maxlength="13" />
                                     <label for="USERPINCODE" id="LABEL-PINCODE" >RESIDENTIAL PIN CODE  </label><br /> <br />
                                     
-                                    <select name="CITY" id="USERCITY" >
+                                    <select name="UserCity" id="USERCITY" >
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="CHENNAI" >CHENNAI</option>
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="KOLKATA" >KOLKATA</option>
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="MUMBAI" >MUMBAI</option>
@@ -76,7 +76,7 @@
                                     </select>
                                     <label id="LABEL-CITY" >RESIDENTIAL CITY</label>
                                     
-                                    <select name="AREA" id="USERAREA" >
+                                    <select name="UserArea" id="USERAREA" >
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="AVADI" >AVADI</option>
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="WEST BENGAL" >WEST BENGAL</option>
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="WORLI" >WORLI</option>
@@ -88,7 +88,7 @@
 
 
                                     
-                                    <input type="password" name="USERPASSWORD" id="USERPASSWORD" maxlength="13" />
+                                    <input type="password" name="UserPassword" id="USERPASSWORD" maxlength="13" />
                                     <label for="USERPASSWORD" id="LABEL-PASSWORD" >PASSWORD  </label><br /> <br />
                                     <p id="LABEL-PASSHINT" >PASSWORD IS MININUM 6 CHARACTER CAN CONTAINS [A-Z],[a-z],[0-9],[SYMBOLS]   </p>
                                     

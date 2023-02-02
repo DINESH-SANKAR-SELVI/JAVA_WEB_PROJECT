@@ -6,9 +6,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-import java.time.LocalDateTime;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -28,7 +25,7 @@ public class AddUser extends HttpServlet {
 		
 		try {
 
-			String UserId 		= "si718231300123".toUpperCase();
+			String UserId 		= "";
 			String UserAvatar 	= "BACKGROUND3.jpg".toUpperCase();
 			String UserName 	= req.getParameter("UserName").toUpperCase();
 			Date UserBhd 		= Date.valueOf(req.getParameter("UserBhd"));
@@ -42,9 +39,11 @@ public class AddUser extends HttpServlet {
 			String UserPassword = req.getParameter("UserPassword");
 			Date UserJoinDate 	= Date.valueOf(java.time.LocalDate.now());
 			
+			IdGenerator id = new IdGenerator();
+			UserId = id.UserId(UserName,UserPinCode,UserPh,UserBhd,UserJoinDate);
+			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BlueMoon?characterEncoding=latin1","root","White@Kite_0110.");
-	
 			PreparedStatement ps1 = con.prepareStatement("INSERT INTO userdetails VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			
 			ps1.setString(1, UserId);
@@ -62,11 +61,8 @@ public class AddUser extends HttpServlet {
 			ps1.setDate(13, UserJoinDate);
 			
 			int rs = ps1.executeUpdate();
-			
-			if(rs == 1) io.println("<html><title>"+UserName+"</title><body><table border=3px> <tr><th>"+UserName+"</th><th>"+UserBhd+"</th><th>"+UserGender+"</th><th>"+UserPh+"</th><th>"+UserEmail+"</th><th>"+UserQualifi+"</th><th>"+UserPinCode+"</th><th>"+UserCity+"</th><th>"+UserArea+"</th><th>"+UserPassword+"</th> </tr> </table></body></html>");
-			
-			else io.print("<html><body>sorry..!S</body></html>");
-			
+
+			if(rs == 1) io.println("<html><title>"+UserId+"</title><body><table border=3px> <tr><th>"+UserName+"</th><th>"+UserBhd+"</th><th>"+UserGender+"</th><th>"+UserPh+"</th><th>"+UserEmail+"</th><th>"+UserQualifi+"</th><th>"+UserPinCode+"</th><th>"+UserCity+"</th><th>"+UserArea+"</th><th>"+UserPassword+"</th> <th>"+ UserJoinDate+" </tr> </table></body></html>");			
 		}catch(Exception e) { io.println("<html><body>NOT ADD USER</body></html>"); e.printStackTrace(); }
 		
 		
