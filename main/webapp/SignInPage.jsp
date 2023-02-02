@@ -19,6 +19,7 @@
 </head>
 <body bgcolor="grey">
 
+<center>
       <div class="fullWindow">
 
             <div class="contentWindow">
@@ -101,5 +102,7 @@
                         </form>                 
             </div>
       </div>
+
+</center>
 </body>
 </html>

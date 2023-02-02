@@ -36,9 +36,10 @@ public class AddUser extends HttpServlet {
 			int UserPinCode 	= Integer.parseInt(req.getParameter("UserPinCode"));
 			String UserCity 	= req.getParameter("UserCity").toUpperCase();
 			String UserArea 	= req.getParameter("UserArea").toUpperCase();
-			String UserPassword = req.getParameter("UserPassword");
+			String UserPassword = null;
 			Date UserJoinDate 	= Date.valueOf(java.time.LocalDate.now());
 			
+			if(req.getParameter("UserPassword").equals(req.getParameter("USERFINALPASSWORD"))) UserPassword = req.getParameter("UserPassword");
 			IdGenerator id = new IdGenerator();
 			UserId = id.UserId(UserName,UserPinCode,UserPh,UserBhd,UserJoinDate);
 			
@@ -62,8 +63,11 @@ public class AddUser extends HttpServlet {
 			
 			int rs = ps1.executeUpdate();
 
-			if(rs == 1) io.println("<html><title>"+UserId+"</title><body><table border=3px> <tr><th>"+UserName+"</th><th>"+UserBhd+"</th><th>"+UserGender+"</th><th>"+UserPh+"</th><th>"+UserEmail+"</th><th>"+UserQualifi+"</th><th>"+UserPinCode+"</th><th>"+UserCity+"</th><th>"+UserArea+"</th><th>"+UserPassword+"</th> <th>"+ UserJoinDate+" </tr> </table></body></html>");			
-		}catch(Exception e) { io.println("<html><body>NOT ADD USER</body></html>"); e.printStackTrace(); }
+			if(rs == 1) io.println("<html><title>"+UserId+"</title><body style='background-image:linear-gradient(to top,#ADF7F2,#15AAFF);' ><center><img width=100px height=100px alt=successfull...! title=VERIFYED src=image/Success.png /><br /><h4>YOU ARE NOW A MEMBER OF BLUE MOON NOW YOU CAN  <a href=LogInPage.jsp style='color:red;'>LOGIN..!</a></h4></center></body></html>");
+			
+			/*<table border=3px> <tr><th>"+UserName+"</th><th>"+UserBhd+"</th><th>"+UserGender+"</th><th>"+UserPh+"</th><th>"+UserEmail+"</th><th>"+UserQualifi+"</th><th>"+UserPinCode+"</th><th>"+UserCity+"</th><th>"+UserArea+"</th><th>"+UserPassword+"</th> <th>"+ UserJoinDate+" </tr> </table> */
+			
+		}catch(Exception e) { io.println("<html><body  style='background-image:linear-gradient(45deg,#02aabd,#00cdac);'><center><img width=100px height=100px alter=FAILED title=ISSUE src=image/failed.png /><br /><br /> SORRY..! MAY BE YOU MADE A MISTAKE SO YOU CAN  <a href=SignInPage.jsp >TRY AGAIN ...!</a></center></body></html>"); e.printStackTrace(); }
 		
 		
 	}

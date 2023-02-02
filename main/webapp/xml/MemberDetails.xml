@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Member>
+
+        <PersonalDetails>
+        
+            <UserId >DI712031230123</UserId>
+            <UserAvatar>BACKGROUND.jpg</UserAvatar>
+            <UserName>DINESH</UserName>
+            <UserBhd>2003-03-31</UserBhd>
+            <UserGender>MALE</UserGender>
+            <UserNumber>7604829520</UserNumber>
+            <UserEmail>ddprofessional31@gmail.com</UserEmail>
+            <UserQualification>UG\PG</UserQualification>
+            <UserPincode>600071</UserPincode>
+            <UserCity>CHENNAI</UserCity>
+            <UserArea>AVADI</UserArea>
+            <UserPassword>DIN</UserPassword>
+            <UserJoinDate>2023-01-22</UserJoinDate>
+            
+        </PersonalDetails>
+
+</Member>
