@@ -9,126 +9,83 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>WELCOME TO BLUE MOON</title>
       <link rel='website icon' type=png href=image/WebIcon.png />
-      <link rel='stylesheet' href='css/UserNavFooter.css' />
-      <Link rel="stylesheet" href="css/UserNavHead.css" />
-      <link rel='stylesheet' type="text/css" href=css/QuizNotes.css />
+      <link rel='stylesheet' href='css/BaseFooter.css' />
+      <link rel='stylesheet' href='css/BaseNav.css' />
+
       
 </head>
-<body>
+<body style="background-image:linear-gradient(to right,#33539e,#2d82b5);color:white;	">
+
+		<%@ page import= "java.io.*"%>
+		<%@ page import= "java.sql.*" %>
+		<%@ page import= "javax.xml.parsers.*" %>
+		<%@ page import= "org.w3c.dom.*" %>
 
       <div class=window >
             <div class="nav">
-                  <nav>
-                        <div class="bars">
-                              <div class="bar"></div>
-                              <div class="bar"></div>
-                              <div class="bar"></div>
-                        </div>     
-                        <ul>
-                              <li>                                   
-                                    <ul class="options">
-                                                <li><a href=QuizNotes.jsp>NOTES</a></li>
-                                                <li><a href=Profile.jsp>PROFILE</a></li>
-                                                <li><a href=Games.jsp>GAMES</a></li>
-                                    </ul>
-                              </li>
-                              <li><i style="font-weight: 1000;"><span style="color:white;">BLUE</span><span style="color: red;"> MOON</span></i></li>
-                              <li><span style="position: relative;;color:white;margin-right: 10px;bottom: 10px;">USER NAME</span><img onclick="window.location.href='Profile.jsp'" width="30px" height="30px" style="border-radius:50%;" src="image/lock screen walpaper.jpg" /></li>
-                        </ul>
-                  </nav>
-                  </div>
+				<%@ include file="StepNav.jsp" %>
+            </div>
             <div class=content>
-                  <div class="menuList">
-                        <article class="opt" onclick="window.location.href='QuizNotesInterFace.jsp'">JAVA</article>
-                        <article class="opt">PYTHON</article>
-                        <article class="opt">C/C++</article>
-                        <article class="opt">PHP</article>
-                        <article class="opt">SQL</article>
-                        <article class="opt">HTML</article>
-                        <article class="opt">REACT</article>
-                        <article class="opt">FLASK</article>
-                        <article class="opt">oracle</article>
-                        <article class="opt">mysql</article>
-                        <article class="opt">Network</article>
-                        <article class="opt" style="font-size: smaller;">COMING_SOON..!</article>
+                  <div class="menuList" >
+                  <%	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+						DocumentBuilder db = dbf.newDocumentBuilder();
+						/*File f = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon.xml");*/
+						Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon1.xml");			
+						out.println("<div style=\"display:flex;flex-wrap:wrap;\">");
+						/*Class.forName("com.mysql.jdbc.Driver");
+						Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BlueMoon?characterEncoding=latin1","root","White@Kite_0110.");*/
+					try{
+						/*PreparedStatement ps = con.prepareStatement("SELECT * FROM Notes;");	
+						ResultSet rs = ps.executeQuery();
+						
+						while(rs.next()){out.println("<h4 style=\"background-color:red; border-radius: 40px;margin-right:6px;padding:10px; \">"+ rs.getObject(2)+"</h4>");}
+						*/						
+						 NodeList nl = d.getElementsByTagName("SUBJECT");
+						 
+						 for(int i=0;i<nl.getLength();i++){
+										 
+							 //Node nl1 = nl.item(i).getChildNodes();
+							 out.println("<h4 style=\"font-size:19px;background-image: linear-gradient(to right,#207fb6de,#4e86a8e1); border-radius: 40px;margin-right:6px;padding:10px; \">"+nl.item(i).getChildNodes().item(1).getTextContent()+"</h4>");
+							 
+							 //out.println("<h1>"+nl.item(i).getAttributes().item(0)+"</h1>");
+						}
+						
+						 out.println("<h4 style=\"font-size:19px;background-image: linear-gradient(to right,#207fb6de,#4e86a8e1); border-radius: 40px;margin-right:6px;padding:10px;\" >COMMING SOON...!</h4></div>");
+				
+					}catch(Exception e){	out.println(e); }
+		%>
                   </div>
                   <div class="title">
                         <h2><i>RECOMMENDED :</i></h2>
                   </div>
                   <div class="selectionList" style="margin-left:10%;">
-                        <div class="recom-opt" onclick="window.location.href='QuizNotesInterFace.jsp'" >
-                              <p  class='recom-title'>JAVA </p>
+                			
+                	<%
+                		 NodeList nl1 = d.getElementsByTagName("SUBJECT");
+                	
+                		for(int i=0;i<nl1.getLength();i++){
+                			
+                			
+                			Node n = nl1.item(i);
+                			
+                			if(n.getNodeType() == n.ELEMENT_NODE){
+                				
+                				Element e = (Element) n;
+                				
+                			
+                				
+                				out.println("<h2 style=\" background-image:linear-gradient(to right,#083557c5,#004e9a); width:80%;border-radius:10px; \">"+e.getElementsByTagName("SUBJECT_NAME").item(0).getTextContent()+"<br /><br /><p style=\"font-size:19px;display:inline;\">"+e.getElementsByTagName("SUBJECT_ABOUT").item(0).getTextContent()+"</p></h2>");
+                			}
 
-                              <div class="intro-subject" >
-                                    <p class="recom-descri" >
-                                          Java is a programming language and computing platform first released by Sun Microsystems in 1995.It has evolved from humble beginnings to power a large share of today’s digital world,<br/>Java is a programming language and computing platform first released by Sun Microsystems in 1995.It has evolved from humble beginnings to power a large share of today’s digital world,<br/>Java is a programming language and computing platform first released by Sun Microsystems in 1995.It has evolved from humble beginnings to power a large share of today’s digital world,<br/>Java is a programming language and computing platform first released by Sun Microsystems in 1995.It has evolved from humble beginnings to power a large share of today’s digital world,<br/>                                          
-                                    </p>
-                              </div>
-                        </div>
-                        <div class="recom-opt" onclick="window.location.href='QuizNotesInterFace.jsp'" >
-                              <p  class='recom-title'>  JAVA </p>
-
-                              <div class="intro-subject" >
-                                    <p class=""recom-descri" >
-                                          Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.
-                                    </p>
-                              </div>
-                        </div>
-                        <div class="recom-opt" onclick="window.location.href='QuizNotesInterFace.jsp'" >
-                              <p  class='recom-title'>  JAVA </p>
-
-                              <div class="intro-subject" >
-                                    <p class=""recom-descri" >
-                                          Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.<br />Java is a programming language and computing platform first released by Sun Microsystems in 1995. <br />It has evolved from humble beginnings to power a large share of today’s digital world,<br /> by providing the reliable platform upon which many services and applications are built.<br /> New, innovative products and digital services designed for the future continue to rely on Java, as well.
-                                    </p>
-                              </div>
-                        </div>
-                        <div class="recom-opt">
-                              <p style="margin:16px;font-size: large;font-weight: 1000;">  COMING SOON..!<br /> <br /> 
-                                    
-                              </p></div>
-
-                  </div>
-
+                		}
+                	
+                	%>
+                			
+                		           
+				 </div>
             </div>
             <div class= footer>
-                  <footer>
-                                    <div class=footerContent>
-                                          <div class=notes>
-                                                <h4>NOTES</h4>
-                                                      <ul>
-                                                            <li><a href=# >JAVA</a></li>
-                                                            <li><a href=# >PYTHON</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div>
-                                          <div class=quiz>
-                                                <h4>PROFILE</h4>
-                                                      <ul>
-                                                            <li><a href=Profile.jsp >RIGION</a></li>
-                                                            <li><a href=Profile.jsp >PERSONAL</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div>
-                                          <div class=games>
-                                                <h4>GAMES</h4>
-                                                      <ul>
-                                                            <li><a href=Games.jsp >REASONING</a></li>
-                                                            <li><a href=Games.jsp >APTITUDE</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div> 
-                                          <div class=community>
-                                                <h4>CONTACT</h4>
-                                                      <ul>
-                                                            <li><a href=# ><img width=30px src="image/WhatsappIcon.png" /></a></li>
-                                                            <li><a href=# ><img width=30px src="image/InstagramIcon.png" /></a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul> 
-                                          </div>
-                                    </div>
-                                    <h4 id=cpyrights ><i><img src=image/WebIcon.png /> BLUE <span style="color: red;"> MOON</span> 2022 &copy;</i></h4>
-                  </footer>
+					<%@ include file="FooterNav.jsp" %>
             </div>	
       </div>	
 <script src="js/QuizNotes.js"></script>

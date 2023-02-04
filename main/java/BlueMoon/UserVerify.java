@@ -29,6 +29,9 @@ public class UserVerify extends HttpServlet {
 			
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()) {
+				
+				/* will replace the code to access xml to write */
+				
 				response.sendRedirect("BasePage.jsp");
 			}
 			else io.println("<html><body  style='background-image:linear-gradient(45deg,#02aabd,#00cdac);'><center><img width=100px height=100px alter=FAILED title=ISSUE src=image/failed.png /><br /><br /> SORRY..! MAY BE YOU MADE A MISTAKE SO YOU CAN  <a href=LogInPage.jsp >TRY AGAIN ...!</a></center></body></html>"); 

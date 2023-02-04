@@ -17,7 +17,7 @@
             <div class="top-panel">
                   <img width="50px" height="50px" src="image/back.png" alt="home" onclick="window.location.href='QuizNotes.jsp'">
                   <h2 style="position: relative; bottom: 10px;">REVIEW</h2>
-                  <img width="50px" height="50px" src="image/WebIcon.png" alt="profile" onclick="window.location.href='UserPage.jsp'">
+                  <img width="50px" height="50px" src="image/WebIcon.png" alt="profile" onclick="window.location.href='BasePage.jsp'">
             </div>
 
             <div class="analysis">
