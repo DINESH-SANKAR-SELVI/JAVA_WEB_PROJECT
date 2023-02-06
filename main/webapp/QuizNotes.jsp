@@ -76,8 +76,8 @@
                 				
                 				out.println("<h2 style=\" background-image:linear-gradient(to right,#083557c5,#004e9a); width:80%;border-radius:10px; \">"+e.getElementsByTagName("SUBJECT_NAME").item(0).getTextContent()+"<br /><br /><p style=\"font-size:19px;display:inline;\">"+e.getElementsByTagName("SUBJECT_ABOUT").item(0).getTextContent()+"</p></h2>");
                 			}
-
                 		}
+                		out.println("<h2 style=\" background-image:linear-gradient(to right,#083557c5,#004e9a); width:80%;border-radius:10px; \">COMMING SOON...!</h4></div>");
                 	
                 	%>
                 			
