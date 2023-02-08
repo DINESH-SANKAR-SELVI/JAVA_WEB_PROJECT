@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Member>
 
+<User>
+		
+		<SUBJECTID id="JAVA1995230122"></SUBJECTID>
+
+</User>
+
+<!-- 
+<?xml version="1.0" encoding="UTF-8" ?>
+<Member>
         <PersonalDetails>
         
             <UserId >DI712031230123</UserId>
@@ -20,3 +28,5 @@
         </PersonalDetails>
 
 </Member>
+
+-->

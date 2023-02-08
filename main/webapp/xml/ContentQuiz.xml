@@ -3,24 +3,20 @@
 <NOTES>
 	
 	<SUBJECT id="JAVA1995230122">
-		
 		<SUBJECT_NAME>JAVA</SUBJECT_NAME>
-		<SUBJECT_ABOUT>Java is a programming language and computing platform first released by Sun Microsystems in 1995.</SUBJECT_ABOUT>
-		
+		<SUBJECT_ABOUT>Java is a programming language and computing platform first released by Sun Microsystems in 1995.</SUBJECT_ABOUT>	
 		<TOPICS>
 			<TOPIC id="JAVAOOPS180203">
 					<TOPIC_NAME>OOPS</TOPIC_NAME>
 			</TOPIC>
-			
 			<TOPIC id="JAVAARRA180203">
 					<TOPIC_NAME>ARRAY</TOPIC_NAME>
 			</TOPIC>
-			
 			<TOPIC id="JAVAITER180203">
 					<TOPIC_NAME>ITERATION</TOPIC_NAME>
-			</TOPIC>	
+			</TOPIC>
+			
 		</TOPICS>
-	
 	</SUBJECT>
 	
 	<SUBJECT id="PYTH1991230204">
@@ -40,8 +36,8 @@
 			<TOPIC id="PYTHITER180203">
 					<TOPIC_NAME>ITERATION</TOPIC_NAME>
 			</TOPIC>	
+			
 		</TOPICS>
-		
 	</SUBJECT>
 	
 	<SUBJECT id="JAVA1997230204">
@@ -63,6 +59,5 @@
 			</TOPIC>	
 		</TOPICS>
 	</SUBJECT>
-	
 	
 </NOTES>

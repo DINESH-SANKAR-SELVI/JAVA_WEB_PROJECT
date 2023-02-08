@@ -9,8 +9,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>WELCOME TO BLUE MOON</title>
       <link rel='website icon' type=png href=image/WebIcon.png />
-      <link rel='stylesheet' href='css/BaseFooter.css' />
-      <link rel='stylesheet' href='css/BaseNav.css' />
+      <link rel='stylesheet' href='CSS/BaseFooter.css' />
+      <link rel='stylesheet' href='CSS/BaseNav.css' />
 
       
 </head>
@@ -29,25 +29,13 @@
                   <div class="menuList" >
                   <%	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 						DocumentBuilder db = dbf.newDocumentBuilder();
-						/*File f = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon.xml");*/
 						Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon1.xml");			
 						out.println("<div style=\"display:flex;flex-wrap:wrap;\">");
-						/*Class.forName("com.mysql.jdbc.Driver");
-						Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BlueMoon?characterEncoding=latin1","root","White@Kite_0110.");*/
 					try{
-						/*PreparedStatement ps = con.prepareStatement("SELECT * FROM Notes;");	
-						ResultSet rs = ps.executeQuery();
-						
-						while(rs.next()){out.println("<h4 style=\"background-color:red; border-radius: 40px;margin-right:6px;padding:10px; \">"+ rs.getObject(2)+"</h4>");}
-						*/						
 						 NodeList nl = d.getElementsByTagName("SUBJECT");
 						 
 						 for(int i=0;i<nl.getLength();i++){
-										 
-							 //Node nl1 = nl.item(i).getChildNodes();
-							 out.println("<h4 style=\"font-size:19px;background-image: linear-gradient(to right,#207fb6de,#4e86a8e1); border-radius: 40px;margin-right:6px;padding:10px; \">"+nl.item(i).getChildNodes().item(1).getTextContent()+"</h4>");
-							 
-							 //out.println("<h1>"+nl.item(i).getAttributes().item(0)+"</h1>");
+							 out.println("<div onclick=\"window1()\" name=\"dinesh\" value= "+nl.item(i).getAttributes().item(0).getTextContent()+"><h4 style=\"font-size:19px;background-image: linear-gradient(to right,#207fb6de,#4e86a8e1); border-radius: 40px;margin-right:6px;padding:10px; \">"+nl.item(i).getChildNodes().item(1).getTextContent()+"</h4></div>");
 						}
 						
 						 out.println("<h4 style=\"font-size:19px;background-image: linear-gradient(to right,#207fb6de,#4e86a8e1); border-radius: 40px;margin-right:6px;padding:10px;\" >COMMING SOON...!</h4></div>");
@@ -74,21 +62,25 @@
                 				
                 			
                 				
-                				out.println("<h2 style=\" background-image:linear-gradient(to right,#083557c5,#004e9a); width:80%;border-radius:10px; \">"+e.getElementsByTagName("SUBJECT_NAME").item(0).getTextContent()+"<br /><br /><p style=\"font-size:19px;display:inline;\">"+e.getElementsByTagName("SUBJECT_ABOUT").item(0).getTextContent()+"</p></h2>");
+                				out.println("<div onclick=\"window.location.href='QuizNotesInterFace.jsp'\" style=\"width:80%;height:120px;\" ><h2 style=\" background-image:linear-gradient(to right,#083557c5,#004e9a);border-radius:10px;height:100%;padding:6px;margin-top:30px; \">"+e.getElementsByTagName("SUBJECT_NAME").item(0).getTextContent()+"<br /><br /><p style=\"font-size:19px;display:inline;\">"+e.getElementsByTagName("SUBJECT_ABOUT").item(0).getTextContent()+"</p></h2></div>");
                 			}
                 		}
                 		out.println("<h2 style=\" background-image:linear-gradient(to right,#083557c5,#004e9a); width:80%;border-radius:10px; \">COMMING SOON...!</h4></div>");
                 	
                 	%>
                 			
-                		           
+                		           <form> <input type="textarea" name=check /></form>
 				 </div>
             </div>
             <div class= footer>
 					<%@ include file="FooterNav.jsp" %>
             </div>	
       </div>	
-<script src="js/QuizNotes.js"></script>
+<script>
+function window1(){
+	
+	window.location.href="QuizNotesInterFace.jsp"
+}</script>
 
 
 </body>

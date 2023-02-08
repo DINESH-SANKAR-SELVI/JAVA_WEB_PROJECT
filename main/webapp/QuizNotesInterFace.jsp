@@ -9,124 +9,91 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Test The Self</title>
       <link rel="website icon" type="png" href="image/WebIcon.png" />
-      <link rel="stylesheet" type="text/css" href="css/QuizNotesInterFace.css" />
-      <link rel="stylesheet" type="text/css" href="css/UserNavFooter.css" />
-      <link rel="stylesheet" type="text/css" href="css/UserNavHead.css" /> 
+      <link rel="stylesheet" type="text/css" href="css/BaseFooter.css" />
+      
+<style type="text/css">
+
+.intro{
+      position: relative;
+      
+      justify-content: space-around;
+      background-image: linear-gradient(-45deg,#d3dd18,#0191b4);
+      width: 90%;
+      border-radius: 20px;
+      left: 5%;
+      height: 300px;
+}
+</style>
+<!-- display: flex;
+      flex-direction: column; -->
+
 </head>
-<body>
+<body style="background-image: linear-gradient(to right,#dac11f,#fe7a15);" >
+
+		<%@ page import= "java.io.*"%>
+		<%@ page import= "java.sql.*" %>
+		<%@ page import= "javax.xml.parsers.*" %>
+		<%@ page import= "org.w3c.dom.*" %>
+
       <div class=window >
             <div class="nav">
-                  <nav>
-                        <div class="bars">
-                              <div class="bar"></div>
-                              <div class="bar"></div>
-                              <div class="bar"></div>
-                        </div>     
-                        <ul>
-                              <li>                                   
-                                    <ul class="options">
-                                                <li><a href=QuizNotes.jsp>NOTES</a></li>
-                                                <li><a href=Profile.jsp>PROFILE</a></li>
-                                                <li><a href=Games.jsp>GAMES</a></li>
-                                    </ul>
-                              </li>
-                              <li><i style="font-weight: 1000;"><span style="color:white;">BLUE</span><span style="color: red;"> MOON</span></i></li>
-                              <li><span style="position: relative;;color:white;margin-right: 10px;bottom: 10px;">USER NAME</span><img width="30px" height="30px" style="border-radius:50%;" src="image/lock screen walpaper.jpg" onclick="window.location.href='Profile.jsp'"/></li>
-                        </ul>
-                  </nav>
+                  <%@ include file="StepNav.jsp" %>
             </div>
             <div class=content>
                   <div class="intro-note-quiz">
                         <div class="intro">
-                              <h2>JAVA</h2>
-                              <ul id="topics">
-                                    <li>JavaTutorial</li>
-                                    <li>ControlStatements</li>
-                                    <li>JavaObjectClass</li>
-                                    <li>JavaInheritance</li>
-                                    <li>JavaPolymorphism</li>
-                                    <li>JavaAbstraction</li>
-                                    <li>JavaEncapsulation</li>
-                                    <li>JavaOOPsMisc</li>
-                                    <li>JavaString</li>
-                                    <li>JavaStringMethods</li>
-                                    <li>JavaArray</li>
-                                    <li>ExceptionHandling</li>
-                                    <li>JavaInnerclasses</li>
-                                    <li>JavaMultithreading</li>
-                                    <li>JavaI/O</li>
-                                    <li>JavaNetworking</li>
-                                    <li>JavaAWT</li>
-                                    <li>JavaSwing</li>
-                                    <li>JavaFX</li>
-                                    <li>JavaApplet</li>
-                                    <li>JavaReflection</li>
-                                    <li>JavaDate</li>
-                                    <li>JavaConversion</li>
-                                    <li>JavaCollection</li>
-                                    <li>JavaJDBC</li>
-                                    <li>JavaNewFeatures</li>
-                                    <li>RMI</li>
-                                    <li>Internationalization</li>
-                                    <li>InterviewQuestions</li>
-                                    <li>JavaTpoint</li>
-                                    <li>JavaRegex</li>
-                              </ul>
-                              <p>
-                                    Java is a programming language and computing platform first released by Sun Microsystems in 1995.
-                                    It has evolved from humble beginnings to power a large share of today’s digital world,
-                                    New, innovative products and digital services designed for the future continue to rely on Java, as well. 
-                                    by providing the reliable platform upon which many services and applications are built.
-                              </p>
-                                          
+                        
+                        
+                        <%	try{
+                        		/*	DOCUMENT CREATER AND READER */	
+									DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+									DocumentBuilder db = dbf.newDocumentBuilder();
+									File f = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon1.xml");
+									Document fd = db.parse(f);		
+									File s = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\UserNotes.xml");
+									Document sd = db.parse(s);
+								/*-------------------------------------------*/
+								
+								/* DECLARE VARIABLE TO COMPARE AND SELECT SUBJECT */
+									String needSub = null;
+									String tempCheck = null;
+								/*-------------------------------------------------*/
+								
+								/* GET THE NODE AND VALUE TO PROCESS */
+									
+									NodeList d2 = fd.getElementsByTagName("SUBJECT");
+									needSub = new String(sd.getElementsByTagName("SUBJECTID").item(0).getAttributes().item(0).getTextContent());
+									
+								/* ---------------------------------------------*/			
+									
+								/* CHECKING PROCESS FOR SELECT TO PRINT THE DATAS */
+									for(int i=0;i<d2.getLength();i++){
+											tempCheck =(String)d2.item(i).getAttributes().item(0).getTextContent();	
+										if(needSub.equals(tempCheck)){
+											
+											out.println("<h1>"+d2.item(i).getChildNodes().item(1).getTextContent()+"</h1>");
+											
+											out.println("<h3>"+d2.item(i).getChildNodes().item(3).getTextContent()+"</h3>");
+											
+											for(int j=0;j<=(d2.item(i).getChildNodes().item(5).getChildNodes().getLength())-2;j++) out.println("<div onclick=\" window.location.href='QuizCommit.jsp'\" style=\"margin:10px;background-color:red;width:10%;color:white;\" ><center><p>"+d2.item(i).getChildNodes().item(5).getChildNodes().item(j+1).getTextContent()+"</p></center></div>");
+											
+											
+										}										
+										else{
+											continue;
+										}
+									}
+													
+								/*----------------------------------------------------*/
+								}catch(Exception e){ e.printStackTrace(); out.println("<p>"+e+"</p>");}	%>
+                                                                                               
                         </div>
-                        <div class="note-quiz">
 
-                              <div class="note-quiz-btn" onclick="window.open('documents/Java.pdf')">NOTES</div>
-                              <div class="note-quiz-btn" onclick="window.location.href='QuizInterFace.jsp'">QUIZ</div>
-
-                        </div>
                   </div>     
             </div>
 
             <div class= footer>
-                  <footer>
-                                    <div class=footerContent>
-                                          <div class=notes>
-                                                <h4>NOTES</h4>
-                                                      <ul>
-                                                            <li><a href=QuizNotes.jsp >JAVA</a></li>
-                                                            <li><a href=QuizNotes.jsp >PYTHON</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div>
-                                          <div class=quiz>
-                                                <h4>PROFILE</h4>
-                                                      <ul>
-                                                            <li><a href=profile.jsp >RIGION</a></li>
-                                                            <li><a href=Profile.jsp >PERSONAL</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div>
-                                          <div class=games>
-                                                <h4>GAMES</h4>
-                                                      <ul>
-                                                            <li><a href=Games.jsp >REASONING</a></li>
-                                                            <li><a href=Games.jsp >APTITUDE</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div> 
-                                          <div class=community>
-                                                <h4>CONTACT</h4>
-                                                      <ul>
-                                                            <li><a href=# ><img width=30px src="image/WhatsappIcon.png" /></a></li>
-                                                            <li><a href=# ><img width=30px src="image/InstagramIcon.png" /></a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul> 
-                                          </div>
-                                    </div>
-                                    <h4 id=cpyrights ><i><img src=image/WebIcon.png /> BLUE <span style="color: red;"> MOON</span> 2022 &copy;</i></h4>
-                  </footer>
+                  <%@ include file="FooterNav.jsp" %>
             </div>	
       </div>	
 <script src="js/BaseMenu.js"></script>
