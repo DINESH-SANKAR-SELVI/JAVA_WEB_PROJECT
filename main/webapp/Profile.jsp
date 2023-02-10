@@ -9,53 +9,62 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Known about you ?</title>
       <link rel="website icon" type="png" href="image/WebIcon.png" />
-      <link rel="stylesheet" type="text/css" href="css/Profile.css" />
-      <link rel="stylesheet" type="text/css" href="css/UserNavFooter.css" />
-      <link rel="stylesheet" type="text/css" href="css/UserNavHead.css" />
+      <link rel="stylesheet" type="text/css" href="css/BaseFooter.css" />
+      
 </head>
-<body>
+<body style="background-image: linear-gradient(to right,#4568dc,#b06ab3);color:white;" >
 
       <div class=window >
             <div class="nav">
-                  <nav>
-                        <div class="bars">
-                              <div class="bar"></div>
-                              <div class="bar"></div>
-                              <div class="bar"></div>
-                        </div>     
-                        <ul>
-                              <li>                                   
-                                    <ul class="options">
-                                                <li><a href=QuizNotes.jsp>NOTES</a></li>
-                                                <li><a href=Profile.jsp>PROFILE</a></li>
-                                                <li><a href=Games.jsp>GAMES</a></li>
-                                    </ul>
-                              </li>
-                              <li><i style="font-weight: 1000;"><span style="color:white;">BLUE</span><span style="color: red;"> MOON</span></i></li>
-                              <li><span style="position: relative;;color:white;margin-right: 10px;bottom: 10px;">USER NAME</span><img onclick="window.location.href='Profile.jsp'" width="30px" height="30px" style="border-radius:50%;" src="image/lock screen walpaper.jpg"/></li>
-                        </ul>
-                  </nav>
+					
+						<%@ include file="StepNav.jsp" %>
+						
                   </div>
             <div class=content>
+            		<center>
+            		
+            		<%@ page import="javax.xml.parsers.*" %>
+            		<%@ page import="java.io.*" %>
+            		<%@ page import="java.sql.*" %>
+            		<%@ page import= "org.w3c.dom.*" %>
+            		
+            		 
                                     <div class="data">
                                           <div class="profile">           
-                                                <div class="imgframe"><img src="image/lock screen walpaper.jpg" width="86px"  height="86px" /> </div>
-                                                <h2>USER NAME</h2>
-                                                <h6>TOTAL ATTEMPT : 39</h6>
-                                           </div>
-                                          <div class="rankInfo">
-                                                <div class="ans">
-                                                      <h4 ><pre>AVERAGE CORRECT   : <span style="color: rgb(55, 190, 55);">60% </span></h4></pre>
-                                                      <h4 ><pre>AVERAGE INCORRECT : <span style="color: rgb(190, 59, 55);">40%</span></h4></pre>
-                                                </div>
-                                                <div class="rank">
-                                                      <h4 ><pre>GLOBAL RANK : <span style="color: rgb(228, 224, 15);"> 176714 </span></h4></pre>
-                                                      <h4 ><pre>REGION RANK : <span style="color: rgb(57, 78, 92);">785</span></h4></pre>
-                                                </div>
-                                          </div>
+                                                <div class="imgframe"><img style="border-radius:50%;" src="image/lock screen walpaper.jpg" width="86px"  height="86px" /> </div>
+                     <%                           
+                        out.println("<h2>");
+                                                
+                                                DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
+                                                DocumentBuilder db = bdf.newDocumentBuilder();                        
+                                                Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");                                               
+                                                NodeList Userdn = d.getDocumentElement().getChildNodes().item(9).getChildNodes();
+                                                NodeList Profiledn = d.getDocumentElement().getChildNodes().item(11).getChildNodes();
+                                                	 	
+                                                out.println("<h1>"+Userdn.item(3).getTextContent()+"</h1>");
+                                                
+                                                out.println("<h6>TOTAL ATTEMPT : "+Profiledn.item(1).getTextContent()+" SETS </h6>");
+                             
+                                                out.println("</h2>");
+                                                
+                                                out.println("</div>");
+                                                out.println("<div class=\"rankInfo\">");
+                                                out.println("<div class=\"ans\">");
+                                                out.println("<h4 >AVERAGE CORRECT   : <span style=\"color: rgb(55, 190, 55);\">" +Profiledn.item(3).getTextContent()+ "% </span></h4>");
+                                                out.println("<h4> AVERAGE INCORRECT : <span style=\"color: rgb(190, 59, 55);\">"+Profiledn.item(5).getTextContent()+"%</span></h4>");
+                                                
+                                                out.print("</div>");
+                                                out.println("<div class=\"rank\">");
+ 												out.println("<h4>GLOBAL RANK : <span style=\"color: rgb(228, 224, 15);\"> "+Profiledn.item(7).getTextContent()+"</span></h4>");
+                                                out.println("<h4 >REGION RANK : <span style=\"color: rgb(57, 78, 92);\">"+Profiledn.item(9).getTextContent()+"</span></h4>");
+                                                		
+                                                out.println("</div>");
+                                          out.println("</div>");
+                                          
+                                          %>
                                           <div class="history" >
-                                                <table border="0px" style="text-align: center;">
-                                                      <tr>
+                                                <table border="0px" style="text-align: center;background-color: #4568dc;">
+                                                      <tr style="background-color: #b956bd;">
                                                             <th>S.NO</th>
                                                             <th>EVENT NAME</th>
                                                             <th> EVENT DATE & TIME</th>
@@ -66,300 +75,38 @@
                                                             <th>FEEDBACK</th>
 
                                                       </tr>
-                                                      <tr>
-                                                            <td>1</td>
-                                                            <td>JAVA</td>
-                                                            <td> 12/02/2022</td>
-                                                            <td>20</td>
-                                                            <td>71JA120222</td>
-                                                            <td> 2</td>
-                                                            <td>8</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>2</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>1</td>
-                                                            <td>JAVA</td>
-                                                            <td> 12/02/2022</td>
-                                                            <td>20</td>
-                                                            <td>71JA120222</td>
-                                                            <td> 2</td>
-                                                            <td>8</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>3</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>1</td>
-                                                            <td>JAVA</td>
-                                                            <td> 12/02/2022</td>
-                                                            <td>20</td>
-                                                            <td>71JA120222</td>
-                                                            <td> 2</td>
-                                                            <td>8</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>4</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>5</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>1</td>
-                                                            <td>JAVA</td>
-                                                            <td> 12/02/2022</td>
-                                                            <td>20</td>
-                                                            <td>71JA120222</td>
-                                                            <td> 2</td>
-                                                            <td>8</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>6</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>7</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>1</td>
-                                                            <td>JAVA</td>
-                                                            <td> 12/02/2022</td>
-                                                            <td>20</td>
-                                                            <td>71JA120222</td>
-                                                            <td> 2</td>
-                                                            <td>8</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>7</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>1</td>
-                                                            <td>JAVA</td>
-                                                            <td> 12/02/2022</td>
-                                                            <td>20</td>
-                                                            <td>71JA120222</td>
-                                                            <td> 2</td>
-                                                            <td>8</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>6</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>7</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>1</td>
-                                                            <td>JAVA</td>
-                                                            <td> 12/02/2022</td>
-                                                            <td>20</td>
-                                                            <td>71JA120222</td>
-                                                            <td> 2</td>
-                                                            <td>8</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>7</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>6</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>7</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>1</td>
-                                                            <td>JAVA</td>
-                                                            <td> 12/02/2022</td>
-                                                            <td>20</td>
-                                                            <td>71JA120222</td>
-                                                            <td> 2</td>
-                                                            <td>8</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>7</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>6</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>7</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>1</td>
-                                                            <td>JAVA</td>
-                                                            <td> 12/02/2022</td>
-                                                            <td>20</td>
-                                                            <td>71JA120222</td>
-                                                            <td> 2</td>
-                                                            <td>90</td>
-                                                            <td>4</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <td>7</td>
-                                                            <td>PYTHON</td>
-                                                            <td> 13/03/2022</td>
-                                                            <td>18</td>
-                                                            <td>72JA130322</td>
-                                                            <td> 3</td>
-                                                            <td>7</td>
-                                                            <td>4</td>
-                                                      </tr>
+                                          <%
+                                          
+                                          	NodeList his =d.getDocumentElement().getChildNodes().item(13).getChildNodes();
+                                          
+                                          long count = 1; 
+                                          	
+                                          for(int i=0;i<his.getLength();i++){
+                                        	  
+                                        	  if(!((i%2)==0)){
+                                        	  
+                                        	  out.println("<tr><td>"+count+"</td>");
+                                        	  count+=1;
+                                        	  for(int j=0;j<his.item(i).getChildNodes().getLength();j++){
+                                        		  
+                                        		  if(!((j%2)==0)) out.println("<td>"+his.item(i).getChildNodes().item(j).getTextContent()+"</td>");
+                                        		  
+                                        	  }
+                                        	  out.println("</tr>");
+                                          }
+                                          
+                                          }
 
-
-                                                </table>
+										  %>
+                                                                                
+                                              </table>
                                           </div>
+                                         
                                     </div>
+                        </center>
             </div>
             <div class= footer>
-                  <footer>
-                                    <div class=footerContent>
-                                          <div class=notes>
-                                                <h4>NOTES</h4>
-                                                      <ul>
-                                                            <li><a href=QuizNotes.jsp >JAVA</a></li>
-                                                            <li><a href=QuizNotes.jsp >PYTHON</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div>
-                                          <div class=quiz>
-                                                <h4>PROFILE</h4>
-                                                      <ul>
-                                                            <li><a href=Profile.jsp >RIGION</a></li>
-                                                            <li><a href=Profile.jsp >PERSONAL</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div>
-                                          <div class=games>
-                                                <h4>GAMES</h4>
-                                                      <ul>
-                                                            <li><a href=Games.jsp >REASONING</a></li>
-                                                            <li><a href=Games.jsp >APTITUDE</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div> 
-                                          <div class=community>
-                                                <h4>CONTACT</h4>
-                                                      <ul>
-                                                            <li><a href=# ><img width=30px src="image/WhatsappIcon.png" /></a></li>
-                                                            <li><a href=# ><img width=30px src="image/InstagramIcon.png" /></a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul> 
-                                          </div>
-                                    </div>
-                                    <h4 id=cpyrights ><i><img src=image/WebIcon.png /> BLUE <span style="color: red;"> MOON</span> 2022 &copy;</i></h4>
-                  </footer>
+                 <%@ include file="FooterNav.jsp" %>
             </div>	
       </div>	
 <script src="js/QuizNotes.js"></script>

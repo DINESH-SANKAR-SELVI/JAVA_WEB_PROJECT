@@ -1,32 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<User>
-		
+<User>	
 		<SUBJECTID id="JAVA1995230122"></SUBJECTID>
+		
+		<TOPICID id=""></TOPICID>
+		
+		<BATCHQUIZID id=""></BATCHQUIZID>
+		
+		<QUIZS></QUIZS>
+		
+		<USERID id="DI712031230123" >
 
-</User>
-
-<!-- 
-<?xml version="1.0" encoding="UTF-8" ?>
-<Member>
-        <PersonalDetails>
-        
-            <UserId >DI712031230123</UserId>
-            <UserAvatar>BACKGROUND.jpg</UserAvatar>
+            <UserAvatar>BACKGROUNDIMG.jpg</UserAvatar>
             <UserName>DINESH</UserName>
             <UserBhd>2003-03-31</UserBhd>
             <UserGender>MALE</UserGender>
             <UserNumber>7604829520</UserNumber>
             <UserEmail>ddprofessional31@gmail.com</UserEmail>
-            <UserQualification>UG\PG</UserQualification>
+            <UserQualification>UG/PG</UserQualification>
             <UserPincode>600071</UserPincode>
             <UserCity>CHENNAI</UserCity>
             <UserArea>AVADI</UserArea>
             <UserPassword>DIN</UserPassword>
-            <UserJoinDate>2023-01-22</UserJoinDate>
+            <UserJoinDate>2023-02-09</UserJoinDate>
+		
+		</USERID>
+		
+		<USERDETAIL>
+			<UserTotalAttempt>66</UserTotalAttempt>
+			<UserAverageCorrect>66</UserAverageCorrect>
+            <UserAverageWrong>34</UserAverageWrong>  
+		   	<UserRankGlobal>128514</UserRankGlobal>
+            <UserRankRegion>17520</UserRankRegion>
+		</USERDETAIL>
+		
+		<History>
+            <UserSerialNumber value='1' >
+                <EventName>JAVA</EventName>
+                <EventAttendDate>2023-02-10</EventAttendDate>
+                <EventPoint>20</EventPoint>
+                <EventQuestionsId>DIJA230209215530</EventQuestionsId>
+                <SkipedQuiz>0</SkipedQuiz>
+                <AttenedQuiz>10</AttenedQuiz>
+                <EventFeedback>4</EventFeedback>
+            </UserSerialNumber>
+
+            <UserSerialNumber value='2' >
+                <EventName>PYTHON</EventName>
+                <EventAttendDate>2023-02-10</EventAttendDate>
+                <EventPoint>18</EventPoint>
+                <EventQuestionsId>DIPY230209215030</EventQuestionsId>
+                <SkipedQuiz>1</SkipedQuiz>
+                <AttenedQuiz>9</AttenedQuiz>
+                <EventFeedback>5</EventFeedback>
+            </UserSerialNumber>
             
-        </PersonalDetails>
-
-</Member>
-
--->
+            <UserSerialNumber value='3' >
+                <EventName>JAVASCRIPT</EventName>
+                <EventAttendDate>2023-02-11</EventAttendDate>
+                <EventPoint>16</EventPoint>
+                <EventQuestionsId>DIJA230209215030</EventQuestionsId>
+                <SkipedQuiz>2</SkipedQuiz>
+                <AttenedQuiz>8</AttenedQuiz>
+                <EventFeedback>5</EventFeedback>
+            </UserSerialNumber>
+        </History>
+        
+		
+</User>

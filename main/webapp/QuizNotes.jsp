@@ -9,8 +9,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>WELCOME TO BLUE MOON</title>
       <link rel='website icon' type=png href=image/WebIcon.png />
-      <link rel='stylesheet' href='CSS/BaseFooter.css' />
-      <link rel='stylesheet' href='CSS/BaseNav.css' />
+      <link rel='stylesheet' href='css/BaseFooter.css' />
+      <link rel='stylesheet' href='css/BaseNav.css' />
 
       
 </head>
@@ -68,8 +68,6 @@
                 		out.println("<h2 style=\" background-image:linear-gradient(to right,#083557c5,#004e9a); width:80%;border-radius:10px; \">COMMING SOON...!</h4></div>");
                 	
                 	%>
-                			
-                		           <form> <input type="textarea" name=check /></form>
 				 </div>
             </div>
             <div class= footer>
