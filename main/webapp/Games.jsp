@@ -43,14 +43,7 @@
                                           <div class="game1"><h3>APTITUDE</h3></div>
                                           <div class="game1"><h3>REASONING</h3></div>
                                           <div class="game1"><h3>COMING SOON..!</h3></div>
-                                          
-                                          <%
-                                          	for(int i=0;i<1;i++){
-                                          		
-                                          		out.println("<div class=game1> <h3>app </h3></div>"); 
-                                          	
-                                          	}
-                                          %>
+                                      
                                     </div>
             </div>
 
