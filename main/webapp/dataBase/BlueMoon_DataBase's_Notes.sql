@@ -13,7 +13,7 @@ USE BlueMoon;
 CREATE TABLE Notes(
 	SubjectId varchar(14) PRIMARY KEY,
 	SubjectName varchar(30) NOT NULL,
-	SubjectAbout varchar(1200) NOT NULL
+	SubjectAbout varchar(2400) NOT NULL
 );
 
 /***************************************************/
@@ -34,7 +34,7 @@ CREATE TABLE BatchQuiz(
 	SubjectId varchar(14),
 	TopicId varchar(14),
 	QuizSetId varchar(14),	
-	BatchName varchar(20) NOT NULL,
+	BatchName varchar(30) NOT NULL,
 	TotalQuestions INT NOT NULL, 
 	TotalPoints INT NOT NULL,
 	TotalTime INT NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE Question(
 	TopicId varchar(14),
 	QuizSetId varchar(14),
 	QuizId varchar(14),
-	QuizContent varchar(200) NOT NULL,
+	QuizContent varchar(300) NOT NULL,
 	QuizPoint INT NOT NULL,
 
 	PRIMARY KEY(SubjectId,TopicId,QuizSetId,QuizId),
@@ -66,7 +66,7 @@ CREATE TABLE Options(
 	QuizSetId varchar(14),
 	QuizId varchar(14),
 	OptionId varchar(14),
-	OptionContent varchar(120) NOT NULL,
+	OptionContent varchar(200) NOT NULL,
 	AnswerTrueFlase INT NOT NULL,
 	
 	PRIMARY KEY(SubjectId,TopicId,QuizSetId,QuizId,OptionId),

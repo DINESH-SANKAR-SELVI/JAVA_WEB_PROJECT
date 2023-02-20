@@ -89,7 +89,14 @@
                                         	  count+=1;
                                         	  for(int j=0;j<his.item(i).getChildNodes().getLength();j++){
                                         		  
-                                        		  if(!((j%2)==0)) out.println("<td>"+his.item(i).getChildNodes().item(j).getTextContent()+"</td>");
+                                        		  if(!((j%2)==0)){
+                                        			  if(!(j==7)){
+                                        				  out.println("<td>"+his.item(i).getChildNodes().item(j).getTextContent()+"</td>");
+                                        			  }
+                                        			  else{
+                                        				  out.println("<td><a style=\" text-decoration:none;color: orengered; \" href='ReviewQuiz.jsp' >"+his.item(i).getChildNodes().item(j).getTextContent()+"</a></td>");
+                                        			  }
+                                        		  }
                                         		  
                                         	  }
                                         	  out.println("</tr>");

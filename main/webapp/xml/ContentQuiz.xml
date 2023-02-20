@@ -1,21 +1,141 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <NOTES>
-	
 	<SUBJECT id="JAVA1995230122">
+	
 		<SUBJECT_NAME>JAVA</SUBJECT_NAME>
-		<SUBJECT_ABOUT>Java is a programming language and computing platform first released by Sun Microsystems in 1995.</SUBJECT_ABOUT>	
+		<SUBJECT_ABOUT>Java is a programming language and computing platform first released by Sun Microsystems in 1995.</SUBJECT_ABOUT>
+			
 		<TOPICS>
+		
 			<TOPIC id="JAVAOOPS180203">
+			
 					<TOPIC_NAME>OOPS</TOPIC_NAME>
+					<BATCH >
+
+						<QUIZ id="" >
+						
+							<QUIZCONTENT>Which of the following Is not oops concept in Java ?</QUIZCONTENT>
+							<OPTIONS>
+						
+								<OPT id ="" >Inheritance</OPT>
+								<OPT id ="" >Encapsulation</OPT>
+								<OPT id ="" >Polymorphism</OPT>
+								<OPT id ="" >Compilation</OPT>
+							</OPTIONS>						
+						</QUIZ>
+						
+						<QUIZ id ="" >
+						
+							<QUIZCONTENT>Which of the following is a type of polymorphism in Java?</QUIZCONTENT>
+							<OPTIONS>
+															
+								<OPT id ="" >Compile time polymorphism</OPT>
+								<OPT id ="" >Execution time polymorphism</OPT>
+								<OPT id ="" >Multiple polymorphism</OPT>
+								<OPT id ="" >Multilevel polymorphism</OPT>													
+							</OPTIONS>				
+						</QUIZ>
+						
+						<QUIZ id ="" >
+						
+							<QUIZCONTENT>When does method overloading is determined?</QUIZCONTENT>
+							<OPTIONS>
+
+								<OPT id ="" >At run time</OPT>
+								<OPT id ="" >At compile time</OPT>
+								<OPT id ="" >At coding time</OPT>
+								<OPT id ="" >At execution time</OPT>
+							</OPTIONS>						
+						</QUIZ>
+					</BATCH>
+					
+					<BATCH >
+					
+						<QUIZ id ="" >
+						
+							<QUIZCONTENT>When Overloading does not occur?</QUIZCONTENT>
+							<OPTIONS>
+	
+								<OPT id ="" >More than one method with same name but different method signature and different number or type of parameters</OPT>
+								<OPT id ="" >More than one method with same name, same signature but different number of signature</OPT>
+								<OPT id ="" >More than one method with same name, same signature, same number of parameters but different type</OPT>
+								<OPT id ="" >More than one method with same name, same number of parameters and type but different signature</OPT>
+							</OPTIONS>												
+						</QUIZ>
+						
+						<QUIZ id ="" >
+						
+							<QUIZCONTENT>Which concept of Java is a way of converting real world objects in terms of class?</QUIZCONTENT>
+							<OPTIONS>
+							
+								<OPT id ="" >Polymorphism</OPT>
+								<OPT id ="" >Encapsulation</OPT>
+								<OPT id ="" >Abstraction</OPT>
+								<OPT id ="" >Inheritance</OPT>						
+							</OPTIONS>						
+						</QUIZ>
+						
+						<QUIZ id ="" >
+						
+							<QUIZCONTENT id ="" >Which concept of Java is achieved by combining methods and attribute into a class?</QUIZCONTENT>
+							<OPTIONS>
+
+								<OPT id ="" >Encapsulation</OPT>
+								<OPT id ="" >Inheritance</OPT>
+								<OPT id ="" >Polymorphism</OPT>
+								<OPT id ="" >Abstraction</OPT>			
+							</OPTIONS>				
+						</QUIZ>
+					</BATCH>
+					
+					<BATCH >
+					
+						<QUIZ id ="" >
+							
+							<QUIZCONTENT>What is it called if an object has its own lifecycle and there is no owner?</QUIZCONTENT>
+							<OPTIONS>
+							
+								<OPT id ="" >Aggregation</OPT>
+								<OPT id ="" >Composition</OPT>
+								<OPT id ="" >Encapsulation</OPT>
+								<OPT id ="" >Association</OPT>						
+							</OPTIONS>					
+						</QUIZ>
+						
+						<QUIZ id ="" >
+						
+							<QUIZCONTENT>What is it called where child object gets killed if parent object is killed?</QUIZCONTENT>
+							<OPTIONS>
+								<OPT id ="" >Aggregation</OPT>
+								<OPT id ="" >Composition</OPT>
+								<OPT id ="" >Encapsulation</OPT>
+								<OPT id ="" >Association</OPT>
+							
+							</OPTIONS>					
+						</QUIZ>
+						
+						<QUIZ id ="" >
+						
+							<QUIZCONTENT>What is it called where object has its own lifecycle and child object cannot belong to another parent object?</QUIZCONTENT>
+							<OPTIONS>
+							
+								<OPT id ="" >Aggregation</OPT>
+								<OPT id ="" >Composition</OPT>
+								<OPT id ="" >Encapsulation</OPT>
+								<OPT id ="" >Association</OPT>
+							</OPTIONS>			
+						</QUIZ>		
+					</BATCH>
 			</TOPIC>
+			
 			<TOPIC id="JAVAARRA180203">
 					<TOPIC_NAME>ARRAY</TOPIC_NAME>
 			</TOPIC>
 			<TOPIC id="JAVAITER180203">
 					<TOPIC_NAME>ITERATION</TOPIC_NAME>
 			</TOPIC>
-
+			
 		</TOPICS>
 	</SUBJECT>
 	
@@ -35,8 +155,7 @@
 			
 			<TOPIC id="PYTHITER180203">
 					<TOPIC_NAME>ITERATION</TOPIC_NAME>
-			</TOPIC>	
-			
+			</TOPIC>
 		</TOPICS>
 	</SUBJECT>
 	

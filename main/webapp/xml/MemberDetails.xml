@@ -7,7 +7,11 @@
 		
 		<BATCHQUIZID id=""></BATCHQUIZID>
 		
-		<QUIZS></QUIZS>
+		<QUIZS>
+				<quiz quizid="" optid="" />
+				<quiz quizid="" optid="" />
+				<quiz quizid="" optid="" />
+		</QUIZS>
 		
 		<USERID id="DI712031230123" >
 
@@ -64,6 +68,7 @@
                 <AttenedQuiz>8</AttenedQuiz>
                 <EventFeedback>5</EventFeedback>
             </UserSerialNumber>
+                       
         </History>
         
 		

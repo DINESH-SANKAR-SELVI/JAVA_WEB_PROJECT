@@ -42,7 +42,7 @@ CREATE TABLE userPersonalLogs(
 /***********************************************/
 
 CREATE TABLE userHistory(
-	UserSerialNumber INT AUTO_INCREMENT,
+	UserSerialNumber INT,
 	UserId varchar(14),
 	EventName varchar(30) NOT NULL,
 	EventAttendDate TIMESTAMP NOT NULL,
