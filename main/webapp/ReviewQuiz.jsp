@@ -66,49 +66,82 @@
  							DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
  							DocumentBuilder db = bdf.newDocumentBuilder(); 
  							Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
+ 							Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
  							out.println("<div class=pair >");
  							
  							NodeList subject = d.getDocumentElement().getElementsByTagName("SUBJECT");
+ 							
+ 							NodeList UserAns = d1.getDocumentElement().getElementsByTagName("QUIZS");
+ 							
+ 							int counter = 1;
+ 							char []counterOpt = {'a','b','c','d','e','f'};
+ 							
  							for(int i=0;i<subject.getLength();i++){
  								
- 								if("PYTH1991230204".equalsIgnoreCase(subject.item(i).getAttributes().item(0).getTextContent())){
+ 								/* SUBJECT SELECTION */
+ 								if("JAVA1995230122".equalsIgnoreCase(subject.item(i).getAttributes().item(0).getTextContent())){
  									
  									for(int j=1;j<(subject.item(i).getChildNodes().item(5).getChildNodes().getLength());j++){
  										
  										if(!(j%2==0)){
+ 											/* TOPIC SELECTION IN SELECTED SUBJECT */
+ 											if("JAVAOOPS180203".equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
  										
- 											if("PYTHARRA180203".equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
- 										
- 												out.println("<p>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getTextContent()+"</p>");
+ 												for(int k=3;k<=subject.item(i).getChildNodes().item(5).getChildNodes().getLength();k++){
+ 													
+ 													if(!(k%2==0)){
+ 														
+ 														/*BATCH QUIZ SELECTION IN SELECTED TOPIC*/																	
+ 														if("JAVAOOPSSETFIR".equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
+ 															
+ 															for(int m=1;m<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
+ 																
+ 																if(!(m%2==0)){
+ 																/* maybe need verify to find quiz*/
+ 																out.println("<div style=\" display:flex;justify-content:space-between;width:99%; \"><h3>"+counter+". "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getTextContent()+"</h3><h3>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getNodeName()+": "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent()+"</h3></div>");
+ 																int count1 = 0;
+																for(int l=1;l<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().getLength();l++){
+ 																	
+																	if(!(l%2==0)){
+																		
+																		out.print("<p ");
+																		
+																		for(int n=1;n<UserAns.item(0).getChildNodes().getLength();n++){
+											 								if(!(n%2==0)){
+											 									if(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(1).getTextContent().equalsIgnoreCase(UserAns.item(0).getChildNodes().item(n).getAttributes().item(0).getTextContent())){
+											 										
+													 								if("1".equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(0).getTextContent()))
+																						out.print("style=\" background-color:green;\" ");
+																					else
+																						out.print("style=\" background-color:red;\" ");
+											 									}
+											 								}
+																		}
+																		out.print(">"+counterOpt[count1]+") "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getTextContent()+"<p>");
+																		
+																		count1++;
+																		
+																		//out.println("<p>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(0).getTextContent()+"</p>");
+																	}
+																}
+																out.println("<hr />");
+																counter++;
+ 															}
+ 														}
+ 													}
+ 												}
  											}
  										}
  									}
+ 								}
  									
  								//out.println("<p>"+subject.item(i).getTextContent()+"</p>");
  								}
  								
  							}
- 								
- 							
  							out.println("</div>");
  						
  						%>	
- 		<!-- work space -->
-                              <div class="pair">
-                                    <h3 id="q1" style="@media (max-width:800px) {font-size:1px;}" >1. GIVE THE CORRECT SYNTAX OF PRINT hello World.....! ? <pre>             POINTS:02/02</pre></h3>
-                                    <h4 id="a1" >a)System.out.println(hello World.....!)</h4>
-                                    <h4 id="b1" >b)System.out.println('hello World.....!')</h4>
-                                    <h4 id="c1" >c)System.out.println("hello World.....!")</h4>
-                                    <h4 id="d1" >d)system.out.print(hello World.....!)</h4><hr />
-                              </div>
-                              <div class="pair">
-                                    <h3 id="q2" >2. GIVE THE CORRECT SYNTAX OF PRINT hello World.....! ? <pre>             POINTS:01/02</pre></h3>
-                                    <h4 id="a2" >a)System.out.println(hello World.....!)</h4>
-                                    <h4 id="b2" >b)System.out.println('hello World.....!')</h4>
-                                    <h4 id="c2" >c)System.out.println("hello World.....!")</h4>
-                                    <h4 id="d2">d)system.out.print(hello World.....!)</h4>
-                              </div>
-
 
                   </div>
 
