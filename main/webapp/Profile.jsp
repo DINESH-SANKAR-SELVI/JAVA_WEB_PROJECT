@@ -17,7 +17,7 @@
       <div class=window >
             <div class="nav">
 					
-						<%@ include file="StepNav.jsp" %>
+						<%@ include file="ProfileNav.jsp" %>
 						
                   </div>
             <div class=content>
