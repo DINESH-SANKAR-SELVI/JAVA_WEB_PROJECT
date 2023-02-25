@@ -71,13 +71,18 @@
 											tempCheck =(String)d2.item(i).getAttributes().item(0).getTextContent();	
 										if(needSub.equals(tempCheck)){
 											
-											out.println("<h1>"+d2.item(i).getChildNodes().item(1).getTextContent()+"</h1>");
+											out.println("<h1 style=\"padding:10px;\" > <img width=50px height=50px src=image/"+d2.item(i).getChildNodes().item(1).getTextContent()+".png	style=\" margin-right:6px;border-radius:6px; \" alt=\"sub-logo\" title=logo />"+d2.item(i).getChildNodes().item(1).getTextContent()+"</h1>");
 											
-											out.println("<h3>"+d2.item(i).getChildNodes().item(3).getTextContent()+"</h3>");
+											out.println("<h3 style=\" margin-left:10%;\" >"+d2.item(i).getChildNodes().item(3).getTextContent()+"</h3>");
 											
-											for(int j=0;j<=(d2.item(i).getChildNodes().item(5).getChildNodes().getLength())-2;j++) out.println("<div onclick=\" window.location.href='QuizCommit.jsp'\" style=\"margin:10px;background-color:red;width:10%;color:white;\" ><center><p>"+d2.item(i).getChildNodes().item(5).getChildNodes().item(j+1).getTextContent()+"</p></center></div>");
+											out.println("<div style=\'display:flex; \' >");
 											
-											
+											for(int j=1;j<=(d2.item(i).getChildNodes().item(5).getChildNodes().getLength()-2);j++){
+												
+												if(!(j%2==0))
+												out.println("<div onclick=\" window.location.href='QuizCommit.jsp'\" style=\"margin:10px;background-color:red;border-radius:20px;width:10%;color:white;\" ><center><p>"+d2.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(1).getTextContent()+"</p></center></div>");
+											}
+											out.println("</div>");
 										}										
 										else{
 											continue;
