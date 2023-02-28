@@ -1,97 +1,180 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>COMMIT YOUR ANSWER</title>
-      <link rel="website icon" type="png" href="image/WebIcon.png" />
- 
- <style>
- .quiz-nav{
- 	color:white;
- 	height: 50px;
-    width: 50px;
-    margin: 10px;
-    background-color: brown;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:10px;
- }
+<meta charset="UTF-8">
+<title>COMMIT YOUR ANSWER</title>
+<link rel="website icon" type="png" href="image/WebIcon.png" />
+<style>
+
 .btn{
  
  	background-color:rgba(255,0,0,0.5);
  	height: 35px;
  	width:10%;
  	border-radius:10px;
+ 	font-weight:bold;
+ 	font-style:italic;
+ 	color:white;
  }
 
- 
- </style>
+</style>
 </head>
 <body style="background-image:linear-gradient(260deg,#416a8a,#2d6977);">
 
-      <div class=window >
-            <div class="nav">
-				<%@ include file="StepNav.jsp" %>                 
-            </div>
+		<%@ include file="StepNav.jsp" %>
 
+<%
 
-	<div class="tot-time-points" style="display:flex;justify-content:space-between;">
-                        <h4>TOTAL TIME : 01:00 </h4>
-                        <h4>POINTS     : 02    </h4>
-                        <h4>TIME HAVE : 00:06 </h4>
-    </div> 
-            
-      		<div class=content style="display:flex;justify-content:space-between;">
-                  
-	                  <div class="window-quiz" style="width:80%;background-color:rgba(255,255,255,0.2);border-radius:10px;">
-	                     
-	                        <div class="client" >
-	                        
-	                              <div class="quiz-base" style="display:flex;justify-content:space-between;width:100%;">
+	DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
+	DocumentBuilder db = bdf.newDocumentBuilder(); 
+	Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
+	Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+
+	out.println("<form action=Quiz method=post >");
+	out.println("<div class=pair >");
+								
+	NodeList subject = d.getDocumentElement().getElementsByTagName("SUBJECT");
+	NodeList UserAns = d1.getDocumentElement().getElementsByTagName("QUIZS");
 	
-	                                    <h3 style="font-size: medium;margin: 1%; ">1. GIVE THE CORRECT SYNTAX OF PRINT hello World.....! ?</h3>
-	                                    <h3 style="font-size: medium;margin: 1%;">QUIZ : 01/10 </h3>
-	                              </div>
-	                              <div class="opt-submit" style="display:flex;align-items:center;justify-content:center;">
-	                                    <form action="#" method="post" style="display:flex;flex-direction:column;width:70%;align-items:center;">
-	                                          <label style="width:80%;left:100px;font-size:small;padding:3px;margin:2px;font-size:larger;"><input type="checkbox" class="opt-1" >System.out.println(hello World.....!)</label>
-	                                          <label style="width:80%;left:100px;font-size:small;padding:3px;margin:2px;font-size:larger;"><input type="checkbox" class="opt-1" >System.out.println('hello World.....!')</label> 
-	                                          <label style="width:80%;left:100px;font-size:small;padding:3px;margin:2px;font-size:larger;"><input type="checkbox" class="opt-1" >System.out.println("hello World.....!")</label>
-	                                          <label style="width:80%;left:100px;font-size:small;padding:3px;margin:2px;font-size:larger;"><input type="checkbox" class="opt-1" >system.out.print(hello World.....!)</label>
-	                                    </form>
-	                              </div>
-	                              <br >
-	                              <div class="submit-property" style="display:flex;justify-content: space-evenly;">
+	String Subject = d1.getDocumentElement().getElementsByTagName("SUBJECTID").item(0).getAttributes().item(0).getTextContent();
+	String Topic = d1.getDocumentElement().getElementsByTagName("TOPICID").item(0).getAttributes().item(0).getTextContent();
+	String BatchQuiz = d1.getDocumentElement().getElementsByTagName("BATCHQUIZID").item(0).getAttributes().item(0).getTextContent();
 	
-	                                    <button type="button" class="btn" >back</button>
-	                                    <button type="button" class="btn" onclick="window.location.href='FeedbackQuiz.jsp'" >send report</button>
-	                                    <button class="btn" type="button">next</button>
-	                              </div>
-	                              <br >
-	                        </div>
-	                        
-	                  </div>
-                  
-		            <div class="quiz-index" style=" display: grid;grid-template-columns: auto auto auto;background-color:rgba(255,255,255,0.5);border-radius:10px;align-items:center;" >
+	String SubjectName =" ",TopicName=" ";
+	
+	int totpoints=0;
+	
+	for(int i=0;i<subject.getLength();i++){
 		
-		                  <div class="quiz-nav">1</div>
-		                  <div class="quiz-nav">2</div>
-		                  <div class="quiz-nav">3</div>
-		                  <div class="quiz-nav">4</div>
-		                  <div class="quiz-nav">5</div>
-		                  <div class="quiz-nav">6</div>
-		                  		                  
-		            </div>
-            
-            </div>
-      </div>	
-<script src="js/QuizNotes.js"></script>
+			if(Subject.equalsIgnoreCase(subject.item(i).getAttributes().item(0).getTextContent())){
+				
+				SubjectName = subject.item(i).getChildNodes().item(1).getTextContent();
+				
+					for(int j=1;j<(subject.item(i).getChildNodes().item(5).getChildNodes().getLength());j++){
+						
+							if(!(j%2==0)){
+								
+								if(Topic.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
+									
+									TopicName = subject.item(i).getChildNodes().item(5).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
+									
+									for(int k=3;k<=subject.item(i).getChildNodes().item(5).getChildNodes().getLength();k++){
+											
+											if(!(k%2==0)){
+												
+												/*BATCH QUIZ SELECTION IN SELECTED TOPIC*/																	
+												if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
+													
+													for(int m=1;m<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
+														
+														if(!(m%2==0)){
+															
+														totpoints = totpoints+ Integer.parseInt(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent());
+														}
+													}
+												}
+											}
+										}
+									}
+							}
+					}
+				
+			}
+	}
+		
+	
+%>
+		<p id="top"></p>
+		
+		<div class="tot-time-points" style="display:flex;justify-content:space-between;">
+                        <h4>SUBJECT : <span style="color:white;" ><%= SubjectName %></span></h4>
+                        <h4>TOTAL POINTS     : <span style="color:white;" > <%= totpoints %> </span></h4>
+                        <h4>TOPICS : <span style="color:white;" > <%= TopicName %></span></h4>
+    </div>
+		
+	<div>
+		<%@ page import="javax.xml.parsers.*" %>
+		<%@ page import="org.w3c.dom.*" %>
+		
+		<%
+ 							int counter = 1;
+ 							char []counterOpt = {'a','b','c','d','e','f'};
+ 							
+ 							for(int i=0;i<subject.getLength();i++){
+ 								
+ 								/* SUBJECT SELECTION */
+ 								if(Subject.equalsIgnoreCase(subject.item(i).getAttributes().item(0).getTextContent())){
+ 									for(int j=1;j<(subject.item(i).getChildNodes().item(5).getChildNodes().getLength());j++){
+ 										 										
+ 										if(!(j%2==0)){
+ 											/* TOPIC SELECTION IN SELECTED SUBJECT */
+ 											if(Topic.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
+ 										
+ 												for(int k=3;k<=subject.item(i).getChildNodes().item(5).getChildNodes().getLength();k++){
+ 													
+ 													if(!(k%2==0)){
+ 														
+ 														/*BATCH QUIZ SELECTION IN SELECTED TOPIC*/																	
+ 														if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
+ 															
+ 															for(int m=1;m<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
+ 																
+ 																if(!(m%2==0)){
+ 																	
+ 																	out.println("<div style='display:flex;flex-direction:column;align-items:center;'>");
+ 	 																out.println("<div style='background-color:rgba(255,255,255,0.4);border-radius:20px;padding:10px;width:90%;' >");
+ 	 																
+ 	 																
+ 																/* maybe need verify to find quiz*/
+ 																
+ 																out.println("<div style=\"font-size:larger;display:flex;justify-content:space-between;width:99%; \"><h3>"+counter+". "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getTextContent()+"</h3><h3>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getNodeName()+": "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent()+"</h3></div>");
+ 																int count1 = 0;
+ 																
+ 																out.println("<div style='display:flex;flex-direction:column;width:100%;align-items:center;' >");
+																for(int l=1;l<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().getLength();l++){
+																	
+																	if(!(l%2==0)){
+																		
+																		out.println("<label style=\"font-size:larger;border:1px solid black;border-radius:20px;width:50%;padding:4px; \" for="+m+l+" >");
+																		out.print("<input type=radio name="+m+" id="+m+l+" value=\""+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getTextContent()+"\" >"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getTextContent());
+																		out.println("</label><br />");
+																		count1++;
+																		
+																		//out.println("<p>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(0).getTextContent()+"</p>");
+																	}
+																}
+																out.println("</div>");
+																out.println("</div>");
+																out.println("</div>");
+																out.println("<hr />");
+																counter++;
+ 															}
+ 														}
+ 													}
+ 												}
+ 											}
+ 										}
+ 									}
+ 								}
+ 									
+ 								//out.println("<p>"+subject.item(i).getTextContent()+"</p>");
+ 								}
+ 								
+ 							}
+ 							out.println("</div>");
+             %>
+             
+             <div class="submit-property" style="display:flex;justify-content: space-evenly;">
+	
+					<input type="button" class="btn" onclick="window.location.href='#top'" value="<%="go_top".toUpperCase() %>" />
+	                <input type="submit" class="btn" onclick="window.location.href='Quiz'" value="<%= "finalize".toUpperCase() %>" />
+	                <input type="button" class="btn" onclick="window.location.href='QuizNotes.jsp'" value="<%="cancel".toUpperCase() %>" />
+	        </div>
+	        </form>
+	   </div>
+		
+		
 </body>
 </html>
-
