@@ -30,19 +30,17 @@ public class Quiz extends HttpServlet{
 			io.println("<html><body>");
 			
 			for(int i=1;i<quiz.getLength();i++) {
-				if(!(i%2==0)) { 
-					io.println("<h1>"+quiz.item(i).getAttributes().item(0).getTextContent()+"</h1>");
+				if(!(i%2==0)) {
+					String q = String.valueOf(i);
+					io.println("<h1>"+quiz.item(i).getAttributes().item(1).getTextContent()+" : "+req.getParameter(q)+"</h1>");
 				}
 			}
+			
+			res.sendRedirect("FeedbackQuiz.jsp");
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-
-		io.println("<h1>"+req.getParameter("1")+"</h1>");
-		io.println("<h1>"+req.getParameter("3")+"</h1>");
-		io.println("<h1>"+req.getParameter("5")+"</h1>");
-		
 		io.println("</body></html>");
 		
 		

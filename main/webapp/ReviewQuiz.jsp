@@ -70,8 +70,12 @@
  							out.println("<div class=pair >");
  							
  							NodeList subject = d.getDocumentElement().getElementsByTagName("SUBJECT");
- 							
  							NodeList UserAns = d1.getDocumentElement().getElementsByTagName("QUIZS");
+ 							
+ 							String Subject = d1.getDocumentElement().getElementsByTagName("SUBJECTID").item(0).getAttributes().item(0).getTextContent();
+ 							String Topic = d1.getDocumentElement().getElementsByTagName("TOPICID").item(0).getAttributes().item(0).getTextContent();
+ 							String BatchQuiz = d1.getDocumentElement().getElementsByTagName("BATCHQUIZID").item(0).getAttributes().item(0).getTextContent();
+ 							
  							
  							int counter = 1;
  							char []counterOpt = {'a','b','c','d','e','f'};
@@ -79,20 +83,20 @@
  							for(int i=0;i<subject.getLength();i++){
  								
  								/* SUBJECT SELECTION */
- 								if("JAVA1995230122".equalsIgnoreCase(subject.item(i).getAttributes().item(0).getTextContent())){
+ 								if(Subject.equalsIgnoreCase(subject.item(i).getAttributes().item(0).getTextContent())){
  									
  									for(int j=1;j<(subject.item(i).getChildNodes().item(5).getChildNodes().getLength());j++){
  										
  										if(!(j%2==0)){
  											/* TOPIC SELECTION IN SELECTED SUBJECT */
- 											if("JAVAOOPS180203".equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
+ 											if(Topic.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
  										
  												for(int k=3;k<=subject.item(i).getChildNodes().item(5).getChildNodes().getLength();k++){
  													
  													if(!(k%2==0)){
  														
  														/*BATCH QUIZ SELECTION IN SELECTED TOPIC*/																	
- 														if("JAVAOOPSSETFIR".equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
+ 														if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
  															
  															for(int m=1;m<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
  																

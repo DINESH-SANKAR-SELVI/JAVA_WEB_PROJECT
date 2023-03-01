@@ -21,7 +21,14 @@
                   <img width="40px" style="margin:10px;" src="image/star.png" alt="Rating(3)">
                   <img width="40px" style="margin:10px;" src="image/star.png" alt="Rating(4)">
                   <img width="40px" style="margin:10px;" src="image/star.png" alt="Rating(5)"><br />
-                  <p style="color: white;display: inline;position: relative;left:30% ;" >press the star for Rating</p>
+                  
+                  <form action=FeedBack method="post" >
+                  
+                  <center><input style="border-radius:10px;border:2px solid white;background-color:orangered;text-align:center;caret-color:white;color:white;font-size:larger;" type="number" min="1" max="5" name="feedback" />  <input type=submit style="border-radius:10px;border:2px solid white;background-color:green;text-align:center;caret-color:white;color:white;font-size:larger;" onclick="winOrLose()" /></center>
+                  
+                  </form><br />
+                  
+                  <p style="color:white;display: inline;position: relative;left:20%;" >Give FeedBack Rating WithIn 5</p>
             </div>
             
             <div class="btn">
@@ -29,5 +36,14 @@
                   <button onclick="window.location.href='ReviewQuiz.jsp'">REVIEW</button>
             </div>
       </div>
+<script>
+	
+	function winOrLose(){
+	
+		alert("ok")
+	}
+
+</script>      
+
 </body>
 </html>

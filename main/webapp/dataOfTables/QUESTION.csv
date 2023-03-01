@@ -36,30 +36,30 @@ JAVA1995230122,JAVAARRA023430,JAVAARRASETTHI,JAARSETTHIRD04,Index in array start
 JAVA1995230122,JAVAARRA023430,JAVAARRASETTHI,JAARSETTHIRD05,"Which of the following is used to declare,construct, and initlaize an array?",2
 JAVA1995230122,JAVAARRA023430,JAVAARRASETTHI,JAARSETTHIRD06,We can calculate the length of an array using ________.,2
 JAVA1995230122,JAVAITER023530,JAVAITERSETFIR,JAITSETFIRST01,which of this return type of hasNext()  method of the iterator ?,2
-JAVA1995230123,JAVAITER023530,JAVAITERSETFIR,JAITSETFIRST02,Which of these methods is used to obtain an iterator to the start of collection?,2
-JAVA1995230124,JAVAITER023530,JAVAITERSETFIR,JAITSETFIRST03,Which of these methods can be used to move to next element in a collection?,2
-JAVA1995230125,JAVAITER023530,JAVAITERSETFIR,JAITSETFIRST04,Which of these iterators can be used only with List?,2
-JAVA1995230126,JAVAITER023530,JAVAITERSETFIR,JAITSETFIRST05,Which of these is a method of ListIterator used to obtain index of previous element?,2
-JAVA1995230127,JAVAITER023530,JAVAITERSETFIR,JAITSETFIRST06, A __________ statement allows us to execute a statement or group of statements multiple times.,2
-JAVA1995230128,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON01,A __________ loop statement in Java programming language repeatedly executes a target statement as long as a given condition is true.,2
-JAVA1995230129,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON02,Which loop guaranteed to execute at least one time?,2
-JAVA1995230130,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON03,A for loop is useful when you know how many times a task is to be repeated.,2
-JAVA1995230131,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON04,Which statement causes the loop to immediately jump to the next iteration of the loop?,2
-JAVA1995230132,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON05,What is the syntax of a continue is a single statement inside any loop?,2
-JAVA1995230133,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON06,Choose a valid loop name in Java below.,2
-JAVA1995230134,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD01,Which of these exceptions is thrown by remover() method?,2
-JAVA1995230135,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD02,Which type of loop is best known for its boolean condition that controls entry to the loop?,2
-JAVA1995230136,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD03, Which type of loop is best known for using an index or counter?,2
-JAVA1995230137,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD04,Which type of loop is guaranteed to have the body execute at least once?,2
-JAVA1995230138,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD05, Which of the following can loop through an array without referring to the elements by index?,2
-JAVA1995230139,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD06, What keyword is used to end the current loop iteration and proceed execution with the next iteration of that loop?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETFIR,JAITSETFIRST02,Which of these methods is used to obtain an iterator to the start of collection?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETFIR,JAITSETFIRST03,Which of these methods can be used to move to next element in a collection?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETFIR,JAITSETFIRST04,Which of these iterators can be used only with List?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETFIR,JAITSETFIRST05,Which of these is a method of ListIterator used to obtain index of previous element?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETFIR,JAITSETFIRST06, A __________ statement allows us to execute a statement or group of statements multiple times.,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON01,A __________ loop statement in Java programming language repeatedly executes a target statement as long as a given condition is true.,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON02,Which loop guaranteed to execute at least one time?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON03,A for loop is useful when you know how many times a task is to be repeated.,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON04,Which statement causes the loop to immediately jump to the next iteration of the loop?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON05,What is the syntax of a continue is a single statement inside any loop?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETSEC,JAITSETSECON06,Choose a valid loop name in Java below.,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD01,Which of these exceptions is thrown by remover() method?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD02,Which type of loop is best known for its boolean condition that controls entry to the loop?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD03, Which type of loop is best known for using an index or counter?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD04,Which type of loop is guaranteed to have the body execute at least once?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD05, Which of the following can loop through an array without referring to the elements by index?,2
+JAVA1995230122,JAVAITER023530,JAVAITERSETTHI,JAITSETTHIRD06, What keyword is used to end the current loop iteration and proceed execution with the next iteration of that loop?,2
 PYTH1991230204,PYTHDATA023730,PYTHDATASETFIR,PYDASETFIRST01,which of the following are immutable ?,2
 PYTH1991230204,PYTHDATA023730,PYTHDATASETFIR,PYDASETFIRST02,Which of these in not a core data type?,2
 PYTH1991230204,PYTHDATA023730,PYTHDATASETFIR,PYDASETFIRST03,"Given a function that does not return any value, What value is thrown by default when executed in shell.",2
 PYTH1991230204,PYTHDATA023730,PYTHDATASETFIR,PYDASETFIRST04,"What will be the output of the following Python code?  "">>>str=""hello"" >>>str[:2] >>>""",2
 PYTH1991230204,PYTHDATA023730,PYTHDATASETFIR,PYDASETFIRST05,Which of the following will run without errors?,2
 PYTH1991230204,PYTHDATA023730,PYTHDATASETFIR,PYDASETFIRST06,What is the return type of function id?,2
-PYTH1991230204,PYTHDATA023730,PYTHDATASETSEC,PYDASETSECON01,"In python we do not specify types, it is directly interpreted by the compiler, so consider the following operation to be performed. "">>>x = 13 ? 2"" objective is to make sure x has a integer value, select all that apply (python 3.xx)",2
+PYTH1991230204,PYTHDATA023730,PYTHDATASETSEC,PYDASETSECON01,"In python we do not specify types, it is directly interpreted by the compiler, so consider the following operation to be performed. ",2
 PYTH1991230204,PYTHDATA023730,PYTHDATASETSEC,PYDASETSECON02," What error occurs when you execute the following Python code snippet? ""apple = mango""",2
 PYTH1991230204,PYTHDATA023730,PYTHDATASETSEC,PYDASETSECON03," What data type is the object below? ""L = [1, 23, 'hello', 1]""",2
 PYTH1991230204,PYTHDATA023730,PYTHDATASETSEC,PYDASETSECON04,In order to store values in terms of key and value we use what core data type.,2

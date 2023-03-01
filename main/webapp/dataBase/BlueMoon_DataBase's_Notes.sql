@@ -4,7 +4,7 @@
 CREATE DATABASE BlueMoon;
 
 USE BlueMoon;
-/***********************************************
+/***********************************************/
 
 /************************************************
 		NOTES TABLES
@@ -66,7 +66,7 @@ CREATE TABLE Options(
 	QuizSetId varchar(14),
 	QuizId varchar(14),
 	OptionId varchar(14),
-	OptionContent varchar(200) NOT NULL,
+	OptionContent varchar(500) NOT NULL,
 	AnswerTrueFlase INT NOT NULL,
 	
 	PRIMARY KEY(SubjectId,TopicId,QuizSetId,QuizId,OptionId),

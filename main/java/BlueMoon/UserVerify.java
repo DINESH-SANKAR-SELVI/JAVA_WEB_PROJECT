@@ -7,6 +7,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.sql.*;
+//import java.sql.Date;
+//import java.time.Instant;
+import java.time.*;
 
 @WebServlet("/UserVerify")
 public class UserVerify extends HttpServlet {
@@ -29,10 +32,23 @@ public class UserVerify extends HttpServlet {
 			
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()) {
+				String id = rs.getString(1);
+				Timestamp now = Timestamp.from(Instant.now());
 				
+					PreparedStatement ps1 = con.prepareStatement("INSERT INTO dailylog(UserId,LogInTimeStamp) VALUES(?,?)");
+					ps1.setString(1, id);
+					ps1.setTimestamp(2, now);
+					
+					Boolean rs1 = ps1.execute();
+					
+					if(!(rs1)) {
+						response.sendRedirect("BasePage.jsp");					
+					}
+					else {
+						response.sendRedirect("LogInPage.jsp");
+					}
 				/* will replace the code to access xml to write */
 				
-				response.sendRedirect("BasePage.jsp");
 			}
 			else io.println("<html><body  style='background-image:linear-gradient(45deg,#02aabd,#00cdac);'><center><img width=100px height=100px alter=FAILED title=ISSUE src=image/failed.png /><br /><br /> SORRY..! MAY BE YOU MADE A MISTAKE SO YOU CAN  <a href=LogInPage.jsp >TRY AGAIN ...!</a></center></body></html>"); 
 			
