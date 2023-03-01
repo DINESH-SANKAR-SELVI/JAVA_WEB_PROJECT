@@ -24,7 +24,7 @@ public class FeedBack extends HttpServlet{
 		try {
 		DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db = bdf.newDocumentBuilder();
-		Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\UserNotes.xml");
+		Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
 		
 		String id = d1.getDocumentElement().getElementsByTagName("USERID").item(0).getAttributes().item(0).getTextContent();
 		String Subject = d1.getDocumentElement().getElementsByTagName("SUBJECTID").item(0).getAttributes().item(0).getTextContent();
@@ -40,7 +40,7 @@ public class FeedBack extends HttpServlet{
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BlueMoon?characterEncoding=latin1","root","White@Kite_0110.");
 				
-				PreparedStatement ps1 = con.prepareStatement("UPDATE feedback set Rating = ? WHERE UserId= ? AND SubjectId= ? AND TopicId= ? AND QuizSetId =?");
+				PreparedStatement ps1 = con.prepareStatement("UPDATE bluemoon.feedback set Rating=? WHERE UserId=? AND SubjectId=? AND TopicId=? AND QuizSetId=? ");
 				
 				ps1.setInt(1, rate);
 				ps1.setString(2, id);
@@ -50,17 +50,16 @@ public class FeedBack extends HttpServlet{
 				
 				int rs = ps1.executeUpdate();
 		
-				if(rs == 1) res.sendRedirect("profile.jsp");
+				if(rs == 1) res.sendRedirect("Profile.jsp");
 				
-				else res.sendRedirect("FeedbackQuiz.jsp");
+				else { io.println("<html><body>"+rate+":"+id+":"+Subject+" : "+Topic+" : "+BatchQuiz); res.sendRedirect("FeedbackQuiz.jsp");}
 				
 				}catch(Exception e) {
 				
 					e.printStackTrace();
 				}
 		}
-		else		
-			res.sendRedirect("FeedbackQuiz.jsp");
+		else	res.sendRedirect("FeedbackQuiz.jsp");
 			
 		}catch(Exception e) {
 			e.printStackTrace();
