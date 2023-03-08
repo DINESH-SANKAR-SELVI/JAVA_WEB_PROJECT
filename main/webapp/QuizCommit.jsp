@@ -29,8 +29,8 @@
 
 	DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
 	DocumentBuilder db = bdf.newDocumentBuilder(); 
-	Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
-	Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+	Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\UserNotes.xml");
+	Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon1.xml");
 
 	out.println("<form action=Quiz method=post >");
 	out.println("<div class=pair >");
@@ -129,7 +129,7 @@
  	 																
  																/* maybe need verify to find quiz*/
  																
- 																out.println("<div style=\"font-size:larger;display:flex;justify-content:space-between;width:99%; \"><h3>"+counter+". "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getTextContent()+"</h3><h3>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getNodeName()+": "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent()+"</h3></div>");
+ 																out.println("<div style=\"font-size:larger;display:flex;justify-content:space-between;width:99%; \"><h3 name=q"+m+" value=dinesh >"+counter+". "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getTextContent()+"</h3><h3>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getNodeName()+": "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent()+"</h3></div>");
  																int count1 = 0;
  																
  																out.println("<div style='display:flex;flex-direction:column;width:100%;align-items:center;' >");
@@ -138,7 +138,7 @@
 																	if(!(l%2==0)){
 																		
 																		out.println("<label style=\"font-size:larger;border:1px solid black;border-radius:20px;width:50%;padding:4px; \" for="+m+l+" >");
-																		out.print("<input type=radio name="+m+" id="+m+l+" value=\""+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getTextContent()+"\" >"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getTextContent());
+																		out.print("<input type=radio name="+m+" id="+m+l+" value="+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(1).getTextContent()+">"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getTextContent());
 																		out.println("</label><br />");
 																		count1++;
 																		
@@ -172,7 +172,7 @@
 	                <input type="submit" class="btn" onclick="window.location.href='Quiz'" value="<%= "finalize".toUpperCase() %>" />
 	                <input type="button" class="btn" onclick="window.location.href='QuizNotes.jsp'" value="<%="cancel".toUpperCase() %>" />
 	        </div>
-	        </form>
+	        <% out.println("</form>"); %>
 	   </div>
 		
 		

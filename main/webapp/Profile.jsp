@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Known about you ?</title>
       <link rel="website icon" type="png" href="image/WebIcon.png" />
-      <link rel="stylesheet" type="text/css" href="CSS/BaseFooter.css" />
+      <link rel="stylesheet" type="text/css" href="css/BaseFooter.css" />
       
 </head>
 <body style="background-image: linear-gradient(to right,#4568dc,#b06ab3);color:white;" >
@@ -37,7 +37,7 @@
                                                 
                                                 DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
                                                 DocumentBuilder db = bdf.newDocumentBuilder();                        
-                                                Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");                                               
+                                                Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\UserNotes.xml");                                               
                                                 NodeList Userdn = d.getDocumentElement().getChildNodes().item(9).getChildNodes();
                                                 NodeList Profiledn = d.getDocumentElement().getChildNodes().item(11).getChildNodes();
                                                 	 	
@@ -67,13 +67,12 @@
                                                       <tr style="background-color: #b956bd;">
                                                             <th>S.NO</th>
                                                             <th>EVENT NAME</th>
+                                                            <th>EVENT TOPIC</th>
                                                             <th> EVENT DATE & TIME</th>
                                                             <th>POINTS</th>
                                                             <th>EVENT QUIZ & ANSWER</th>
                                                             <th> SKIPED</th>
                                                             <th>ATTENED QUIZ</th>
-                                                            <th>FEEDBACK</th>
-
                                                       </tr>
                                           <%
                                           
@@ -90,7 +89,7 @@
                                         	  for(int j=0;j<his.item(i).getChildNodes().getLength();j++){
                                         		  
                                         		  if(!((j%2)==0)){
-                                        			  if(!(j==7)){
+                                        			  if(!(j==9)){
                                         				  out.println("<td>"+his.item(i).getChildNodes().item(j).getTextContent()+"</td>");
                                         			  }
                                         			  else{

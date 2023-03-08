@@ -59,7 +59,6 @@ CREATE TABLE userHistory(
 
 CREATE TABLE Review(
 	EventQuestionsId varchar(16) PRIMARY KEY,
-	AttenedTime INT NOT NULL,
 	NumberOfCorrectAnswer INT NOT NULL,
 	NumberOfWrongAnswer INT NOT NULL,
 	SubjectId varchar(14) NOT NULL,

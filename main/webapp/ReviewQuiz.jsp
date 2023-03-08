@@ -8,7 +8,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>REVIEW OF CURRENT TASK</title>
-      <link rel="stylesheet" type="text/css" href="CSS/ReviewQuiz.css" />
+      <link rel="stylesheet" type="text/css" href="css/ReviewQuiz.css" />
       <link rel="website icon" type="png" href="image/WebIcon.png" />
 </head>
 <body >
@@ -28,7 +28,7 @@
  							String Topic = d1.getDocumentElement().getElementsByTagName("TOPICID").item(0).getAttributes().item(0).getTextContent();
  							String BatchQuiz = d1.getDocumentElement().getElementsByTagName("BATCHQUIZID").item(0).getAttributes().item(0).getTextContent();
  							
- 							int correct = 0 ,wrong = 0 ,skiped = 0 ,totalquiz = 0 ,attenedQuiz = 0;
+ 							int correct = 0 ,wrong = 0 ,skiped = 0 ,totalquiz = 0;	
  							
  							int counter = 1;
  							char []counterOpt = {'a','b','c','d','e','f'};
@@ -104,7 +104,6 @@
  							}
  							out.println("</div>");
  						
- 							attenedQuiz = (correct + wrong);
  						%>
 
 
@@ -148,7 +147,7 @@
  							//DocumentBuilder db = bdf.newDocumentBuilder(); 
  							//Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
  							//Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
- 							out.println("<div class=pair >");
+ 							out.println("<div class=pair>");
  							
  							//NodeList subject = d.getDocumentElement().getElementsByTagName("SUBJECT");
  							//NodeList UserAns = d1.getDocumentElement().getElementsByTagName("QUIZS");

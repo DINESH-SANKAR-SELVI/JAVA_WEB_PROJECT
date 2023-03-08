@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
 <User>	
-		<SUBJECTID id="JAVA1995230122"></SUBJECTID>
+		<SUBJECTID id="JAVA1995230122">JAVA</SUBJECTID>
 		
-		<TOPICID id="JAVAOOPS132218"></TOPICID>
+		<TOPICID id="JAVAOOPS132218">OOPS</TOPICID>
 		
-		<BATCHQUIZID id="JAVAOOPSSETFIR"></BATCHQUIZID>
+		<BATCHQUIZID id="JAVAOOPSSETFIR">SETFIRST</BATCHQUIZID>
 		
 		<QUIZS>
-				<quiz quizid="JAOOSETFIRST01" optid="JAOOSETFIR01O2" />
-				<quiz quizid="JAOOSETFIRST02" optid="JAOOSETFIR02O2" />
+				<quiz quizid="JAOOSETFIRST01" optid="JAOOSETFIR01O3" />
+				<quiz quizid="JAOOSETFIRST02" optid="JAOOSETFIR02O4" />
 				<quiz quizid="JAOOSETFIRST03" optid="JAOOSETFIR03O3" />
 		</QUIZS>
 		
 		<USERID id="VI547810230301" >
-
             <UserAvatar>BACKGROUNDIMG.jpg</UserAvatar>
             <UserName>DINESH</UserName>
             <UserBhd>2003-03-31</UserBhd>
@@ -27,9 +25,8 @@
             <UserArea>AVADI</UserArea>
             <UserPassword>DIN</UserPassword>
             <UserJoinDate>2023-02-09</UserJoinDate>
-		
 		</USERID>
-		
+
 		<USERDETAIL>
 			<UserTotalAttempt>66</UserTotalAttempt>
 			<UserAverageCorrect>66</UserAverageCorrect>
@@ -37,7 +34,7 @@
 		   	<UserRankGlobal>128514</UserRankGlobal>
             <UserRankRegion>17520</UserRankRegion>
 		</USERDETAIL>
-		
+
 		<History>
             <UserSerialNumber value='1' >
                 <EventName>JAVA</EventName>
@@ -47,7 +44,6 @@
                 <SkipedQuiz>0</SkipedQuiz>
                 <AttenedQuiz>10</AttenedQuiz>
             </UserSerialNumber>
-
             <UserSerialNumber value='2' >
                 <EventName>PYTHON</EventName>
                 <EventAttendDate>2023-02-10</EventAttendDate>
@@ -56,7 +52,6 @@
                 <SkipedQuiz>1</SkipedQuiz>
                 <AttenedQuiz>9</AttenedQuiz>
             </UserSerialNumber>
-            
             <UserSerialNumber value='3' >
                 <EventName>JAVASCRIPT</EventName>
                 <EventAttendDate>2023-02-11</EventAttendDate>
@@ -66,6 +61,4 @@
                 <AttenedQuiz>8</AttenedQuiz>
             </UserSerialNumber>
         </History>
-        
-		
 </User>
