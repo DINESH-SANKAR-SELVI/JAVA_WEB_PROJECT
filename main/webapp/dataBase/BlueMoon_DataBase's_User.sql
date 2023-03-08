@@ -50,7 +50,6 @@ CREATE TABLE userHistory(
 	EventPoint TINYINT NOT NULL,
 	SkipedQuiz TINYINT NOT NULL,
 	AttenedQuiz TINYINT NOT NULL,
-	EventFeedback TINYINT,
 
 	PRIMARY KEY(UserSerialNumber,UserId),
 	FOREIGN KEY(UserId)REFERENCES UserDetails(UserId) ON DELETE CASCADE

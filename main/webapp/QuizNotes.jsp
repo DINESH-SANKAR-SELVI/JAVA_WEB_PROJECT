@@ -29,7 +29,7 @@
                   <div class="menuList" >
                   <%	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 						DocumentBuilder db = dbf.newDocumentBuilder();
-						Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon1.xml");			
+						Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");			
 						out.println("<div style=\"display:flex;flex-wrap:wrap;\">");
 					try{
 						 NodeList nl = d.getElementsByTagName("SUBJECT");

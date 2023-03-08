@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Known about you ?</title>
       <link rel="website icon" type="png" href="image/WebIcon.png" />
-      <link rel="stylesheet" type="text/css" href="css/BaseFooter.css" />
+      <link rel="stylesheet" type="text/css" href="CSS/BaseFooter.css" />
       
 </head>
 <body style="background-image: linear-gradient(to right,#4568dc,#b06ab3);color:white;" >

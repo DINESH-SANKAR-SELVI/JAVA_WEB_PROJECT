@@ -33,26 +33,41 @@ public class FeedBack extends HttpServlet{
 		String s = req.getParameter("feedback");
 		
 		if(!(s.equals(""))) {
-		
 			int rate = Integer.parseInt(req.getParameter("feedback"));
 			
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BlueMoon?characterEncoding=latin1","root","White@Kite_0110.");
 			try {
-				Class.forName("com.mysql.jdbc.Driver");
-				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BlueMoon?characterEncoding=latin1","root","White@Kite_0110.");
-				
 				PreparedStatement ps1 = con.prepareStatement("UPDATE bluemoon.feedback set Rating=? WHERE UserId=? AND SubjectId=? AND TopicId=? AND QuizSetId=? ");
-				
+
 				ps1.setInt(1, rate);
 				ps1.setString(2, id);
 				ps1.setString(3, Subject);
 				ps1.setString(4, Topic);
 				ps1.setString(5, BatchQuiz);
-				
+
 				int rs = ps1.executeUpdate();
-		
+				
 				if(rs == 1) res.sendRedirect("Profile.jsp");
 				
-				else { io.println("<html><body>"+rate+":"+id+":"+Subject+" : "+Topic+" : "+BatchQuiz); res.sendRedirect("FeedbackQuiz.jsp");}
+				else {
+					PreparedStatement ps2 = con.prepareStatement("insert into bluemoon.feedback values(?,?,?,?,?)");
+					
+					ps2.setString(1, id);
+					ps2.setString(2, Subject);
+					ps2.setString(3, Topic);
+					ps2.setString(4, BatchQuiz);
+					ps2.setInt(5, rate);
+					
+					boolean resultInsertFeedback = ps2.execute();
+					
+					if(!(resultInsertFeedback)) {					
+						io.println("<html><body>"+rate+":"+id+":"+Subject+" : "+Topic+" : "+BatchQuiz+"</body></html>");
+						res.sendRedirect("Profile.jsp");
+					}
+					
+					else { io.println("<html><body> didn't insert </body></html>"); }
+					}
 				
 				}catch(Exception e) {
 				

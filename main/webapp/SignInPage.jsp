@@ -9,9 +9,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>GetMemberShip</title>
       <link rel="website icon" type="png" href="image/WebIcon.png" />
-      <!-- <link rel="stylesheet" type="text/css" href="css/LogSignInTemplate.css" /> -->
-      <!-- <link rel="stylesheet" type="text/css" href="css/SignInPage.css" /> -->
-      <!-- <link rel="stylesheet" type="text/css" href="css/SignInPage.css" />
+      <!-- <link rel="stylesheet" type="text/css" href="css/LogSignInTemplate.css" /> 
+      <link rel="stylesheet" type="text/css" href="css/SignInPage.css" />
+      <link rel="stylesheet" type="text/css" href="css/SignInPage.css" />
       <link rel="stylesheet" type="text/css" href="css/SignInPage1.css" />
       <link rel="stylesheet" type="text/css" href="css/SignInPage2.css" />
       <link rel="stylesheet" type="text/css" href="css/SignInPage3.css" /> -->
@@ -62,32 +62,28 @@
                                     </select>
                                     <label id="LABEL-QUALI" >USER QULAIFICATION</label>
 
-
-
-
                                     <input type="text" name="UserPinCode" id="USERPINCODE" maxlength="13" />
                                     <label for="USERPINCODE" id="LABEL-PINCODE" >RESIDENTIAL PIN CODE  </label><br /> <br />
                                     
-                                    <select name="UserCity" id="USERCITY" >
-                                          <option style="color: rgb(25, 123, 209);font-weight: bold;" value="CHENNAI" >CHENNAI</option>
-                                          <option style="color: rgb(25, 123, 209);font-weight: bold;" value="KOLKATA" >KOLKATA</option>
-                                          <option style="color: rgb(25, 123, 209);font-weight: bold;" value="MUMBAI" >MUMBAI</option>
-                                          <option style="color: rgb(25, 123, 209);font-weight: bold;" value="BANGALORE" >BANGALORE</option>
-                                          <option style="color: rgb(25, 123, 209);font-weight: bold;" value="OTHERS" >OTHERS</option>
-                                    </select>
+                                    <input list="USERCITYNAME" name="UserCity" id="USERCITY" />
+                                    <datalist  id="USERCITYNAME" >
+                                    	<option  value="CHENNAI" />
+                                    	<option  value="KOLKATA" />
+                                    	<option  value="MUMBAI" />
+                                    	<option  value="BANGALORE" />
+                                    	<option  value="Others" />
+                                    </datalist>
                                     <label id="LABEL-CITY" >RESIDENTIAL CITY</label>
                                     
-                                    <select name="UserArea" id="USERAREA" >
-                                          <option style="color: rgb(25, 123, 209);font-weight: bold;" value="AVADI" >AVADI</option>
-                                          <option style="color: rgb(25, 123, 209);font-weight: bold;" value="WEST BENGAL" >WEST BENGAL</option>
-                                          <option style="color: rgb(25, 123, 209);font-weight: bold;" value="WORLI" >WORLI</option>
-                                          <option style="color: rgb(25, 123, 209);font-weight: bold;" value="BASAVANAGUDI" >BASAVANAGUDI</option>
-                                          <option style="color: rgb(25, 123, 209);font-weight: bold;" value="OTHERS" >OTHERS</option>
-                                    </select>
+                                    <input list="USERAREANAME" name="UserArea" id="USERAREA" />
+                                    <datalist  id="USERAREANAME" >
+                                    	<option  value="AVADI" />
+                                    	<option  value="WEST BENGAL" />
+                                    	<option  value="WORLI" />
+                                    	<option  value="BASAVANAGUDI" />
+                                    	<option  value="Others" />
+                                    </datalist>
                                     <label id="LABEL-AREA" >RESIDENTIAL AREA</label>
-
-
-
                                     
                                     <input type="password" name="UserPassword" id="USERPASSWORD" maxlength="13" />
                                     <label for="USERPASSWORD" id="LABEL-PASSWORD" >PASSWORD  </label><br /> <br />

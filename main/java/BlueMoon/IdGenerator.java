@@ -1,11 +1,13 @@
 package BlueMoon;
 
-import java.sql.Date;
-import java.time.LocalDate;
+import java.sql.*;
+import java.time.*;
 
 public class IdGenerator {
 	
 	String UserId = "" ,name="",pincode="",phno="",bhd="",doj="";
+	
+	String UserName = "", SubjectName = "" ,time = "";
 	
 	public String UserId(String name,int pincode,long phno,Date bhd,Date doj) {
 		
@@ -20,4 +22,13 @@ public class IdGenerator {
 		
 		return UserId.toUpperCase();
 	}	
+	
+	public String BatchQuizId(String UsrName ,String SubName ,String curTimeStamp ) {
+		
+		this.UserName = UsrName.trim().substring(0,2);
+		this.SubjectName = SubName.trim().substring(0,2);
+		this.time = curTimeStamp.trim().substring(2,4).concat(curTimeStamp.substring(5,7)).concat(curTimeStamp.substring(8,10)).concat(curTimeStamp.substring(11,13)).concat(curTimeStamp.substring(14,16)).concat(curTimeStamp.substring(17,19));
+		
+		return this.UserName.concat(this.SubjectName).concat(this.time);
+	}
 }
