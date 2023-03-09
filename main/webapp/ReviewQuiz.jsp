@@ -8,7 +8,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>REVIEW OF CURRENT TASK</title>
-      <link rel="stylesheet" type="text/css" href="css/ReviewQuiz.css" />
+      <link rel="stylesheet" type="text/css" href="CSS/ReviewQuiz.css" />
       <link rel="website icon" type="png" href="image/WebIcon.png" />
 </head>
 <body >
@@ -17,8 +17,8 @@
 <% 
  							DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
  							DocumentBuilder db = bdf.newDocumentBuilder(); 
- 							Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
- 							Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+ 							Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon1.xml");
+ 							Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\UserNotes.xml");
  							out.println("<div class=pair >");
  							
  							NodeList subject = d.getDocumentElement().getElementsByTagName("SUBJECT");

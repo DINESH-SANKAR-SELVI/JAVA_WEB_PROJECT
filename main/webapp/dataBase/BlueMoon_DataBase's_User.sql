@@ -45,6 +45,7 @@ CREATE TABLE userHistory(
 	UserSerialNumber INT,
 	UserId varchar(14),
 	EventName varchar(30) NOT NULL,
+	TopicName varchar(30) NOT NULL,
 	EventAttendDate TIMESTAMP NOT NULL,
 	EventQuestionsId varchar(16) UNIQUE NOT NULL, 
 	EventPoint TINYINT NOT NULL,

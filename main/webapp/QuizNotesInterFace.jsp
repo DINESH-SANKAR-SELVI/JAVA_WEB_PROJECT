@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Test The Self</title>
       <link rel="website icon" type="png" href="image/WebIcon.png" />
-      <link rel="stylesheet" type="text/css" href="css/BaseFooter.css" />
+      <link rel="stylesheet" type="text/css" href="CSS/BaseFooter.css" />
       
 <style type="text/css">
 
@@ -48,9 +48,9 @@
                         		/*	DOCUMENT CREATER AND READER */	
 									DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 									DocumentBuilder db = dbf.newDocumentBuilder();
-									File f = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
+									File f = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon1.xml");
 									Document fd = db.parse(f);		
-									File s = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+									File s = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\UserNotes.xml");
 									Document sd = db.parse(s);
 								/*-------------------------------------------*/
 								

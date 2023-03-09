@@ -9,8 +9,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>WELCOME TO BLUE MOON</title>
       <link rel='website icon' type=png href=image/WebIcon.png />
-      <link rel='stylesheet' href='css/BaseFooter.css' />
-      <link rel='stylesheet' href='css/BaseNav.css' />
+      <link rel='stylesheet' href='CSS/BaseFooter.css' />
+      <link rel='stylesheet' href='CSS/BaseNav.css' />
 
       
 </head>
@@ -29,7 +29,7 @@
                   <div class="menuList" >
                   <%	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 						DocumentBuilder db = dbf.newDocumentBuilder();
-						Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");			
+						Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon1.xml");			
 						out.println("<div style=\"display:flex;flex-wrap:wrap;\">");
 					try{
 						 NodeList nl = d.getElementsByTagName("SUBJECT");
