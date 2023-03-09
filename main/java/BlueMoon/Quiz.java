@@ -42,7 +42,7 @@ public class Quiz extends HttpServlet{
 			IdGenerator key = new IdGenerator();
 			
 
-				io.println("<div class=pair >");
+		//		io.println("<div class=pair >");
 				
 				NodeList subject = d.getDocumentElement().getElementsByTagName("SUBJECT");
 				NodeList UserAns = d1.getDocumentElement().getElementsByTagName("QUIZS");
@@ -60,7 +60,8 @@ public class Quiz extends HttpServlet{
 				
 				String now1 = format1.format(now);
 				
-				int correct = 0 ,wrong = 0 ,skiped = 0 ,totalquiz = 0 ,attenedQuiz = 0 ,totpoints = 0;
+				int correct = 0 ,wrong = 0 ,skiped = 0 ,totalquiz = 0 ,attenedQuiz = 0 ,totpoints = 0 ;
+				boolean work = true;
 				
 				int counter = 1;
 				char []counterOpt = {'a','b','c','d','e','f'};
@@ -140,31 +141,71 @@ public class Quiz extends HttpServlet{
 					}
 					
 				}
-				io.println("</div>");
+			//	io.println("</div>");
 			
 				attenedQuiz = (correct + wrong);
 				
 				skiped = (totalquiz-correct -wrong);
+				
+				
+				String UsrName = d1.getElementsByTagName("USERID").item(0).getChildNodes().item(3).getTextContent();
+				//String SubjectName = d1.getElementsByTagName("SUBJECTID").item(0).getTextContent();
+				
+				String EventQuizId = "";
+				String SubjectId = d1.getDocumentElement().getElementsByTagName("SUBJECTID").item(0).getAttributes().item(0).getTextContent();
+				String TopicId = d1.getDocumentElement().getElementsByTagName("TOPICID").item(0).getAttributes().item(0).getTextContent();
+				String QuizSetId = d1.getDocumentElement().getElementsByTagName("BATCHQUIZID").item(0).getAttributes().item(0).getTextContent();
+				String QuizId = "" ;
+				String UserOptionId = "";
+			
+				EventQuizId = key.BatchQuizId(UsrName ,SubjectName , now1);
+				
+				Statement stmt = con.createStatement();
+				ResultSet usrsno = stmt.executeQuery("select count(bluemoon.userhistory.EventQuestionsId) from bluemoon.userhistory where UserId ='"+UsrId+"'");
+				int sno = 0;
+				if(usrsno.next())sno= (usrsno.getInt(1))+1;
+				
+				PreparedStatement ps1 = con.prepareStatement("INSERT INTO bluemoon.UserHistory VALUE(?,?,?,?,?,?,?,?,?)");
+				
+				ps1.setInt(1, sno);
+				ps1.setString(2, UsrId);
+				ps1.setString(3, SubjectName);
+				ps1.setString(4, now1);
+				ps1.setString(5, EventQuizId);
+				ps1.setInt(6, totpoints);
+				ps1.setInt(7, skiped);
+				ps1.setInt(8,attenedQuiz);
+				ps1.setString(9,TopicName);
+				
+				work = ps1.execute();
+				
+				if(!(work)) {
+					io.print("<div style=\"border:3px solid black;display:flex;align-items:center;justify-content:center;margin:3px;\" />");
+						io.print("<h4>DONE ....!</h4>");	
+					io.print("</div>");
+				}
+				work = true;
 
-			io.print("<div style=\"border:3px solid black;display:flex;align-items:center;justify-content:center;margin:3px;\" />");
+				PreparedStatement ps2 = con.prepareStatement("INSERT INTO bluemoon.review VALUES(?,?,?,?,?,?)");
+				
+				ps2.setString(1, EventQuizId);
+				ps2.setInt(2, correct);
+				ps2.setInt(3, wrong);
+				ps2.setString(4, SubjectId);
+				ps2.setString(5, TopicId);
+				ps2.setString(6, QuizSetId);
+				
+				work = ps2.execute();
+				
+				if(!(work)) {
+					
+				io.print("<div style=\"border:3px solid black;display:flex;align-items:center;justify-content:center;margin:3px;\" />");
+					
+					io.print("<h4>DONE ....!</h4>");	
+				io.print("</div>");
+					
+				}		
 			
-			io.print("<h4> correct :"+correct+ " : wrong : " +wrong+" : attenedQuiz : "+attenedQuiz+ " : skiped : " +skiped +" : subjectName :"+SubjectName+" : Topic Name : "+TopicName+" : usrId : "+UsrId+" : timeStamp : "+now1+ " : TotalPoints : "+totpoints+"</h4>");
-			
-			io.print("</div>");
-			
-			
-			String UsrName = d1.getElementsByTagName("USERID").item(0).getChildNodes().item(3).getTextContent();
-			//String SubjectName = d1.getElementsByTagName("SUBJECTID").item(0).getTextContent();
-			
-			String EventQuizId = "";
-			String SubjectId = d1.getDocumentElement().getElementsByTagName("SUBJECTID").item(0).getAttributes().item(0).getTextContent();
-			String TopicId = d1.getDocumentElement().getElementsByTagName("TOPICID").item(0).getAttributes().item(0).getTextContent();
-			String QuizSetId = d1.getDocumentElement().getElementsByTagName("BATCHQUIZID").item(0).getAttributes().item(0).getTextContent();
-			String QuizId = "" ;
-			String UserOptionId = "";
-			
-		
-			EventQuizId = key.BatchQuizId(UsrName ,SubjectName , now1);
 			
 			io.println("<div style=\"display:flex;flex-direction:column;border:3px solid black;justify-content:center;align-items:center;\" >");
 			
@@ -173,8 +214,10 @@ public class Quiz extends HttpServlet{
 					String q = String.valueOf(i);
 					
 					QuizId = quiz.item(i).getAttributes().item(1).getTextContent();
-					UserOptionId = req.getParameter(q);
+					UserOptionId =String.valueOf(req.getParameter(q));
 					
+					if(!(UserOptionId.equals(""))) {
+						
 					PreparedStatement ps = con.prepareStatement("INSERT INTO reviewQuestionAnswer values(?,?,?,?,?,?)");
 					
 					ps.setString(1, EventQuizId);
@@ -183,14 +226,20 @@ public class Quiz extends HttpServlet{
 					ps.setString(4, QuizSetId);
 					ps.setString(5, QuizId);
 					ps.setString(6, UserOptionId);
+										
+						work = ps.execute();
+					}
 					
-					io.println("<h3>"+EventQuizId + " : " +SubjectId +" : "+TopicId + " : " + QuizSetId +" : " +QuizId + " : "+ UserOptionId +"</h3>");
+					if(!(work)) {
+						io.println("<h3>DONE ...!</h3>");
+					}
+					work = true;
 				}
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		//res.sendRedirect("FeedbackQuiz.jsp");
+		res.sendRedirect("FeedbackQuiz.jsp");
 		io.println("</div>");
 		io.println("</body></html>");
 	}
