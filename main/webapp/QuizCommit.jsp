@@ -165,11 +165,6 @@
  							}
  							out.println("</div>");
              %>
-             
-	        <div style="width:100%;display:flex;align-items:center;justify-content:center;height:30px;">
-	        	<h4 style="color:white;">WAIT FOR 6 SEC BEFORE CLICK FINALIZE</h4>
-	        </div>
-             
              <div class="submit-property" style="display:flex;justify-content: space-evenly;">
 	
 					<input type="button" class="btn" onclick="window.location.href='#top'" value="<%="go_top".toUpperCase() %>" />
