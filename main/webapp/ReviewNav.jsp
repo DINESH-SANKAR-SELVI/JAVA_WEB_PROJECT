@@ -11,7 +11,7 @@
 	
 		<div>
 			<div class="bars">
-                              <img width="35px" height="35px" src="image/back.png" onclick="window.location.href='QuizCommit.jsp'"/>
+                              <img width="35px" height="35px" src="image/back.png" onclick="window.location.href='QuizNotes.jsp'"/>
             </div>                                   
 	                 
 		</div>
