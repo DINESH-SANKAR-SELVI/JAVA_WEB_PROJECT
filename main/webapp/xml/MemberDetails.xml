@@ -9,12 +9,12 @@
 		<QUIZS>
 				<quiz quizid="JAOOSETFIRST01" optid="JAOOSETFIR01O2" />
 				<quiz quizid="JAOOSETFIRST02" optid="JAOOSETFIR02O3" />
-				<quiz quizid="JAOOSETFIRST03" optid="JAOOSETFIR03O3" />
+				<quiz quizid="JAOOSETFIRST03" optid="JAOOSETFIR03O1" />
 		</QUIZS>
 		
-		<USERID id="VI547810230301" >
+		<USERID id="DI712031230310" >
             <UserAvatar>BACKGROUNDIMG.jpg</UserAvatar>
-            <UserName>VIJAY</UserName>
+            <UserName>DINESH</UserName>
             <UserBhd>2003-03-31</UserBhd>
             <UserGender>MALE</UserGender>
             <UserNumber>7604829520</UserNumber>
@@ -31,8 +31,8 @@
 			<UserTotalAttempt>66</UserTotalAttempt>
 			<UserAverageCorrect>66</UserAverageCorrect>
             <UserAverageWrong>34</UserAverageWrong>  
-		   	<UserRankGlobal>128514</UserRankGlobal>
-            <UserRankRegion>17520</UserRankRegion>
+<!-- 		   	<UserRankGlobal>128514</UserRankGlobal>
+            <UserRankRegion>17520</UserRankRegion> -->
 		</USERDETAIL>
 
 		<History>

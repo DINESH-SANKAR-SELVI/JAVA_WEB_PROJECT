@@ -30,10 +30,10 @@ CREATE TABLE userDetails(
 
 CREATE TABLE userPersonalLogs(
 	UserId varchar(14) PRIMARY KEY,
-	UserRankGlobal BIGINT UNIQUE NOT NULL,
-	UserRankRegion INT UNIQUE NOT NULL,
-	UserAverageCorrect INT NOT NULL,
-	UserAverageWrong INT NOT NULL,
+	/*UserRankGlobal BIGINT UNIQUE NOT NULL,
+	UserRankRegion INT UNIQUE NOT NULL,*/
+	UserAverageCorrect FLOAT NOT NULL,
+	UserAverageWrong FLOAT NOT NULL,
 	UserTotalAttempt INT NOT NULL,
 
  	FOREIGN KEY(UserId)REFERENCES UserDetails(UserId) ON DELETE CASCADE

@@ -18,7 +18,7 @@ CREATE TABLE FeedBack(
 	Rating TINYINT NOT NULL,
  
 	PRIMARY KEY(UserId,SubjectId,TopicId,QuizSetId),
-	FOREIGN KEY(SubjectId,TopicId,QuizSetId) REFERENCES BatchQuiz(SubjectId,TopicId,QuizSetId)
+	FOREIGN KEY(SubjectId,TopicId,QuizSetId) REFERENCES BatchQuiz(SubjectId,TopicId,QuizSetId) ON DELETE CASCADE
 );
 
 /***************************************************/
@@ -29,7 +29,7 @@ CREATE TABLE DailyLog(
 	LogInTimeStamp TIMESTAMP NOT NULL,
 	
 	PRIMARY KEY(UserId,LogInTimeStamp),
-	FOREIGN KEY(UserId) REFERENCES userDetails(UserId)
+	FOREIGN KEY(UserId)REFERENCES UserDetails(UserId) ON DELETE CASCADE
 );
 
 /****************************************************/

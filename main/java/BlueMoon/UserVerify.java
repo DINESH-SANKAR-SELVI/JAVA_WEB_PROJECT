@@ -42,7 +42,61 @@ public class UserVerify extends HttpServlet {
 					Boolean rs1 = ps1.execute();
 					
 					if(!(rs1)) {
-						response.sendRedirect("BasePage.jsp");					
+						
+						
+					/* Class.forName("com.mysql.jdbc.Driver");
+						Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BlueMoon?characterEncoding=latin1","root","White@Kite_0110.");
+					*/
+						try {
+							
+							int totatpt =0;
+							float avgcrt =0 ,avgwrg = 0;
+							
+							PreparedStatement ps4 = con.prepareStatement("select count(*),avg(NumberOfCorrectAnswer),avg(NumberOfWrongAnswer) from bluemoon.userhistory INNER JOIN bluemoon.review ON bluemoon.userhistory.EventQuestionsId = bluemoon.review.EventQuestionsId where UserId = ?;");
+							
+							ps4.setString(1, id);
+							
+							ResultSet rs4 = ps4.executeQuery();
+							if(rs4.next()) {
+								
+								totatpt = rs4.getInt(1);
+								avgcrt = rs4.getFloat(2);
+								avgwrg = rs4.getFloat(3);
+							}
+							
+							io.print("<h1> update</h1>");
+							PreparedStatement ps3 = con.prepareStatement("UPDATE blueMoon.UserPersonallogs set UserAverageCorrect =? ,UserAverageWrong=?,UserTotalAttempt=? where UserId=? ");
+							
+							ps3.setFloat(1, avgcrt);
+							ps3.setFloat(2, avgwrg);
+							ps3.setInt(3, totatpt);
+							ps3.setString(4, id);
+
+							int rs3 = ps3.executeUpdate();
+							
+							if(rs3 == 1) response.sendRedirect("BasePage.jsp");
+							
+							else {
+								PreparedStatement ps2 = con.prepareStatement("insert into bluemoon.userpersonallogs values(?,?,?,?)");
+								
+								ps2.setString(1, id);
+								ps2.setFloat(2, avgcrt);
+								ps2.setFloat(3, avgwrg);
+								ps2.setInt(4, totatpt);
+								
+								boolean rs2 = ps2.execute();
+								
+								if(!(rs2)) {					
+									io.println("<html><body> WORK</body></html>");
+									response.sendRedirect("BasePage.jsp");
+								}
+								else { io.println("<html><body> didn't insert </body></html>"); }
+							}
+								io.print("<h1> insert </h1>");
+							}catch(Exception e) {
+								e.printStackTrace();
+							}
+						//response.sendRedirect("BasePage.jsp");					
 					}
 					else {
 						response.sendRedirect("LogInPage.jsp");

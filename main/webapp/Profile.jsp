@@ -15,6 +15,9 @@
 <body style="background-image: linear-gradient(to right,#4568dc,#b06ab3);color:white;" >
 
       <div class=window >
+
+					<%/* xml write content*/%>      
+  
             <div class="nav">
 					
 						<%@ include file="ProfileNav.jsp" %>
@@ -37,7 +40,7 @@
                                                 
                                                 DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
                                                 DocumentBuilder db = bdf.newDocumentBuilder();                        
-                                                Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\UserNotes.xml");                                               
+                                                Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");                                               
                                                 NodeList Userdn = d.getDocumentElement().getChildNodes().item(9).getChildNodes();
                                                 NodeList Profiledn = d.getDocumentElement().getChildNodes().item(11).getChildNodes();
                                                 	 	
@@ -54,9 +57,9 @@
                                                 out.println("<h4> AVERAGE INCORRECT : <span style=\"color: rgb(190, 59, 55);\">"+Profiledn.item(5).getTextContent()+"%</span></h4>");
                                                 
                                                 out.print("</div>");
-                                                out.println("<div class=\"rank\">");
+                                                /* out.println("<div class=\"rank\">");
  												out.println("<h4>GLOBAL RANK : <span style=\"color: rgb(228, 224, 15);\"> "+Profiledn.item(7).getTextContent()+"</span></h4>");
-                                                out.println("<h4 >REGION RANK : <span style=\"color: rgb(57, 78, 92);\">"+Profiledn.item(9).getTextContent()+"</span></h4>");
+                                                out.println("<h4 >REGION RANK : <span style=\"color: rgb(57, 78, 92);\">"+Profiledn.item(9).getTextContent()+"</span></h4>"); */
                                                 		
                                                 out.println("</div>");
                                           out.println("</div>");
@@ -100,11 +103,8 @@
                                         	  }
                                         	  out.println("</tr>");
                                           }
-                                          
                                           }
-
 										  %>
-                                                                                
                                               </table>
                                           </div>
                                          
