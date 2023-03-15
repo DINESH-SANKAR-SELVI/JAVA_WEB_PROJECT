@@ -56,7 +56,7 @@
 	
 	int totpoints=0;
 	
-//	if(Quiz.hasChildNodes()) for (Node child; (child = Quiz.getFirstChild()) != null; Quiz.removeChild(child));
+	if(Quiz.hasChildNodes()) for (Node child; (child = Quiz.getFirstChild()) != null; Quiz.removeChild(child));
 	
 	for(int i=0;i<subject.getLength();i++){
 		
@@ -136,7 +136,7 @@
  	 															Element qui = d1.createElement("quiz");
  	 															
  	 															qui.setAttribute("optid", "");
- 	 															qui.setAttribute("quizid", subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent());
+ 	 															qui.setAttribute("quizid", subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(1).getTextContent());
  	 															
  	 															Quiz.appendChild(qui);
  	 															 															
@@ -146,7 +146,7 @@
 																for(int l=0;l<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().getLength();l++){
 																	
 																		out.println("<label style=\"font-size:larger;border:1px solid black;border-radius:20px;width:50%;padding:4px; \" for="+m+l+" >");
-																		out.print("<input type=radio name="+m+" id="+m+l+" value="+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(0).getTextContent()+">"+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getTextContent());
+																		out.print("<input type=radio name="+(m+1)+" id="+m+l+" value="+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(1).getTextContent()+">"+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getTextContent() + "" + subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(1).getTextContent());
 																		out.println("</label><br />");
 																		count1++;
 																}
@@ -160,25 +160,24 @@
  										}
  									}
  								}
- 									
- 								//out.println("<p>"+subject.item(i).getTextContent()+"</p>");
  								}
  								
  							}
  							out.println("</div>");
- 							/*
+ 							
  							Writer writer = new FileWriter(file);
 							    javax.xml.transform.Transformer transformer = javax.xml.transform.TransformerFactory.newInstance().newTransformer();
 							    transformer.transform(new javax.xml.transform.dom.DOMSource(d1), new javax.xml.transform.stream.StreamResult(writer));
-							    writer.close();*/
+							    writer.close();
+							    //out.println("<h1>working</h1>");
              %>
              <div class="submit-property" style="display:flex;justify-content: space-evenly;">
 	
 					<input type="button" class="btn" onclick="window.location.href='#top'" value="<%="go_top".toUpperCase() %>" />
-	                <input type="submit" class="btn" value="<%= "finalize".toUpperCase() %>" />
+	                <input type="submit" class="btn" value="<%= "finalize".toUpperCase()%>" />
 	                <input type="button" class="btn" onclick="window.location.href='QuizNotes.jsp'" value="<%="cancel".toUpperCase() %>" />
 	        </div>
-	        <% out.println("</form>"); %>
+	        <% out.println("</form>");%>
 	   </div>
 		
 		

@@ -33,9 +33,7 @@ public class Quiz extends HttpServlet{
 			Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
 			
 			File file = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
-			
-			NodeList quiz = d1.getElementsByTagName("QUIZS").item(0).getChildNodes();
-			
+								
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BlueMoon?characterEncoding=latin1","root","White@Kite_0110.");
 			io.println("<html><body>");
@@ -55,9 +53,7 @@ public class Quiz extends HttpServlet{
 				String SubjectName = "";//d1.getElementsByTagName("SUBJECTID").item(0).getTextContent();
 				String TopicName = "";
 				String UsrId = d1.getElementsByTagName("USERID").item(0).getAttributes().item(0).getTextContent();
-				
-				Node quzopt = d1.getElementsByTagName("QUIZS").item(0);
-				
+												
 				Date now = new Date();
 				SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				
@@ -69,125 +65,98 @@ public class Quiz extends HttpServlet{
 				int counter = 1;
 				char []counterOpt = {'a','b','c','d','e','f'};
 				
-				
-				for(int i=0;i<quiz.getLength();i++) {
-					
+				String[] UserOptionId = new String[4];
+				for(int i=0;i<UserAns.item(0).getChildNodes().getLength();i++) {
 					String q = String.valueOf(i+1);
-												
-					String UserOptionId =String.valueOf(req.getParameter(q));
-						
-						if(!(UserOptionId.equals(""))) {
+					String UserOptionId1 =String.valueOf(req.getParameter(q));
+					UserOptionId[i] = String.valueOf(req.getParameter(q));
+					Element quizids = (Element)UserAns.item(0).getChildNodes().item(i);
+					quizids.setAttribute("optid", UserOptionId[i]);
+							
+							Writer writer = new FileWriter(file);
+						    javax.xml.transform.Transformer transformer = javax.xml.transform.TransformerFactory.newInstance().newTransformer();
 
-							Element quzopt1 =(Element) quzopt.getChildNodes().item(i);
-							
-							quzopt1.setAttribute("optid", UserOptionId);
-							
-							
-							quzopt.appendChild(quzopt1);
-						}
+						    transformer.transform(new javax.xml.transform.dom.DOMSource(d1), new javax.xml.transform.stream.StreamResult(writer));
+						    writer.close();
 					}
-				
-						
-				Writer writer = new FileWriter(file);
-			    javax.xml.transform.Transformer transformer = javax.xml.transform.TransformerFactory.newInstance().newTransformer();
-
-			    transformer.transform(new javax.xml.transform.dom.DOMSource(d1), new javax.xml.transform.stream.StreamResult(writer));
-			    writer.close();
-				
 				
 				
 				
 				for(int i=0;i<subject.getLength();i++){
 					
-					/* SUBJECT SELECTION */
+					// SUBJECT SELECTION 
 					if(Subject.equalsIgnoreCase(subject.item(i).getAttributes().item(0).getTextContent())){
 						
-						SubjectName = subject.item(i).getChildNodes().item(1).getTextContent();
+						SubjectName = subject.item(i).getChildNodes().item(0).getTextContent();
 						
-						for(int j=1;j<(subject.item(i).getChildNodes().item(5).getChildNodes().getLength());j++){
+						//io.print("<h1>"+SubjectName+"</h1>");
+						
+						for(int j=0;j<subject.item(i).getChildNodes().item(2).getChildNodes().getLength();j++){
 							
-							if(!(j%2==0)){
-								/* TOPIC SELECTION IN SELECTED SUBJECT */
-								if(Topic.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
+								// TOPIC SELECTION IN SELECTED SUBJECT 
+								if(Topic.equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
 									
-									TopicName = subject.item(i).getChildNodes().item(5).getChildNodes().item(1).getChildNodes().item(1).getTextContent();
+									TopicName = subject.item(i).getChildNodes().item(2).getChildNodes().item(0).getChildNodes().item(0).getTextContent();
 									
-									for(int k=3;k<=subject.item(i).getChildNodes().item(5).getChildNodes().getLength();k++){
+									//io.print("<h1>"+TopicName+"</h1>");
+									for(int k=1;k<subject.item(i).getChildNodes().item(2).getChildNodes().getLength();k++){
 										
-										if(!(k%2==0)){
-											
-											/*BATCH QUIZ SELECTION IN SELECTED TOPIC*/																	
-											if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
-												
-												for(int m=1;m<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
-													
-													if(!(m%2==0)){
-													/* maybe need verify to find quiz*/
-						//							out.println("<div style=\" display:flex;justify-content:space-between;width:99%; \"><h3>"+counter+". "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getTextContent()+"</h3><h3>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getNodeName()+": "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent()+"</h3></div>");
+
+											//BATCH QUIZ SELECTION IN SELECTED TOPIC																	
+											if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
+
+												//io.print("<h1>"+BatchQuiz+"</h1>");
+												for(int m=0;m<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
 													int count1 = 0;
 													totalquiz++;
-													totpoints = totpoints+ Integer.parseInt(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent());
+													totpoints = totpoints+ Integer.parseInt(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent());
 													
-												for(int l=1;l<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().getLength();l++){
+												for(int l=0;l<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().getLength();l++){
 														
-													if(!(l%2==0)){
-														
-				//										out.print("<p ");
-														
-														for(int n=1;n<UserAns.item(0).getChildNodes().getLength();n++){
-							 								if(!(n%2==0)){
-							 									if(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(1).getTextContent().equalsIgnoreCase(UserAns.item(0).getChildNodes().item(n).getAttributes().item(0).getTextContent())){
+													//io.print("<h1>"+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getTextContent() +"</h1>");
+													
+														for(int n=0;n<UserAns.item(0).getChildNodes().getLength();n++){
+							 									if(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(1).getTextContent().equalsIgnoreCase(UserAns.item(0).getChildNodes().item(n).getAttributes().item(0).getTextContent())){
 
-									 								if("1".equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(0).getTextContent())){
-																//		out.print("style=\" background-color:green;\" ");
+									 								if("1".equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(0).getTextContent())){
 									 									correct++;
+									 									//io.print("<h1>correct :"+correct+"</h1");
 									 								}
-									 								
+									 									
 																	else{
-															//			out.print("style=\" background-color:red;\" ");
-																		wrong++;
+																			wrong++;
+																			//io.print("<h1> wrong : "+wrong+"</h1");
 																	}
 							 									}
 							 								}
-														}
-														//out.print(">"+counterOpt[count1]+") "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getTextContent()+"<p>");
-														
-														//count1++;
-														
-														//out.println("<p>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(0).getTextContent()+"</p>");
-													}
 												}
-												//out.println("<hr />");
-												//counter++;
-												}
-											}
 										}
-									}
 								}
 							}
 						}
 					}
 						
-					//out.println("<p>"+subject.item(i).getTextContent()+"</p>");
+
 					}
 					
 				}
-			//	io.println("</div>");
+		
 			
 				attenedQuiz = (correct + wrong);
 				
 				skiped = (totalquiz-correct -wrong);
 				
+				//io.print("<h1>"+skiped+" "+attenedQuiz+" "+correct+" "+wrong+"</h1>");
 				
 				String UsrName = d1.getElementsByTagName("USERID").item(0).getChildNodes().item(3).getTextContent();
-				//String SubjectName = d1.getElementsByTagName("SUBJECTID").item(0).getTextContent();
-				
+				SubjectName = d1.getElementsByTagName("SUBJECTID").item(0).getTextContent();
+								
 				String EventQuizId = "";
 				String SubjectId = d1.getDocumentElement().getElementsByTagName("SUBJECTID").item(0).getAttributes().item(0).getTextContent();
 				String TopicId = d1.getDocumentElement().getElementsByTagName("TOPICID").item(0).getAttributes().item(0).getTextContent();
 				String QuizSetId = d1.getDocumentElement().getElementsByTagName("BATCHQUIZID").item(0).getAttributes().item(0).getTextContent();
 				String QuizId = "" ;
-				String UserOptionId = "";
+				//String UserOptionId = "";
 			
 				EventQuizId = key.BatchQuizId(UsrName ,SubjectName , now1);
 				
@@ -240,12 +209,12 @@ public class Quiz extends HttpServlet{
 			
 			io.println("<div style=\"display:flex;flex-direction:column;border:3px solid black;justify-content:center;align-items:center;\" >");
 			
-			for(int i=0;i<quiz.getLength();i++) {
-				//if(!(i%2==0)) {
+			for(int i=0;i<UserAns.item(0).getChildNodes().getLength();i++) {
+				
 					String q = String.valueOf(i+1);
 					
-					QuizId = quiz.item(i).getAttributes().item(1).getTextContent();
-					UserOptionId =String.valueOf(req.getParameter(q));
+					QuizId = UserAns.item(0).getChildNodes().item(i).getAttributes().item(1).getTextContent();
+					//UserOptionId =String.valueOf(req.getParameter(q));
 					
 					if(!(UserOptionId.equals(""))) {
 						
@@ -256,7 +225,7 @@ public class Quiz extends HttpServlet{
 					ps.setString(3, TopicId);
 					ps.setString(4, QuizSetId);
 					ps.setString(5, QuizId);
-					ps.setString(6, UserOptionId);
+					ps.setString(6, UserOptionId[i]);
 										
 						work = ps.execute();
 					}
@@ -266,7 +235,7 @@ public class Quiz extends HttpServlet{
 					}
 					work = true;
 				}
-			//}
+		
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
