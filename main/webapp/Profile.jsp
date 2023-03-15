@@ -47,8 +47,8 @@
                      <%                           
                      	
                         out.println("<h2>");                                               
-                                                NodeList Userdn = d.getDocumentElement().getChildNodes().item(9).getChildNodes();
-                                                NodeList Profiledn = d.getDocumentElement().getChildNodes().item(11).getChildNodes();
+                                                NodeList Userdn = d.getElementsByTagName("USERID").item(0).getChildNodes();
+                                                NodeList Profiledn = d.getElementsByTagName("USERDETAIL").item(0).getChildNodes();
                                                 	 	
                                                 out.println("<h1>"+Userdn.item(3).getTextContent()+"</h1>");
                                                 
@@ -85,30 +85,30 @@
                                                       </tr>
                                           <%
                                           
-                                          	NodeList his =d.getDocumentElement().getChildNodes().item(13).getChildNodes();
+                                          	NodeList his =d.getElementsByTagName("History").item(0).getChildNodes();
                                           
                                           long count = 1; 
                                           	
                                           for(int i=0;i<his.getLength();i++){
                                         	  
-                                        	  if(!((i%2)==0)){
+                                        	  //if(!((i%2)==0)){
                                         	  
                                         	  out.println("<tr><td>"+count+"</td>");
                                         	  count+=1;
                                         	  for(int j=0;j<his.item(i).getChildNodes().getLength();j++){
                                         		  
-                                        		  if(!((j%2)==0)){
-                                        			  if(!(j==9)){
+                                        		  //if(((j%2)==0)){
+                                        			  if(!(j==4)){
                                         				  out.println("<td>"+his.item(i).getChildNodes().item(j).getTextContent()+"</td>");
                                         			  }
                                         			  else{
                                         				  out.println("<td><a style=\" text-decoration:none;color: orengered; \" href='ReviewQuiz.jsp' >"+his.item(i).getChildNodes().item(j).getTextContent()+"</a></td>");
                                         			  }
-                                        		  }
+                                        		 // }
                                         		  
                                         	  }
                                         	  out.println("</tr>");
-                                          }
+                                          //}
                                           }
 										  %>
                                               </table>

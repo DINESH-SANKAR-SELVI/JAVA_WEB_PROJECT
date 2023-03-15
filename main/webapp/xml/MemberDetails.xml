@@ -11,58 +11,20 @@
 		<quiz optid="" quizid="JAOOSETFIRST03"/>
 	</QUIZS>
 		
-	<USERID id="DI712031230310">
-       	    <UserAvatar>BACKGROUND.JPG</UserAvatar>
-            <UserName>DINESH</UserName>
-            <UserEmail>dd@gmail.com</UserEmail>
+	<USERID id="SA545704230306">
+       	    <UserAvatar>BACKGROUND3.JPG</UserAvatar>
+            <UserName>SAMANTHA</UserName>
+            <UserEmail>samantha123@gmail.com</UserEmail>
 	</USERID>
 
 	<USERDETAIL>
-		<UserTotalAttempt>12</UserTotalAttempt>
-		<UserAverageCorrect>0.6666667</UserAverageCorrect>
-       		<UserAverageWrong>0.6666667</UserAverageWrong>  
+		<UserTotalAttempt>0</UserTotalAttempt>
+		<UserAverageCorrect>0.0</UserAverageCorrect>
+       		<UserAverageWrong>0.0</UserAverageWrong>  
 	</USERDETAIL>
 
-	<History>
-            <UserSerialNumber value="1">
-                <EventName>JAVA</EventName>
-                <EventTopic>OOPS</EventTopic>
-                <EventAttendDate>2023-03-08 18:38:23</EventAttendDate>
-                <EventPoint>20</EventPoint>
-                <EventQuestionsId>DIJA230209215530</EventQuestionsId>
-                <SkipedQuiz>0</SkipedQuiz>
-                <AttenedQuiz>10</AttenedQuiz>
-            </UserSerialNumber>
-            <UserSerialNumber value="2">
-                <EventName>PYTHON</EventName>
-                <EventTopic>OBJECT</EventTopic>
-                <EventAttendDate>2023-04-09 20:38:23</EventAttendDate>
-	                <EventPoint>18</EventPoint>
-                <EventQuestionsId>DIPY230209215030</EventQuestionsId>
-                <SkipedQuiz>1</SkipedQuiz>
-                <AttenedQuiz>9</AttenedQuiz>
-            </UserSerialNumber>
-            <UserSerialNumber value="3">
-                <EventName>JAVASCRIPT</EventName>
-                <EventTopic>ARRAY</EventTopic>
-                <EventAttendDate>2023-03-20 19:00:23</EventAttendDate>
-                <EventPoint>16</EventPoint>
-                <EventQuestionsId>DIJA230209215030</EventQuestionsId>
-                <SkipedQuiz>2</SkipedQuiz>
-                <AttenedQuiz>8</AttenedQuiz>
-            </UserSerialNumber>
-            <UserSerialNumber value="4">
-                <EventName>JAVA</EventName>
-                <EventTopic>OOPS</EventTopic>
-                <EventAttendDate>2023-03-08 18:38:23</EventAttendDate>
-                <EventPoint>20</EventPoint>
-                <EventQuestionsId>DIJA230209215530</EventQuestionsId>
-                <SkipedQuiz>0</SkipedQuiz>
-                <AttenedQuiz>10</AttenedQuiz>
-            </UserSerialNumber>
-        </History>
-</User>
-<!--             <UserSerialNumber value="1">
+	<History/>
+</User><!--             <UserSerialNumber value="1">
                 <EventName>JAVA</EventName>
                 <EventTopic>OOPS</EventTopic>
                 <EventAttendDate>2023-03-08 18:38:23</EventAttendDate>

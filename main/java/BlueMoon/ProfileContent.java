@@ -81,7 +81,55 @@ public class ProfileContent{
 			e.printStackTrace();
 		}
 		
-	
+		Node his = d.getElementsByTagName("History").item(0);
+		
+		if(his.hasChildNodes()){
+		 for (Node child; (child = his.getFirstChild()) != null; his.removeChild(child));
+		}
+					
+			PreparedStatement ps2 = con.prepareStatement("SELECT * FROM bluemoon.userhistory where Userid=? ");
+			ps2.setString(1, id);
+			
+			ResultSet rs2 = ps2.executeQuery();
+			
+			while(rs2.next()) {
+				
+				Element usrno1 = d.createElement("UserSerialNumber");
+				usrno1.setAttribute("value", rs2.getString(1));
+				
+				Element evname = d.createElement("EventName");
+				evname.setTextContent(rs2.getString(3));
+				
+				Element evtopic = d.createElement("EventTopic");
+				evtopic.setTextContent(rs2.getString(9));
+				
+				Element evattendate = d.createElement("EventAttendDate");
+				evattendate.setTextContent(rs2.getString(4));
+				
+				Element evpoin = d.createElement("EventPoint");
+				evpoin.setTextContent(rs2.getString(6));
+				
+				Element evquesid = d.createElement("EventQuestionsId");
+				evquesid.setTextContent(rs2.getString(5));
+				
+				Element evskipquiz = d.createElement("SkipedQuiz");
+				evskipquiz.setTextContent(rs2.getString(7));
+				
+				Element evAttenquiz = d.createElement("AttenedQuiz");
+				evAttenquiz.setTextContent(rs2.getString(8));
+				
+				usrno1.appendChild(evname);
+				usrno1.appendChild(evtopic);
+				usrno1.appendChild(evattendate);
+				usrno1.appendChild(evpoin);
+				usrno1.appendChild(evquesid);
+				usrno1.appendChild(evskipquiz);
+				usrno1.appendChild(evAttenquiz);
+				
+				his.appendChild(usrno1);
+				
+		}		
+		
 		Writer writer = new FileWriter(file);
 	    javax.xml.transform.Transformer transformer = javax.xml.transform.TransformerFactory.newInstance().newTransformer();
 
