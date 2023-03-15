@@ -10,33 +10,15 @@
       <title>IQ+ Trainer</title>
       <link rel="website icon" type="png" href="image/WebIcon.png" />
       <link rel="stylesheet" type="text/css" href="css/Games.css" />
-      <link rel="stylesheet" type="text/css" href="css/UserNavFooter.css" />
-      <link rel="stylesheet" type="text/css" href="css/UserNavHead.css" />
+      <link rel="stylesheet" type="text/css" href="css/BaseFooter.css" />
+      <!-- <link rel="stylesheet" type="text/css" href="css/UserNavFooter.css" />
+      <link rel="stylesheet" type="text/css" href="css/UserNavHead.css" /> -->
 </head>
 <body>
-
-      <div class=window >
-            <div class=nav >
-                  <nav>
-                        <div class="bars">
-                              <div class="bar"></div>
-                              <div class="bar"></div>
-                              <div class="bar"></div>
-                        </div>     
-                        <ul>
-                              <li>                                   
-                                    <ul class="options">
-                                                <li><a href=QuizNotes.jsp>NOTES</a></li>
-                                                <li><a href=Profile.jsp>PROFILE</a></li>
-                                                <li><a href=Games.jsp>GAMES</a></li>
-                                    </ul>
-                              </li>
-                              <li><i style="font-weight: 1000;"><span style="color:white;">BLUE</span><span style="color: red;"> MOON</span></i></li>
-                              <li><span style="position: relative;;color:white;margin-right: 10px;bottom: 10px;">USER NAME</span><img onclick="window.location.href='Profile.html'" width="30px" height="30px" style="border-radius:50%;" src="image/lock screen walpaper.jpg" /></li>
-                        </ul>
-                  </nav>
-            </div>
-            
+      <div class=window style="display:flex;flex-direction:column;justify-content:center;align-items:center;" >
+      
+			<%@ include file="StepNav.jsp" %>
+                      
             <div class=content>
                                     <div class="game">
 
@@ -47,44 +29,8 @@
                                     </div>
             </div>
 
-            <div class= footer>
-                  <footer>
-                                    <div class=footerContent>
-                                          <div class=notes>
-                                                <h4>NOTES</h4>
-                                                      <ul>
-                                                            <li><a href=QuizNotes.jsp >JAVA</a></li>
-                                                            <li><a href=QuizNotes.jsp >PYTHON</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div>
-                                          <div class=quiz>
-                                                <h4>PROFILE</h4>
-                                                      <ul>
-                                                            <li><a href=Profile.jsp >RIGION</a></li>
-                                                            <li><a href=Profile.jsp >PERSONAL</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div>
-                                          <div class=games>
-                                                <h4>GAMES</h4>
-                                                      <ul>
-                                                            <li><a href=Games.jsp >REASONING</a></li>
-                                                            <li><a href=Games.jsp >APTITUDE</a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul>
-                                          </div> 
-                                          <div class=community>
-                                                <h4>CONTACT</h4>
-                                                      <ul>
-                                                            <li><a href=# ><img width=30px src="image/WhatsappIcon.png" /></a></li>
-                                                            <li><a href=# ><img width=30px src="image/InstagramIcon.png" /></a></li>
-                                                            <li>COMING SOON...!</li>
-                                                      </ul> 
-                                          </div>
-                                    </div>
-                                    <h4 id=cpyrights ><i><img src=image/WebIcon.png /> BLUE <span style="color: red;"> MOON</span> 2022 &copy;</i></h4>
-                  </footer>
+            <div class= footer style="width:100%;" >
+                <%@ include file="FooterNav.jsp" %>
             </div>	
       </div>	
 <script src="js/BaseMenu.js"></script>

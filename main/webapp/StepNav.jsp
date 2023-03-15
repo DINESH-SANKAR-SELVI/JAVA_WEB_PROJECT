@@ -22,8 +22,18 @@
 		</div>
 		
 		<div><i style="font-weight: 1000;"><span style="color:white;">BLUE</span><span style="color: red;"> MOON</span></i></div>
-		
-		<div><span style="position: relative;;color:white;margin-right: 10px;bottom: 10px;">USER NAME</span><img onclick="window.location.href='Profile.jsp'" width="30px" height="30px" style="border-radius:50%;" src="image/lock screen walpaper.jpg" /></div>
+<%@page import="javax.xml.parsers.*" %>
+<%@page import="javax.xml.transform.*" %>
+<%@page import="org.w3c.dom.*" %>
+<%@page import="org.xml.sax.*" %>
+<%@page import="java.io.*" %>
+<%
+File file = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+DocumentBuilder builder = factory.newDocumentBuilder();
+Document document = builder.parse(file); 
+%>
+		<div><span style="position: relative;;color:white;margin-right: 10px;bottom: 10px;"><%= document.getElementsByTagName("UserName").item(0).getTextContent() %></span><img onclick="window.location.href='Profile.jsp'" width="30px" height="30px" style="border-radius:50%;" src="image/BACKGROUND.JPG" /></div>
 	
 	
 	</div>
