@@ -71,16 +71,16 @@
 											tempCheck =(String)d2.item(i).getAttributes().item(0).getTextContent();	
 										if(needSub.equals(tempCheck)){
 											
-											out.println("<h1 style=\"padding:10px;\" > <img width=50px height=50px src=image/"+d2.item(i).getChildNodes().item(1).getTextContent()+".png	style=\" margin-right:6px;border-radius:6px; \" alt=\"sub-logo\" title=logo />"+d2.item(i).getChildNodes().item(1).getTextContent()+"</h1>");
+											out.println("<h1 style=\"padding:10px;\" > <img width=50px height=50px src=image/"+d2.item(i).getChildNodes().item(0).getTextContent()+".png	style=\" margin-right:6px;border-radius:6px; \" alt=\"sub-logo\" title=logo />"+d2.item(i).getChildNodes().item(0).getTextContent()+"</h1>");
 											
-											out.println("<h3 style=\" margin-left:10%;\" >"+d2.item(i).getChildNodes().item(3).getTextContent()+"</h3>");
+											out.println("<h3 style=\" margin-left:10%;\" >"+d2.item(i).getChildNodes().item(1).getTextContent()+"</h3>");
 											
 											out.println("<div style=\'display:flex; \' >");
 											
 											out.println("<form action=TopContent method=post>");
-											for(int j=1;j<=(d2.item(i).getChildNodes().item(5).getChildNodes().getLength()-2);j++){
-												if(!(j%2==0))
-												 out.println("<input type=radio id="+j+" name=dinesh1 value="+d2.item(i).getChildNodes().item(5).getChildNodes().item(j).getAttributes().item(0).getTextContent()+"  ><label for="+j+" style=\"background-color:red;color:white;border:1px solid green;font-size:19px;border-radius: 40px;margin-right:6px;padding:10px;\" >"+d2.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(1).getTextContent()+"</label>");
+											for(int j=0;j<d2.item(i).getChildNodes().item(2).getChildNodes().getLength();j++){
+												//if(!(j%2==0))
+												 out.println("<input type=radio id="+j+" name=dinesh1 value="+d2.item(i).getChildNodes().item(2).getChildNodes().item(j).getAttributes().item(0).getTextContent()+"  ><label for="+j+" style=\"background-color:red;color:white;border:1px solid green;font-size:19px;border-radius: 40px;margin-right:6px;padding:10px;\" >"+d2.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(0).getTextContent()+"</label>");
 											}
 																
 											 out.println("<button type=submit style=\"color:green;border:3px solid green;font-size:19px;border-radius: 40px;margin-right:6px;padding:10px;\" >Select</h4></div>");

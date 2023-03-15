@@ -32,6 +32,7 @@ public class Quiz extends HttpServlet{
 			Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
 			Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
 			
+			File file = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
 			
 			NodeList quiz = d1.getElementsByTagName("QUIZS").item(0).getChildNodes();
 			
@@ -55,6 +56,8 @@ public class Quiz extends HttpServlet{
 				String TopicName = "";
 				String UsrId = d1.getElementsByTagName("USERID").item(0).getAttributes().item(0).getTextContent();
 				
+				Node quzopt = d1.getElementsByTagName("QUIZS").item(0);
+				
 				Date now = new Date();
 				SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 				
@@ -65,6 +68,34 @@ public class Quiz extends HttpServlet{
 				
 				int counter = 1;
 				char []counterOpt = {'a','b','c','d','e','f'};
+				
+				
+				for(int i=0;i<quiz.getLength();i++) {
+					
+					String q = String.valueOf(i+1);
+												
+					String UserOptionId =String.valueOf(req.getParameter(q));
+						
+						if(!(UserOptionId.equals(""))) {
+
+							Element quzopt1 =(Element) quzopt.getChildNodes().item(i);
+							
+							quzopt1.setAttribute("optid", UserOptionId);
+							
+							
+							quzopt.appendChild(quzopt1);
+						}
+					}
+				
+						
+				Writer writer = new FileWriter(file);
+			    javax.xml.transform.Transformer transformer = javax.xml.transform.TransformerFactory.newInstance().newTransformer();
+
+			    transformer.transform(new javax.xml.transform.dom.DOMSource(d1), new javax.xml.transform.stream.StreamResult(writer));
+			    writer.close();
+				
+				
+				
 				
 				for(int i=0;i<subject.getLength();i++){
 					
@@ -209,9 +240,9 @@ public class Quiz extends HttpServlet{
 			
 			io.println("<div style=\"display:flex;flex-direction:column;border:3px solid black;justify-content:center;align-items:center;\" >");
 			
-			for(int i=1;i<quiz.getLength();i++) {
-				if(!(i%2==0)) {
-					String q = String.valueOf(i);
+			for(int i=0;i<quiz.getLength();i++) {
+				//if(!(i%2==0)) {
+					String q = String.valueOf(i+1);
 					
 					QuizId = quiz.item(i).getAttributes().item(1).getTextContent();
 					UserOptionId =String.valueOf(req.getParameter(q));
@@ -235,7 +266,7 @@ public class Quiz extends HttpServlet{
 					}
 					work = true;
 				}
-			}
+			//}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

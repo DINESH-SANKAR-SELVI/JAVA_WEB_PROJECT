@@ -36,7 +36,7 @@
 						 
 						 out.println("<form action=SubContent method=post>");
 						 for(int i=0;i<nl.getLength();i++){
-							 out.println("<input type=radio id="+i+" name=dinesh value="+nl.item(i).getAttributes().item(0).getTextContent()+"  ><label for="+i+" style=\"color:white;font-size:19px;background-image: linear-gradient(to right,#207fb6de,#4e86a8e1); border-radius: 50px;margin-right:6px;padding:10px;border:1px solid white;font-weight:bolder;\">"+nl.item(i).getChildNodes().item(1).getTextContent()+"</label>");
+							 out.println("<input type=radio id="+i+" name=dinesh value="+nl.item(i).getAttributes().item(0).getTextContent()+"  ><label for="+i+" style=\"color:white;font-size:19px;background-image: linear-gradient(to right,#207fb6de,#4e86a8e1); border-radius: 50px;margin-right:6px;padding:10px;border:1px solid white;font-weight:bolder;\">"+nl.item(i).getChildNodes().item(0).getTextContent()+"</label>");
 						}
 											
 						 out.println("<button type=submit style=\"color:green;border:3px solid green;font-size:19px;border-radius: 40px;margin-right:6px;padding:10px;\" >Select</h4></div>");

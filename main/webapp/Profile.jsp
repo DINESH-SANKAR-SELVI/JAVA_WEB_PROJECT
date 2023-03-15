@@ -16,7 +16,7 @@
 
       <div class=window >
 
-					<%@ page import="BlueMoon.ProfileContent"%>      
+					<%@ page import="BlueMoon.ProfileContent"%>
   					
   					<% 
   						ProfileContent key = new ProfileContent(); 
@@ -88,13 +88,14 @@
                                           	NodeList his =d.getElementsByTagName("History").item(0).getChildNodes();
                                           
                                           long count = 1; 
-                                          	
+                                          
                                           for(int i=0;i<his.getLength();i++){
                                         	  
                                         	  //if(!((i%2)==0)){
                                         	  
                                         	  out.println("<tr><td>"+count+"</td>");
                                         	  count+=1;
+                                        	  
                                         	  for(int j=0;j<his.item(i).getChildNodes().getLength();j++){
                                         		  
                                         		  //if(((j%2)==0)){
@@ -102,7 +103,8 @@
                                         				  out.println("<td>"+his.item(i).getChildNodes().item(j).getTextContent()+"</td>");
                                         			  }
                                         			  else{
-                                        				  out.println("<td><a style=\" text-decoration:none;color: orengered; \" href='ReviewQuiz.jsp' >"+his.item(i).getChildNodes().item(j).getTextContent()+"</a></td>");
+                                        				  
+                                        				  out.println("<td><a style=\"text-decoration:none;color:black;cursor:pointer;\" href=Reviewer;>"+his.item(i).getChildNodes().item(j).getTextContent()+"</a></td>");
                                         			  }
                                         		 // }
                                         		  
