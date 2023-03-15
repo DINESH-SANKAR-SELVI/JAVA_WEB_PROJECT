@@ -1,42 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<User>	
-		<SUBJECTID id="JAVA1995230122">JAVA</SUBJECTID>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><User>	
+	<SUBJECTID id="JAVA1995230122">JAVA</SUBJECTID>
+	
+	<TOPICID id="JAVAOOPS132218">OOPS</TOPICID>
+	
+	<BATCHQUIZID id="JAVAOOPSSETTHI">SETFIRST</BATCHQUIZID>
+
+	<QUIZS>
+		<quiz optid="JAOOSETFIR01O2" quizid="JAOOSETFIRST01"/>
+		<quiz optid="JAOOSETFIR02O3" quizid="JAOOSETFIRST02"/>
+		<quiz optid="" quizid="JAOOSETFIRST03"/>
+	</QUIZS>
 		
-		<TOPICID id="JAVAOOPS132218">OOPS</TOPICID>
-		
-		<BATCHQUIZID id="JAVAOOPSSETFIR">SETFIRST</BATCHQUIZID>
-		
-		<QUIZS>
-				<quiz quizid="JAOOSETFIRST01" optid="JAOOSETFIR01O2" />
-				<quiz quizid="JAOOSETFIRST02" optid="JAOOSETFIR02O3" />
-				<quiz quizid="JAOOSETFIRST03" optid="JAOOSETFIR03O1" />
-		</QUIZS>
-		
-		<USERID id="DI712031230310" >
-            <UserAvatar>BACKGROUNDIMG.jpg</UserAvatar>
+	<USERID id="DI712031230310">
+       	    <UserAvatar>BACKGROUND.JPG</UserAvatar>
             <UserName>DINESH</UserName>
-            <UserBhd>2003-03-31</UserBhd>
-            <UserGender>MALE</UserGender>
-            <UserNumber>7604829520</UserNumber>
-            <UserEmail>ddprofessional31@gmail.com</UserEmail>
-            <UserQualification>UG/PG</UserQualification>
-            <UserPincode>600071</UserPincode>
-            <UserCity>CHENNAI</UserCity>
-            <UserArea>AVADI</UserArea>
-            <UserPassword>DIN</UserPassword>
-            <UserJoinDate>2023-02-09</UserJoinDate>
-		</USERID>
+            <UserEmail>dd@gmail.com</UserEmail>
+	</USERID>
 
-		<USERDETAIL>
-			<UserTotalAttempt>66</UserTotalAttempt>
-			<UserAverageCorrect>66</UserAverageCorrect>
-            <UserAverageWrong>34</UserAverageWrong>  
-<!-- 		   	<UserRankGlobal>128514</UserRankGlobal>
-            <UserRankRegion>17520</UserRankRegion> -->
-		</USERDETAIL>
+	<USERDETAIL>
+		<UserTotalAttempt>12</UserTotalAttempt>
+		<UserAverageCorrect>0.6666667</UserAverageCorrect>
+       		<UserAverageWrong>0.6666667</UserAverageWrong>  
+	</USERDETAIL>
 
-		<History>
-            <UserSerialNumber value='1' >
+	<History>
+            <UserSerialNumber value="1">
                 <EventName>JAVA</EventName>
                 <EventTopic>OOPS</EventTopic>
                 <EventAttendDate>2023-03-08 18:38:23</EventAttendDate>
@@ -45,16 +33,16 @@
                 <SkipedQuiz>0</SkipedQuiz>
                 <AttenedQuiz>10</AttenedQuiz>
             </UserSerialNumber>
-            <UserSerialNumber value='2' >
+            <UserSerialNumber value="2">
                 <EventName>PYTHON</EventName>
                 <EventTopic>OBJECT</EventTopic>
                 <EventAttendDate>2023-04-09 20:38:23</EventAttendDate>
-                <EventPoint>18</EventPoint>
+	                <EventPoint>18</EventPoint>
                 <EventQuestionsId>DIPY230209215030</EventQuestionsId>
                 <SkipedQuiz>1</SkipedQuiz>
                 <AttenedQuiz>9</AttenedQuiz>
             </UserSerialNumber>
-            <UserSerialNumber value='3' >
+            <UserSerialNumber value="3">
                 <EventName>JAVASCRIPT</EventName>
                 <EventTopic>ARRAY</EventTopic>
                 <EventAttendDate>2023-03-20 19:00:23</EventAttendDate>
@@ -63,5 +51,24 @@
                 <SkipedQuiz>2</SkipedQuiz>
                 <AttenedQuiz>8</AttenedQuiz>
             </UserSerialNumber>
+            <UserSerialNumber value="4">
+                <EventName>JAVA</EventName>
+                <EventTopic>OOPS</EventTopic>
+                <EventAttendDate>2023-03-08 18:38:23</EventAttendDate>
+                <EventPoint>20</EventPoint>
+                <EventQuestionsId>DIJA230209215530</EventQuestionsId>
+                <SkipedQuiz>0</SkipedQuiz>
+                <AttenedQuiz>10</AttenedQuiz>
+            </UserSerialNumber>
         </History>
 </User>
+<!--             <UserSerialNumber value="1">
+                <EventName>JAVA</EventName>
+                <EventTopic>OOPS</EventTopic>
+                <EventAttendDate>2023-03-08 18:38:23</EventAttendDate>
+                <EventPoint>20</EventPoint>
+                <EventQuestionsId>DIJA230209215530</EventQuestionsId>
+                <SkipedQuiz>0</SkipedQuiz>
+                <AttenedQuiz>10</AttenedQuiz>
+            </UserSerialNumber> 
+-->

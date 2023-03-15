@@ -26,11 +26,11 @@ label{
       position: relative;
 }
 #LABEL-NAME{
-      bottom: 32px;
+      bottom: 35px;
       right: 20px;
 }
 #LABEL-PASSWORD{
-      bottom: 32px;
+      bottom: 35px;
       right: 20px;
 }
 #LABEL-FORGOT/*,#LABEL-SIGN*/{

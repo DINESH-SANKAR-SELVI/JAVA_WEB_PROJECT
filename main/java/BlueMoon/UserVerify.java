@@ -1,15 +1,24 @@
 package BlueMoon;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 import java.io.*;
-import java.sql.*;
-//import java.sql.Date;
-//import java.time.Instant;
-import java.time.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Timestamp;
+import java.time.Instant;
+import java.util.*;
+
+import javax.xml.parsers.*;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.*;
+
 
 @WebServlet("/UserVerify")
 public class UserVerify extends HttpServlet {
@@ -22,6 +31,21 @@ public class UserVerify extends HttpServlet {
 		
 		PrintWriter io = response.getWriter();
 		try {
+			
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+			File file = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+
+			Node usrid = d.getElementsByTagName("USERID").item(0);
+			Element usrd = (Element) usrid;
+			
+			
+			String id = null;
+
+			
+			
+			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BlueMoon?characterEncoding=latin1","root","White@Kite_0110.");
 			
@@ -32,7 +56,16 @@ public class UserVerify extends HttpServlet {
 			
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()) {
-				String id = rs.getString(1);
+				
+				id = rs.getString(1);
+				usrd.setAttribute("id", id);
+				
+				Writer writer = new FileWriter(file);
+			    javax.xml.transform.Transformer transformer = javax.xml.transform.TransformerFactory.newInstance().newTransformer();
+
+			    transformer.transform(new javax.xml.transform.dom.DOMSource(d), new javax.xml.transform.stream.StreamResult(writer));
+			    writer.close();
+				
 				Timestamp now = Timestamp.from(Instant.now());
 				
 					PreparedStatement ps1 = con.prepareStatement("INSERT INTO dailylog(UserId,LogInTimeStamp) VALUES(?,?)");
@@ -52,7 +85,7 @@ public class UserVerify extends HttpServlet {
 							int totatpt =0;
 							float avgcrt =0 ,avgwrg = 0;
 							
-							PreparedStatement ps4 = con.prepareStatement("select count(*),avg(NumberOfCorrectAnswer),avg(NumberOfWrongAnswer) from bluemoon.userhistory INNER JOIN bluemoon.review ON bluemoon.userhistory.EventQuestionsId = bluemoon.review.EventQuestionsId where UserId = ?;");
+							PreparedStatement ps4 = con.prepareStatement("select count(*),avg(NumberOfCorrectAnswer),avg(NumberOfWrongAnswer) from bluemoon.userhistory INNER JOIN bluemoon.review ON bluemoon.userhistory.EventQuestionsId = bluemoon.review.EventQuestionsId where UserId = ?");
 							
 							ps4.setString(1, id);
 							

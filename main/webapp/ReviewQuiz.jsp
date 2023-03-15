@@ -17,8 +17,8 @@
 <% 
  							DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
  							DocumentBuilder db = bdf.newDocumentBuilder(); 
- 							Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon1.xml");
- 							Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\UserNotes.xml");
+ 							Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
+ 							Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
  							out.println("<div class=pair >");
  							
  							NodeList subject = d.getDocumentElement().getElementsByTagName("SUBJECT");

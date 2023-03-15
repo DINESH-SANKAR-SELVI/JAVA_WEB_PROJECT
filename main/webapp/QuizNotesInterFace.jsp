@@ -48,9 +48,9 @@
                         		/*	DOCUMENT CREATER AND READER */	
 									DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 									DocumentBuilder db = dbf.newDocumentBuilder();
-									File f = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon1.xml");
+									File f = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
 									Document fd = db.parse(f);		
-									File s = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\UserNotes.xml");
+									File s = new File("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
 									Document sd = db.parse(s);
 								/*-------------------------------------------*/
 								
@@ -77,11 +77,15 @@
 											
 											out.println("<div style=\'display:flex; \' >");
 											
+											out.println("<form action=TopContent method=post>");
 											for(int j=1;j<=(d2.item(i).getChildNodes().item(5).getChildNodes().getLength()-2);j++){
-												
 												if(!(j%2==0))
-												out.println("<div onclick=\" window.location.href='QuizCommit.jsp'\" style=\"margin:10px;background-color:red;border-radius:20px;width:10%;color:white;\" ><center><p>"+d2.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(1).getTextContent()+"</p></center></div>");
+												 out.println("<input type=radio id="+j+" name=dinesh1 value="+d2.item(i).getChildNodes().item(5).getChildNodes().item(j).getAttributes().item(0).getTextContent()+"  ><label for="+j+" style=\"background-color:red;color:white;border:1px solid green;font-size:19px;border-radius: 40px;margin-right:6px;padding:10px;\" >"+d2.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(1).getTextContent()+"</label>");
 											}
+																
+											 out.println("<button type=submit style=\"color:green;border:3px solid green;font-size:19px;border-radius: 40px;margin-right:6px;padding:10px;\" >Select</h4></div>");
+											 out.println("</form>");
+											
 											out.println("</div>");
 										}										
 										else{

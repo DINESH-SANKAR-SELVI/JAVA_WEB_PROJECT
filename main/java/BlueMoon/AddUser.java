@@ -7,6 +7,12 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactoryConfigurationError;
+
+import org.xml.sax.SAXException;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -26,7 +32,7 @@ public class AddUser extends HttpServlet {
 		try {
 
 			String UserId 		= "";
-			String UserAvatar 	= "BACKGROUND3.jpg".toUpperCase();
+			String UserAvatar 	= "BACKGROUND.jpg".toUpperCase();
 			String UserName 	= req.getParameter("UserName").toUpperCase();
 			Date UserBhd 		= Date.valueOf(req.getParameter("UserBhd"));
 			String UserGender 	= req.getParameter("UserGender").toUpperCase();
@@ -68,8 +74,6 @@ public class AddUser extends HttpServlet {
 			/*<table border=3px> <tr><th>"+UserName+"</th><th>"+UserBhd+"</th><th>"+UserGender+"</th><th>"+UserPh+"</th><th>"+UserEmail+"</th><th>"+UserQualifi+"</th><th>"+UserPinCode+"</th><th>"+UserCity+"</th><th>"+UserArea+"</th><th>"+UserPassword+"</th> <th>"+ UserJoinDate+" </tr> </table> */
 			
 		}catch(Exception e) { io.println("<html><body  style='background-image:linear-gradient(45deg,#02aabd,#00cdac);'><center><img width=100px height=100px alter=FAILED title=ISSUE src=image/failed.png /><br /><br /> SORRY..! MAY BE YOU MADE A MISTAKE SO YOU CAN  <a href=SignInPage.jsp >TRY AGAIN ...!</a></center></body></html>"); e.printStackTrace(); }
-		
-		
 	}
 
 }

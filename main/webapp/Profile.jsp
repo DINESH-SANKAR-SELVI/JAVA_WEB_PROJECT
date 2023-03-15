@@ -16,8 +16,12 @@
 
       <div class=window >
 
-					<%/* xml write content*/%>      
-  
+					<%@ page import="BlueMoon.ProfileContent"%>      
+  					
+  					<% 
+  						ProfileContent key = new ProfileContent(); 
+  						if(!(key.WriterProfile())) response.sendRedirect("SignInPage.jsp");%>
+    					
             <div class="nav">
 					
 						<%@ include file="ProfileNav.jsp" %>
@@ -31,16 +35,18 @@
             		<%@ page import="java.sql.*" %>
             		<%@ page import= "org.w3c.dom.*" %>
             		
+            		<%
+                    
+                    DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
+                    DocumentBuilder db = bdf.newDocumentBuilder();                        
+                    Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml"); %>
             		 
                                     <div class="data">
                                           <div class="profile">           
-                                                <div class="imgframe"><img style="border-radius:50%;" src="image/lock screen walpaper.jpg" width="86px"  height="86px" /> </div>
+                                                <%out.print("<div class=\"imgframe\"><img style=\"border-radius:50%;\" src=\"image/"+d.getElementsByTagName("UserAvatar").item(0).getTextContent()+"\" width=\"100px\"  height=\"100px\" /> </div>");%>
                      <%                           
-                        out.println("<h2>");
-                                                
-                                                DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
-                                                DocumentBuilder db = bdf.newDocumentBuilder();                        
-                                                Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");                                               
+                     	
+                        out.println("<h2>");                                               
                                                 NodeList Userdn = d.getDocumentElement().getChildNodes().item(9).getChildNodes();
                                                 NodeList Profiledn = d.getDocumentElement().getChildNodes().item(11).getChildNodes();
                                                 	 	

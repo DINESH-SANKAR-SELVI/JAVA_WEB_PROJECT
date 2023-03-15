@@ -29,8 +29,8 @@
 
 	DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
 	DocumentBuilder db = bdf.newDocumentBuilder(); 
-	Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\UserNotes.xml");
-	Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\BACKEND_WORK\\main\\webapp\\xml\\BlueMoon1.xml");
+	Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+	Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
 
 	out.println("<form action=Quiz method=post >");
 	out.println("<div class=pair >");
@@ -125,9 +125,11 @@
  																	
  																	out.println("<div style='display:flex;flex-direction:column;align-items:center;'>");
  	 																out.println("<div style='background-color:rgba(255,255,255,0.4);border-radius:20px;padding:10px;width:90%;' >");
+ 	 																/*
  	 																
+ 	 																	xml with parser and dom 
  	 																
- 																/* maybe need verify to find quiz*/
+ 	 																*/
  																
  																out.println("<div style=\"font-size:larger;display:flex;justify-content:space-between;width:99%; \"><h3 name=q"+m+" value=dinesh >"+counter+". "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getTextContent()+"</h3><h3>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getNodeName()+": "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent()+"</h3></div>");
  																int count1 = 0;
