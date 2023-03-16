@@ -60,8 +60,8 @@ CREATE TABLE userHistory(
 
 CREATE TABLE Review(
 	EventQuestionsId varchar(16) PRIMARY KEY,
-	NumberOfCorrectAnswer INT NOT NULL,
-	NumberOfWrongAnswer INT NOT NULL,
+	NumberOfCorrectAnswer FLOAT NOT NULL,
+	NumberOfWrongAnswer FLOAT NOT NULL,
 	SubjectId varchar(14) NOT NULL,
 	TopicId varchar(14) NOT NULL,
 	QuizSetId varchar(14) NOT NULL,
