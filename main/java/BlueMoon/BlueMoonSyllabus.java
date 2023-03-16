@@ -24,8 +24,7 @@ public class BlueMoonSyllabus {
     
     int NoOfSub =0 , NOofTopic=0 ,NoOfBatch=0 , NoOfQuiz=0 ,NoOfOption=0 ;
     
-    
-    
+        
     
     Element existingElement = (Element) document.getElementsByTagName("NOTES").item(0);
 

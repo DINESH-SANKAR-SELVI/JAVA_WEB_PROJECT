@@ -148,9 +148,8 @@
  												//TopicName = subject.item(i).getChildNodes().item(2).getChildNodes().item(0).getChildNodes().item(0).getTextContent();
  												
  												//io.print("<h1>"+TopicName+"</h1>");
- 												for(int k=1;k<subject.item(i).getChildNodes().item(2).getChildNodes().getLength();k++){
+ 												for(int k=1;k<=subject.item(i).getChildNodes().item(2).getChildNodes().getLength();k++){
  													
-
  														//BATCH QUIZ SELECTION IN SELECTED TOPIC																	
  														if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
 

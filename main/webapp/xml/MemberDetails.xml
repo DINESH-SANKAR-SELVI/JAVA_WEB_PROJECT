@@ -5,7 +5,7 @@
 	
 	<BATCHQUIZID id="JAVAOOPSSETSEC"/>
 
-	<QUIZS><quiz optid="JAOOSETSEC01O1" quizid="JAOOSETSECON01"/><quiz optid="JAOOSETSEC02O1" quizid="JAOOSETSECON02"/><quiz optid="JAOOSETSEC03O1" quizid="JAOOSETSECON03"/></QUIZS>
+	<QUIZS><quiz optid="JAOOSETSEC01O1" quizid="JAOOSETSECON01"/><quiz optid="null" quizid="JAOOSETSECON02"/><quiz optid="null" quizid="JAOOSETSECON03"/></QUIZS>
 
 	<USERID id="SA545704230306">
        	    <UserAvatar>BACKGROUND.JPG</UserAvatar>

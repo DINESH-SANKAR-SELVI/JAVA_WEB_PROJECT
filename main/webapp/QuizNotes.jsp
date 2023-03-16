@@ -21,6 +21,14 @@
 		MemberAccess key = new MemberAccess();
 		if(!(key.isMember())) response.sendRedirect("LogInPage.jsp");
 	%>
+	
+	<!-- 
+	
+	
+		WRITE SYLLABUS
+	
+	
+	 -->
 
 
 		<%@ page import= "java.io.*"%>
