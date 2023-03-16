@@ -15,6 +15,17 @@
       <link rel="stylesheet" type="text/css" href="css/UserNavHead.css" /> -->
 </head>
 <body>
+
+	<%@ page import="BlueMoon.MemberAccess" %>
+	
+	<%	
+		MemberAccess key = new MemberAccess();
+		
+		if(!(key.isMember())) response.sendRedirect("LogInPage.jsp");
+			
+	%>
+
+
       <div class=window style="display:flex;flex-direction:column;justify-content:center;align-items:center;" >
       
 			<%@ include file="StepNav.jsp" %>

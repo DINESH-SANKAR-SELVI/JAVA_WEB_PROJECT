@@ -15,12 +15,15 @@
 <body style="background-image: linear-gradient(to right,#4568dc,#b06ab3);color:white;" >
 
       <div class=window >
-
+      
+					<%@ page import="BlueMoon.MemberAccess" %>
+					<%	
+						MemberAccess key = new MemberAccess();
+						if(!(key.isMember())) response.sendRedirect("LogInPage.jsp");%>
 					<%@ page import="BlueMoon.ProfileContent"%>
-  					
   					<% 
-  						ProfileContent key = new ProfileContent(); 
-  						if(!(key.WriterProfile())) response.sendRedirect("SignInPage.jsp");%>
+  						ProfileContent key1 = new ProfileContent(); 
+  						if(!(key1.WriterProfile())) response.sendRedirect("SignInPage.jsp");%>
     					
             <div class="nav">
 					

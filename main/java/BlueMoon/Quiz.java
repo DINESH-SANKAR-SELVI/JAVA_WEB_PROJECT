@@ -65,7 +65,7 @@ public class Quiz extends HttpServlet{
 				int counter = 1;
 				char []counterOpt = {'a','b','c','d','e','f'};
 				
-				String[] UserOptionId = new String[4];
+				String[] UserOptionId = new String[3];
 				for(int i=0;i<UserAns.item(0).getChildNodes().getLength();i++) {
 					String q = String.valueOf(i+1);
 					String UserOptionId1 =String.valueOf(req.getParameter(q));
@@ -89,7 +89,7 @@ public class Quiz extends HttpServlet{
 						
 						SubjectName = subject.item(i).getChildNodes().item(0).getTextContent();
 						
-						//io.print("<h1>"+SubjectName+"</h1>");
+						io.print("<h1>"+SubjectName+"</h1>");
 						
 						for(int j=0;j<subject.item(i).getChildNodes().item(2).getChildNodes().getLength();j++){
 							
@@ -98,14 +98,14 @@ public class Quiz extends HttpServlet{
 									
 									TopicName = subject.item(i).getChildNodes().item(2).getChildNodes().item(0).getChildNodes().item(0).getTextContent();
 									
-									//io.print("<h1>"+TopicName+"</h1>");
+									io.print("<h1>"+TopicName+"</h1>");
 									for(int k=1;k<subject.item(i).getChildNodes().item(2).getChildNodes().getLength();k++){
 										
 
 											//BATCH QUIZ SELECTION IN SELECTED TOPIC																	
 											if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
 
-												//io.print("<h1>"+BatchQuiz+"</h1>");
+												io.print("<h1>"+BatchQuiz+"</h1>");
 												for(int m=0;m<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
 													int count1 = 0;
 													totalquiz++;
@@ -113,19 +113,19 @@ public class Quiz extends HttpServlet{
 													
 												for(int l=0;l<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().getLength();l++){
 														
-													//io.print("<h1>"+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getTextContent() +"</h1>");
+													io.print("<h1>"+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getTextContent() +"</h1>");
 													
 														for(int n=0;n<UserAns.item(0).getChildNodes().getLength();n++){
 							 									if(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(1).getTextContent().equalsIgnoreCase(UserAns.item(0).getChildNodes().item(n).getAttributes().item(0).getTextContent())){
 
 									 								if("1".equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(0).getTextContent())){
 									 									correct++;
-									 									//io.print("<h1>correct :"+correct+"</h1");
+									 									io.print("<h1>correct :"+correct+"</h1>");
 									 								}
 									 									
 																	else{
 																			wrong++;
-																			//io.print("<h1> wrong : "+wrong+"</h1");
+																			io.print("<h1> wrong : "+wrong+"</h1>");
 																	}
 							 									}
 							 								}
@@ -146,19 +146,21 @@ public class Quiz extends HttpServlet{
 				
 				skiped = (totalquiz-correct -wrong);
 				
-				//io.print("<h1>"+skiped+" "+attenedQuiz+" "+correct+" "+wrong+"</h1>");
+				io.print("<h1>"+skiped+" "+attenedQuiz+" "+correct+" "+wrong+"</h1>");
 				
 				String UsrName = d1.getElementsByTagName("USERID").item(0).getChildNodes().item(3).getTextContent();
-				SubjectName = d1.getElementsByTagName("SUBJECTID").item(0).getTextContent();
-								
+				//SubjectName = d1.getElementsByTagName("SUBJECTID").item(0).getTextContent();
+
 				String EventQuizId = "";
 				String SubjectId = d1.getDocumentElement().getElementsByTagName("SUBJECTID").item(0).getAttributes().item(0).getTextContent();
 				String TopicId = d1.getDocumentElement().getElementsByTagName("TOPICID").item(0).getAttributes().item(0).getTextContent();
 				String QuizSetId = d1.getDocumentElement().getElementsByTagName("BATCHQUIZID").item(0).getAttributes().item(0).getTextContent();
 				String QuizId = "" ;
 				//String UserOptionId = "";
-			
+				
 				EventQuizId = key.BatchQuizId(UsrName ,SubjectName , now1);
+				
+				io.print("<h1>"+skiped+" "+attenedQuiz+" "+correct+" "+wrong+" "+UsrName+""+EventQuizId +"</h1>");
 				
 				Statement stmt = con.createStatement();
 				ResultSet usrsno = stmt.executeQuery("select count(bluemoon.userhistory.EventQuestionsId) from bluemoon.userhistory where UserId ='"+UsrId+"'");
@@ -170,12 +172,13 @@ public class Quiz extends HttpServlet{
 				ps1.setInt(1, sno);
 				ps1.setString(2, UsrId);
 				ps1.setString(3, SubjectName);
-				ps1.setString(4, now1);
-				ps1.setString(5, EventQuizId);
-				ps1.setInt(6, totpoints);
-				ps1.setInt(7, skiped);
-				ps1.setInt(8,attenedQuiz);
-				ps1.setString(9,TopicName);
+				ps1.setString(4,TopicName);
+				ps1.setString(5, now1);
+				ps1.setString(6, EventQuizId);
+				ps1.setInt(7, totpoints);
+				ps1.setInt(8, skiped);
+				ps1.setInt(9,attenedQuiz);
+				
 				
 				work = ps1.execute();
 				

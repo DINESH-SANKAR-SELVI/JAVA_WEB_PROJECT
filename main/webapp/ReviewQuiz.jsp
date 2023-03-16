@@ -33,72 +33,60 @@
  							int counter = 1;
  							char []counterOpt = {'a','b','c','d','e','f'};
  							
+ 							
  							for(int i=0;i<subject.getLength();i++){
  								
- 								/* SUBJECT SELECTION */
+ 								// SUBJECT SELECTION 
  								if(Subject.equalsIgnoreCase(subject.item(i).getAttributes().item(0).getTextContent())){
  									
- 									for(int j=1;j<(subject.item(i).getChildNodes().item(5).getChildNodes().getLength());j++){
+ 									//SubjectName = subject.item(i).getChildNodes().item(0).getTextContent();
+ 									
+ 									//io.print("<h1>"+SubjectName+"</h1>");
+ 									
+ 									for(int j=0;j<subject.item(i).getChildNodes().item(2).getChildNodes().getLength();j++){
  										
- 										if(!(j%2==0)){
- 											/* TOPIC SELECTION IN SELECTED SUBJECT */
- 											if(Topic.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
- 										
- 												for(int k=3;k<=subject.item(i).getChildNodes().item(5).getChildNodes().getLength();k++){
+ 											// TOPIC SELECTION IN SELECTED SUBJECT 
+ 											if(Topic.equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
+ 												
+ 												//TopicName = subject.item(i).getChildNodes().item(2).getChildNodes().item(0).getChildNodes().item(0).getTextContent();
+ 												
+ 												//io.print("<h1>"+TopicName+"</h1>");
+ 												for(int k=1;k<subject.item(i).getChildNodes().item(2).getChildNodes().getLength();k++){
  													
- 													if(!(k%2==0)){
- 														
- 														/*BATCH QUIZ SELECTION IN SELECTED TOPIC*/																	
- 														if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
- 															
- 															for(int m=1;m<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
- 																
- 																if(!(m%2==0)){
- 																/* maybe need verify to find quiz*/
- 									//							out.println("<div style=\" display:flex;justify-content:space-between;width:99%; \"><h3>"+counter+". "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getTextContent()+"</h3><h3>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getNodeName()+": "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent()+"</h3></div>");
+
+ 														//BATCH QUIZ SELECTION IN SELECTED TOPIC																	
+ 														if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
+
+ 															//io.print("<h1>"+BatchQuiz+"</h1>");
+ 															for(int m=0;m<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
  																int count1 = 0;
  																totalquiz++;
-																for(int l=1;l<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().getLength();l++){
+ 															for(int l=0;l<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().getLength();l++){
  																	
-																	if(!(l%2==0)){
-																		
-								//										out.print("<p ");
-																		
-																		for(int n=1;n<UserAns.item(0).getChildNodes().getLength();n++){
-											 								if(!(n%2==0)){
-											 									if(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(1).getTextContent().equalsIgnoreCase(UserAns.item(0).getChildNodes().item(n).getAttributes().item(0).getTextContent())){
+ 																//io.print("<h1>"+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getTextContent() +"</h1>");
+ 																
+ 																	for(int n=0;n<UserAns.item(0).getChildNodes().getLength();n++){
+ 										 									if(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(1).getTextContent().equalsIgnoreCase(UserAns.item(0).getChildNodes().item(n).getAttributes().item(0).getTextContent())){
 
-													 								if("1".equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(0).getTextContent())){
-																				//		out.print("style=\" background-color:green;\" ");
-													 									correct++;
-													 								}
-													 								
-																					else{
-																			//			out.print("style=\" background-color:red;\" ");
-																						wrong++;
-																					}
-											 									}
-											 								}
-																		}
-																		//out.print(">"+counterOpt[count1]+") "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getTextContent()+"<p>");
-																		
-																		//count1++;
-																		
-																		//out.println("<p>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(0).getTextContent()+"</p>");
-																	}
-																}
-																//out.println("<hr />");
-																//counter++;
+ 												 								if("1".equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(0).getTextContent())){
+ 												 									correct++;
+ 												 									//io.print("<h1>correct :"+correct+"</h1");
+ 												 								}
+ 												 									
+ 																				else{
+ 																						wrong++;
+ 																						//io.print("<h1> wrong : "+wrong+"</h1");
+ 																				}
+ 										 									}
+ 										 								}
  															}
- 														}
  													}
- 												}
  											}
  										}
  									}
  								}
  									
- 								//out.println("<p>"+subject.item(i).getTextContent()+"</p>");
+
  								}
  								
  							}
@@ -143,59 +131,44 @@
             			<%@ page import= "org.w3c.dom.*" %>
  					
  						<% 
- 							//DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
- 							//DocumentBuilder db = bdf.newDocumentBuilder(); 
- 							//Document d = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
- 							//Document d1 = db.parse("C:\\Users\\WHITE_KITE\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
- 							out.println("<div class=pair>");
- 							
- 							//NodeList subject = d.getDocumentElement().getElementsByTagName("SUBJECT");
- 							//NodeList UserAns = d1.getDocumentElement().getElementsByTagName("QUIZS");
- 							
- 							//String Subject = d1.getDocumentElement().getElementsByTagName("SUBJECTID").item(0).getAttributes().item(0).getTextContent();
- 							//String Topic = d1.getDocumentElement().getElementsByTagName("TOPICID").item(0).getAttributes().item(0).getTextContent();
- 							//String BatchQuiz = d1.getDocumentElement().getElementsByTagName("BATCHQUIZID").item(0).getAttributes().item(0).getTextContent();
- 							
- 						//	int correct = 0 ,wrong = 0;
- 							
- 							//int counter = 1;
- 							//char []counterOpt = {'a','b','c','d','e','f'};
- 							
  							for(int i=0;i<subject.getLength();i++){
  								
- 								/* SUBJECT SELECTION */
+ 								// SUBJECT SELECTION 
  								if(Subject.equalsIgnoreCase(subject.item(i).getAttributes().item(0).getTextContent())){
  									
- 									for(int j=1;j<(subject.item(i).getChildNodes().item(5).getChildNodes().getLength());j++){
+ 									//SubjectName = subject.item(i).getChildNodes().item(0).getTextContent();
+ 									
+ 									//io.print("<h1>"+SubjectName+"</h1>");
+ 									
+ 									for(int j=0;j<subject.item(i).getChildNodes().item(2).getChildNodes().getLength();j++){
  										
- 										if(!(j%2==0)){
- 											/* TOPIC SELECTION IN SELECTED SUBJECT */
- 											if(Topic.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
- 										
- 												for(int k=3;k<=subject.item(i).getChildNodes().item(5).getChildNodes().getLength();k++){
+ 											// TOPIC SELECTION IN SELECTED SUBJECT 
+ 											if(Topic.equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
+ 												
+ 												//TopicName = subject.item(i).getChildNodes().item(2).getChildNodes().item(0).getChildNodes().item(0).getTextContent();
+ 												
+ 												//io.print("<h1>"+TopicName+"</h1>");
+ 												for(int k=1;k<subject.item(i).getChildNodes().item(2).getChildNodes().getLength();k++){
  													
- 													if(!(k%2==0)){
- 														
- 														/*BATCH QUIZ SELECTION IN SELECTED TOPIC*/																	
- 														if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
- 															
- 															for(int m=1;m<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
- 																
- 																if(!(m%2==0)){
+
+ 														//BATCH QUIZ SELECTION IN SELECTED TOPIC																	
+ 														if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
+
+ 															//io.print("<h1>"+BatchQuiz+"</h1>");
+ 															for(int m=0;m<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
  																/* maybe need verify to find quiz*/
- 																out.println("<div style=\" display:flex;justify-content:space-between;width:99%; \"><h3>"+counter+". "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getTextContent()+"</h3><h3>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getNodeName()+": "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent()+"</h3></div>");
+ 																out.println("<div style=\" padding:6px;\">");
+ 																out.println("<div style=\"display:flex;justify-content:space-between;width:99%; \"><h3>"+counter+". "+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(0).getTextContent()+"</h3><h3>"+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getNodeName()+": "+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent()+"</h3></div>");
  																int count1 = 0;
-																for(int l=1;l<subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().getLength();l++){
- 																	
-																	if(!(l%2==0)){
-																		
+ 																for(int l=0;l<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().getLength();l++){
+ 																		
 																		out.print("<p ");
 																		
-																		for(int n=1;n<UserAns.item(0).getChildNodes().getLength();n++){
-											 								if(!(n%2==0)){
-											 									if(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(1).getTextContent().equalsIgnoreCase(UserAns.item(0).getChildNodes().item(n).getAttributes().item(0).getTextContent())){
+																		for(int n=0;n<UserAns.item(0).getChildNodes().getLength();n++){
+											 								
+																			if(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(1).getTextContent().equalsIgnoreCase(UserAns.item(0).getChildNodes().item(n).getAttributes().item(0).getTextContent())){
 											 										
-													 								if("1".equalsIgnoreCase(subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(0).getTextContent())){
+													 								if("1".equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(0).getTextContent())){
 																						out.print("style=\" background-color:green;\" ");
 																						correct++;
 													 								}
@@ -205,30 +178,25 @@
 																					}
 											 									}
 											 								}
+																			out.print(">"+counterOpt[count1]+") "+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getTextContent()+"<p>");
+																			count1++;
+																			}
+
+																		out.println("<hr />");
+																		counter++;
+																		out.println("</div>");
 																		}
-																		out.print(">"+counterOpt[count1]+") "+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getTextContent()+"<p>");
-																		
-																		count1++;
-																		
-																		//out.println("<p>"+subject.item(i).getChildNodes().item(5).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(3).getChildNodes().item(l).getAttributes().item(0).getTextContent()+"</p>");
+ 																
 																	}
 																}
-																out.println("<hr />");
-																counter++;
+																
  															}
+ 											
  														}
  													}
- 												}
- 											}
- 										}
- 									}
- 								}
  									
- 								//out.println("<p>"+subject.item(i).getTextContent()+"</p>");
- 								}
- 								
- 							}
- 							out.println("</div>");
+ 												}
+ 		
  						
  						%>	
 

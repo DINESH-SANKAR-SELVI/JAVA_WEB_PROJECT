@@ -16,6 +16,13 @@
 </head>
 <body style="background-image:linear-gradient(to right,#33539e,#2d82b5);color:white;	">
 
+<%@ page import="BlueMoon.MemberAccess" %>
+	<%	
+		MemberAccess key = new MemberAccess();
+		if(!(key.isMember())) response.sendRedirect("LogInPage.jsp");
+	%>
+
+
 		<%@ page import= "java.io.*"%>
 		<%@ page import= "java.sql.*" %>
 		<%@ page import= "javax.xml.parsers.*" %>
