@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><User>	
-	<SUBJECTID id="JAVA1995230122"/>
+	<SUBJECTID id=""/>
 	
-	<TOPICID id="JAVAOOPS132218"/>
+	<TOPICID id=""/>
 	
-	<BATCHQUIZID id="JAVAOOPSSETTHI"/>
+	<BATCHQUIZID id=""/>
 
-	<QUIZS><quiz optid="" quizid="JAOOSETTHIRD01"/><quiz optid="" quizid="JAOOSETTHIRD02"/><quiz optid="" quizid="JAOOSETTHIRD03"/><quiz optid="" quizid="JAOOSETTHIRD04"/><quiz optid="" quizid="JAOOSETTHIRD05"/><quiz optid="" quizid="JAOOSETTHIRD06"/></QUIZS>
+	<QUIZS><quiz optid="PYOOSETTHI01O1" quizid="PYOOSETTHIRD01"/><quiz optid="PYOOSETTHI01O3" quizid="PYOOSETTHIRD02"/><quiz optid="PYOOSETTHI01O3" quizid="PYOOSETTHIRD03"/><quiz optid="" quizid="PYOOSETTHIRD04"/><quiz optid="" quizid="PYOOSETTHIRD05"/><quiz optid="" quizid="PYOOSETTHIRD06"/></QUIZS>
 
-	<USERID id="DI712031230310">
-       	    <UserAvatar>BACKGROUND.JPG</UserAvatar>
-            <UserName>DINESH</UserName>
-            <UserEmail>dd@gmail.com</UserEmail>
+	<USERID id="">
+       	    <UserAvatar> </UserAvatar>
+            <UserName>UserName</UserName>
+            <UserEmail> </UserEmail>
 	</USERID>
 
 	<USERDETAIL>
