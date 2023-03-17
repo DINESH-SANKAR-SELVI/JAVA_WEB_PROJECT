@@ -101,22 +101,22 @@ public class ProfileContent{
 				evname.setTextContent(rs2.getString(3));
 				
 				Element evtopic = d.createElement("EventTopic");
-				evtopic.setTextContent(rs2.getString(9));
+				evtopic.setTextContent(rs2.getString(4));
 				
 				Element evattendate = d.createElement("EventAttendDate");
-				evattendate.setTextContent(rs2.getString(4));
+				evattendate.setTextContent(rs2.getString(5));
 				
 				Element evpoin = d.createElement("EventPoint");
-				evpoin.setTextContent(rs2.getString(6));
+				evpoin.setTextContent(rs2.getString(7));
 				
 				Element evquesid = d.createElement("EventQuestionsId");
-				evquesid.setTextContent(rs2.getString(5));
+				evquesid.setTextContent(rs2.getString(6));
 				
 				Element evskipquiz = d.createElement("SkipedQuiz");
-				evskipquiz.setTextContent(rs2.getString(7));
+				evskipquiz.setTextContent(rs2.getString(8));
 				
 				Element evAttenquiz = d.createElement("AttenedQuiz");
-				evAttenquiz.setTextContent(rs2.getString(8));
+				evAttenquiz.setTextContent(rs2.getString(9));
 				
 				usrno1.appendChild(evname);
 				usrno1.appendChild(evtopic);

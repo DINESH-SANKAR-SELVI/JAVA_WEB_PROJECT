@@ -21,14 +21,12 @@
 		MemberAccess key = new MemberAccess();
 		if(!(key.isMember())) response.sendRedirect("LogInPage.jsp");
 	%>
-	
-	<!-- 
-	
-	
-		WRITE SYLLABUS
-	
-	
-	 -->
+
+<%@ page import="BlueMoon.BlueMoonSyllabus" %>
+	<%	
+		BlueMoonSyllabus key1 = new BlueMoonSyllabus();
+		if(!(key1.BlueMoonSyllabus1())) response.sendRedirect("LogInPage.jsp");
+	%>
 
 
 		<%@ page import= "java.io.*"%>

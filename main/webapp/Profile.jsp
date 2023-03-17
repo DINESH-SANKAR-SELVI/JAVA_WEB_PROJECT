@@ -52,24 +52,27 @@
                         out.println("<h2>");                                               
                                                 NodeList Userdn = d.getElementsByTagName("USERID").item(0).getChildNodes();
                                                 NodeList Profiledn = d.getElementsByTagName("USERDETAIL").item(0).getChildNodes();
-                                                	 	
-                                                out.println("<h1>"+Userdn.item(3).getTextContent()+"</h1>");
                                                 
+                                                out.println("<h1>"+Userdn.item(3).getTextContent()+"</h1>");
                                                 out.println("<h6>TOTAL ATTEMPT : "+Profiledn.item(1).getTextContent()+" SETS </h6>");
                              
                                                 out.println("</h2>");
-                                                
                                                 out.println("</div>");
+                                                
+                                                out.print("<form action=Reviewer method=post>");                                                
+                                                
+                                                out.println("<div style='display:flex;flex-direction:row;justify-content:space-evenly;align-items:center;' >");
                                                 out.println("<div class=\"rankInfo\">");
+
                                                 out.println("<div class=\"ans\">");
                                                 out.println("<h4 >AVERAGE CORRECT   : <span style=\"color: rgb(55, 190, 55);\">" +Profiledn.item(3).getTextContent()+ "% </span></h4>");
                                                 out.println("<h4> AVERAGE INCORRECT : <span style=\"color: rgb(190, 59, 55);\">"+Profiledn.item(5).getTextContent()+"%</span></h4>");
+                                                out.print("</div>");
                                                 
                                                 out.print("</div>");
-                                                /* out.println("<div class=\"rank\">");
- 												out.println("<h4>GLOBAL RANK : <span style=\"color: rgb(228, 224, 15);\"> "+Profiledn.item(7).getTextContent()+"</span></h4>");
-                                                out.println("<h4 >REGION RANK : <span style=\"color: rgb(57, 78, 92);\">"+Profiledn.item(9).getTextContent()+"</span></h4>"); */
-                                                		
+
+                                                out.print("<button style=\"position:relative;width:150px;height:50px;color:black;font-weight:900;border-radius:6px;\" >REVIEW</button>"); 		
+                                                
                                                 out.println("</div>");
                                           out.println("</div>");
                                           
@@ -92,6 +95,7 @@
                                           
                                           long count = 1; 
                                           
+                                          
                                           for(int i=0;i<his.getLength();i++){
                                         	  
                                         	  //if(!((i%2)==0)){
@@ -107,7 +111,7 @@
                                         			  }
                                         			  else{
                                         				  
-                                        				  out.println("<td><a style=\"text-decoration:none;color:black;cursor:pointer;\" href=Reviewer;>"+his.item(i).getChildNodes().item(j).getTextContent()+"</a></td>");
+                                        				  out.println("<td><input id="+his.item(i).getChildNodes().item(j).getTextContent()+" name=DINESH type=radio value="+his.item(i).getChildNodes().item(j).getTextContent()+" /><label for="+his.item(i).getChildNodes().item(j).getTextContent()+" style=\"text-decoration:none;color:black;cursor:pointer;\">"+his.item(i).getChildNodes().item(j).getTextContent()+"</a></td>");
                                         			  }
                                         		 // }
                                         		  
@@ -117,6 +121,7 @@
                                           }
 										  %>
                                               </table>
+                                              </form>
                                           </div>
                                          
                                     </div>

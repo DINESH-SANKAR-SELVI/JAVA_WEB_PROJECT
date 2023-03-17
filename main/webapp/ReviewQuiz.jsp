@@ -51,7 +51,7 @@
  												//TopicName = subject.item(i).getChildNodes().item(2).getChildNodes().item(0).getChildNodes().item(0).getTextContent();
  												
  												//io.print("<h1>"+TopicName+"</h1>");
- 												for(int k=1;k<subject.item(i).getChildNodes().item(2).getChildNodes().getLength();k++){
+ 												for(int k=1;k<=subject.item(i).getChildNodes().item(2).getChildNodes().getLength();k++){
  													
 
  														//BATCH QUIZ SELECTION IN SELECTED TOPIC																	
@@ -135,24 +135,16 @@
  								
  								// SUBJECT SELECTION 
  								if(Subject.equalsIgnoreCase(subject.item(i).getAttributes().item(0).getTextContent())){
- 									
  									//SubjectName = subject.item(i).getChildNodes().item(0).getTextContent();
- 									
  									//io.print("<h1>"+SubjectName+"</h1>");
- 									
  									for(int j=0;j<subject.item(i).getChildNodes().item(2).getChildNodes().getLength();j++){
- 										
  											// TOPIC SELECTION IN SELECTED SUBJECT 
  											if(Topic.equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
- 												
  												//TopicName = subject.item(i).getChildNodes().item(2).getChildNodes().item(0).getChildNodes().item(0).getTextContent();
- 												
  												//io.print("<h1>"+TopicName+"</h1>");
  												for(int k=1;k<=subject.item(i).getChildNodes().item(2).getChildNodes().getLength();k++){
- 													
  														//BATCH QUIZ SELECTION IN SELECTED TOPIC																	
  														if(BatchQuiz.equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getAttributes().item(0).getTextContent())){
-
  															//io.print("<h1>"+BatchQuiz+"</h1>");
  															for(int m=0;m<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().getLength();m++){
  																/* maybe need verify to find quiz*/
@@ -160,11 +152,8 @@
  																out.println("<div style=\"display:flex;justify-content:space-between;width:99%; \"><h3>"+counter+". "+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(0).getTextContent()+"</h3><h3>"+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getNodeName()+": "+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent()+"</h3></div>");
  																int count1 = 0;
  																for(int l=0;l<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().getLength();l++){
- 																		
 																		out.print("<p ");
-																		
 																		for(int n=0;n<UserAns.item(0).getChildNodes().getLength();n++){
-											 								
 																			if(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(1).getTextContent().equalsIgnoreCase(UserAns.item(0).getChildNodes().item(n).getAttributes().item(0).getTextContent())){
 											 										
 													 								if("1".equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(0).getTextContent())){
@@ -195,15 +184,9 @@
  													}
  									
  												}
- 		
- 						
  						%>	
-
                   </div>
-
             </div>
-
       </div>
-      
 </body>
 </html>
