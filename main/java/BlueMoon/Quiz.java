@@ -65,10 +65,10 @@ public class Quiz extends HttpServlet{
 				int counter = 1;
 				char []counterOpt = {'a','b','c','d','e','f'};
 				
-				String[] UserOptionId = new String[3];
+				String[] UserOptionId = new String[UserAns.item(0).getChildNodes().getLength()];
 				for(int i=0;i<UserAns.item(0).getChildNodes().getLength();i++) {
 					String q = String.valueOf(i+1);
-					String UserOptionId1 =String.valueOf(req.getParameter(q));
+				//	String UserOptionId1 =String.valueOf(req.getParameter(q));
 					UserOptionId[i] = String.valueOf(req.getParameter(q));
 					Element quizids = (Element)UserAns.item(0).getChildNodes().item(i);
 					quizids.setAttribute("optid", UserOptionId[i]);
@@ -111,30 +111,30 @@ public class Quiz extends HttpServlet{
 													totalquiz++;
 													totpoints = totpoints+ Integer.parseInt(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getAttributes().item(0).getTextContent());
 													
-												for(int l=0;l<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().getLength();l++){
-														
-													io.print("<h1>"+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getTextContent() +"</h1>");
-													
-														for(int n=0;n<UserAns.item(0).getChildNodes().getLength();n++){
-							 									if(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(1).getTextContent().equalsIgnoreCase(UserAns.item(0).getChildNodes().item(n).getAttributes().item(0).getTextContent())){
-
-									 								if("1".equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(0).getTextContent())){
-									 									correct++;
-									 									io.print("<h1>correct :"+correct+"</h1>");
-									 								}
-									 									
-																	else{
-																			wrong++;
-																			io.print("<h1> wrong : "+wrong+"</h1>");
+														for(int l=0;l<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().getLength();l++){
+																
+															io.print("<h1>"+subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getTextContent() +"</h1>");
+															
+																	for(int n=0;n<UserAns.item(0).getChildNodes().getLength();n++){
+										 									if(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(1).getTextContent().equalsIgnoreCase(UserAns.item(0).getChildNodes().item(n).getAttributes().item(0).getTextContent())){
+			
+												 								if("1".equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(k).getChildNodes().item(m).getChildNodes().item(1).getChildNodes().item(l).getAttributes().item(0).getTextContent())){
+												 									correct++;
+												 									io.print("<h1>correct :"+correct+"</h1>");
+												 								}
+												 									
+																				else{
+																					wrong++;
+																					io.print("<h1> wrong : "+wrong+"</h1>");
+																				}
+										 									}
 																	}
-							 									}
-							 								}
+														}
 												}
-										}
+										}	
+									}
 								}
-							}
 						}
-					}
 						
 
 					}
@@ -144,7 +144,7 @@ public class Quiz extends HttpServlet{
 			
 				attenedQuiz = (correct + wrong);
 				
-				skiped = (totalquiz-correct -wrong);
+				skiped = (totalquiz-(correct +wrong));
 				
 				io.print("<h1>"+skiped+" "+attenedQuiz+" "+correct+" "+wrong+"</h1>");
 				

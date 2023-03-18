@@ -27,9 +27,6 @@ public class Reviewer extends HttpServlet {
 		
 		PrintWriter io = res.getWriter();
 		
-		//res.sendRedirect("ReviewQuiz.jsp");
-		
-		
 		try {
 			
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -43,7 +40,7 @@ public class Reviewer extends HttpServlet {
 			Node QuizIdNode = d.getElementsByTagName("QUIZS").item(0);
 			
 			String SubjectId ="" ,TopicId ="" ,QuizSetId ="";
-			String[] QuizId = {"","",""} ,UserOptionId = {"","",""};
+			String[] QuizId = {"","","","","",""} ,UserOptionId = {"","","","","",""};
 			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BlueMoon?characterEncoding=latin1","root","White@Kite_0110.");
