@@ -69,7 +69,7 @@
 						
 							if(Topic.equalsIgnoreCase(subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getAttributes().item(0).getTextContent())){
 																	
-									TopicName = subject.item(i).getChildNodes().item(2).getChildNodes().item(0).getChildNodes().item(0).getTextContent();
+									TopicName = subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().item(0).getTextContent();
 									
 									
 									for(int k=1;k<subject.item(i).getChildNodes().item(2).getChildNodes().item(j).getChildNodes().getLength();k++){
