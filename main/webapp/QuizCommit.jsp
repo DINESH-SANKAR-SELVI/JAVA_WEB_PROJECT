@@ -36,9 +36,9 @@
 
 	DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
 	DocumentBuilder db = bdf.newDocumentBuilder(); 
-	File file1 = new File("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
-	Document d1 = db.parse("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
-	Document d = db.parse("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
+	File file1 = new File("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/MemberDetails.xml");
+	Document d1 = db.parse("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/MemberDetails.xml");
+	Document d = db.parse("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/ContentQuiz.xml");
 
 	out.println("<form action=Quiz method=post >");
 	out.println("<div class=pair >");

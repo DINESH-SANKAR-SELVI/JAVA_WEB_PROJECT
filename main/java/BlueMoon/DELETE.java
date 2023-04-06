@@ -12,7 +12,7 @@ import org.xml.sax.*;
 public class DELETE{
     public void DeletePage() throws ParserConfigurationException, SAXException, IOException, TransformerFactoryConfigurationError, TransformerException {
        
-      File file = new File("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\BlueMoonNotes.xml");
+      File file = new File("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/BlueMoonNotes.xml");
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       DocumentBuilder builder = factory.newDocumentBuilder();
       Document document = builder.parse(file);

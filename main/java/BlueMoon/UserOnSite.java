@@ -23,7 +23,7 @@ public class UserOnSite extends HttpServlet {
 		try {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
-			File profile = new File("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+			File profile = new File("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/MemberDetails.xml");
 			Document doc  = db.parse(profile);
 			doc.getDocumentElement().normalize();
 			

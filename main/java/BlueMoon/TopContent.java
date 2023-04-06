@@ -29,12 +29,12 @@ public class TopContent extends HttpServlet{
 		//res.sendRedirect("QuizNotesInterFace.jsp");
 		
 		try {
-			File file = new File("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+			File file = new File("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/MemberDetails.xml");
 			if(req.getParameter("dinesh1").isEmpty()) io.print("<html><body> work</body></html>");
 			
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
-			Document d = db.parse("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");			
+			Document d = db.parse("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/MemberDetails.xml");			
 			
 			Node topicid = d.getElementsByTagName("TOPICID").item(0);
 			Element topid = (Element) topicid;

@@ -14,11 +14,11 @@ public class ProfileContent{
 		
 	public boolean WriterProfile() throws ParserConfigurationException, SAXException, IOException, TransformerFactoryConfigurationError, TransformerException, ClassNotFoundException, SQLException {
 		
-		File file = new File("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+		File file = new File("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/MemberDetails.xml");
 		
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document d = db.parse("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+		Document d = db.parse("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/MemberDetails.xml");
 		
 		//String userid = d.getElementsByTagName("USERID").item(0).getAttributes().item(0).getTextContent();
 		

@@ -42,7 +42,7 @@
                     
                     DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
                     DocumentBuilder db = bdf.newDocumentBuilder();                        
-                    Document d = db.parse("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml"); %>
+                    Document d = db.parse("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/MemberDetails.xml"); %>
             		 
                                     <div class="data">
                                           <div class="profile">           

@@ -24,7 +24,7 @@ public class FeedBack extends HttpServlet{
 		try {
 		DocumentBuilderFactory bdf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db = bdf.newDocumentBuilder();
-		Document d1 = db.parse("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+		Document d1 = db.parse("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/MemberDetails.xml");
 		
 		String id = d1.getDocumentElement().getElementsByTagName("USERID").item(0).getAttributes().item(0).getTextContent();
 		String Subject = d1.getDocumentElement().getElementsByTagName("SUBJECTID").item(0).getAttributes().item(0).getTextContent();

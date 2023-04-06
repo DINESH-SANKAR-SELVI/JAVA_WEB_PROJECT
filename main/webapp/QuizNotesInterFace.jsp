@@ -48,9 +48,9 @@
                         		/*	DOCUMENT CREATER AND READER */	
 									DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 									DocumentBuilder db = dbf.newDocumentBuilder();
-									File f = new File("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
+									File f = new File("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/ContentQuiz.xml");
 									Document fd = db.parse(f);		
-									File s = new File("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\MemberDetails.xml");
+									File s = new File("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/MemberDetails.xml");
 									Document sd = db.parse(s);
 								/*-------------------------------------------*/
 								

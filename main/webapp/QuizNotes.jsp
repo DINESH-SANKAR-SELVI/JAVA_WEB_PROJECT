@@ -42,7 +42,7 @@
                   <div class="menuList" >
                   <%	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 						DocumentBuilder db = dbf.newDocumentBuilder();
-						Document d = db.parse("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");			
+						Document d = db.parse("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/ContentQuiz.xml");			
 						out.println("<div style=\"display:flex;flex-wrap:wrap;\">");
 					try{
 						 NodeList nl = d.getElementsByTagName("SUBJECT");

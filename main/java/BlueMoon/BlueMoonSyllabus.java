@@ -12,7 +12,7 @@ public class BlueMoonSyllabus {
 	
 	public boolean BlueMoonSyllabus1() {
 	try {
-	    File file = new File("C:\\Users\\ddpro\\eclipse-workspace\\JAVA_WEB_PROJECT\\main\\webapp\\xml\\ContentQuiz.xml");
+	    File file = new File("../eclipse-workspace/JAVA_WEB_PROJECT/main/webapp/xml/ContentQuiz.xml");
 	    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 	    DocumentBuilder builder = factory.newDocumentBuilder();
 	    Document document = builder.parse(file);
