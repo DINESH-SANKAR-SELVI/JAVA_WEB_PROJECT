@@ -39,7 +39,11 @@ public class Report2 extends HttpServlet {
 				io.print("<td style=\"padding:16px;margin:6px;\" >"+rs.getString(2)+"</td>");
 				io.print("<td style=\"padding:16px;margin:6px;\">"+rs.getString(3)+"</td></tr>");
 			}
-			io.print("</table></center></body></html>");
+			io.print("</table><hr />");
+			
+			io.print("<button onclick=\"window.location.href='AdminFile.jsp' \">Back</button>");
+					
+			io.print("</center></body></html>");
 			
 			
 		} catch (Exception e) {
