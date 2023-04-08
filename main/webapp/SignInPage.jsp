@@ -9,15 +9,16 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>GetMemberShip</title>
       <link rel="website icon" type="png" href="image/WebIcon.png" />
+      <link rel="stylesheet" type="text/css" href="css/SignInPage.css" />
       <!-- <link rel="stylesheet" type="text/css" href="css/LogSignInTemplate.css" /> 
       <link rel="stylesheet" type="text/css" href="css/SignInPage.css" />
-      <link rel="stylesheet" type="text/css" href="css/SignInPage.css" />
+      
       <link rel="stylesheet" type="text/css" href="css/SignInPage1.css" />
       <link rel="stylesheet" type="text/css" href="css/SignInPage2.css" />
       <link rel="stylesheet" type="text/css" href="css/SignInPage3.css" /> -->
 
 </head>
-<body bgcolor="grey">
+<body >
 
 <center>
       <div class="fullWindow">
@@ -32,29 +33,32 @@
                   <div class="formPage">
 
                         <form action="AddUser" method="post">
-                         	<label for="USERNAME" id="LABEL-NAME" >USER NAME </label>
+                        
+                        <div style="display:flex;justify-content:center;">
+                        	<div>
+                         	<label for="USERNAME" id="LABEL-NAME" >USER NAME </label><br />
                          	<input type="text" name="UserName" id="USERNAME" maxlength="26" />
                                    <br /><br />
                                     
-                                    <label id="LABEL-BHD" >USER BIRTHDAY</label>
-                                    <input type="date" name="UserBhd" id="USERBHD" />
+                                    <label id="LABEL-BHD" >USER BIRTHDAY</label><br />
+                                    <input type="date" name="UserBhd" id="USERBHD" /><br /><br />
                                     
-                                    <label id="LABEL-GENDER" >USER GENDER</label>
+                                    <label id="LABEL-GENDER" >USER GENDER</label><br />
                                     <select name="UserGender" id="GENDER" >
                                           <option style="color: red;font-weight: bold;" value="male" >MALE</option>
                                           <option style="color: rgb(230, 54, 84);font-weight: bold;" value="female">FEMALE</option>
                                     </select>
                                     <br /><br />
 
-									<label for="USERNUMBER" id="LABEL-NUMBER" >PHONE NUMBER  </label>
-                                    <input type="tel" name="UserPh" id="USERNUMBER" maxlength="13" />
+									<label for="USERNUMBER" id="LABEL-NUMBER" >PHONE NUMBER  </label><br />
+                                    <input type="tel" name="UserPh" id="USERNUMBER" maxlength="13" /><br /><br />
                                     
                                     
-                                    <label id="LABEL-EMAIL" >EMAIL ADDRESS</label>
+                                    <label id="LABEL-EMAIL" >EMAIL ADDRESS</label><br />
                                     <input type="email" name="UserEmail" id="USEREMAIL" />
                                     <br /><br />
                                     
-                                    <label id="LABEL-QUALI" >USER QULAIFICATION</label>
+                                    <label id="LABEL-QUALI" >USER QULAIFICATION</label><br />
                                     <select name="UserQualifi" id="USERQUALI" >
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="SSLC" >SSLC</option>
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="HSC" >HSC</option>
@@ -63,10 +67,15 @@
                                           <option style="color: rgb(25, 123, 209);font-weight: bold;" value="OTHERS" >OTHERS</option>
                                     </select>
                                     <br /><br />
-
-                                    <input type="text" name="UserPinCode" id="USERPINCODE" maxlength="13" />
-                                    <label for="USERPINCODE" id="LABEL-PINCODE" >RESIDENTIAL PIN CODE  </label><br /> <br />
                                     
+                                    </div>
+                                    <div>
+                                    
+									<label for="USERPINCODE" id="LABEL-PINCODE" >RESIDENTIAL PIN CODE  </label><br />
+                                    <input type="text" name="UserPinCode" id="USERPINCODE" maxlength="13" />
+                                    <br /> <br />
+                                    
+                                    <label id="LABEL-CITY" >RESIDENTIAL CITY</label><br>
                                     <input list="USERCITYNAME" name="UserCity" id="USERCITY" />
                                     <datalist  id="USERCITYNAME" >
                                     	<option  value="CHENNAI" />
@@ -75,8 +84,9 @@
                                     	<option  value="BANGALORE" />
                                     	<option  value="Others" />
                                     </datalist>
-                                    <label id="LABEL-CITY" >RESIDENTIAL CITY</label><br /><br />
+                                    <br /><br />
                                     
+                                    <label id="LABEL-AREA" >RESIDENTIAL AREA</label><br /><br />
                                     <input list="USERAREANAME" name="UserArea" id="USERAREA" />
                                     <datalist  id="USERAREANAME" >
                                     	<option  value="AVADI" />
@@ -85,17 +95,23 @@
                                     	<option  value="BASAVANAGUDI" />
                                     	<option  value="Others" />
                                     </datalist>
-                                    <label id="LABEL-AREA" >RESIDENTIAL AREA</label><br /><br />
+                                    <br><br >
                                     
-                                    <input type="password" name="UserPassword" id="USERPASSWORD" maxlength="13" />
                                     <label for="USERPASSWORD" id="LABEL-PASSWORD" >PASSWORD  </label><br /> <br />
-                                    <p id="LABEL-PASSHINT" >PASSWORD IS MININUM 6 CHARACTER CAN CONTAINS [A-Z],[a-z],[0-9],[SYMBOLS]   </p>
+                                    <input type="password" name="UserPassword" id="USERPASSWORD" maxlength="13" /><br><br>
                                     
+                                    <p id="LABEL-PASSHINT" >PASSWORD IS MININUM 6 CHARACTER <br>CAN CONTAINS [A-Z],[a-z],[0-9],[SYMBOLS]   </p>
+                                    
+                                    <label id="LABEL-FINALPASSWORD" >CONFIRMATION PASSWORD</label><br />
                                     <input type="password" name="USERFINALPASSWORD" id="USERFINALPASSWORD" maxlength="13" />
-                                    <label id="LABEL-FINALPASSWORD" >CONFIRMATION PASSWORD</label><br /><br />	
-                                    <p id="LABEL-FINALPASSHINT" >CONFIRMATION PASSWORD IS MUST BE SAME WITH PASSWORD</p>
+                                    <br />	<br>
                                     
+                                    </div>
+                                    
+                                    
+                                    </div>
                   </div>
+                  <p id="LABEL-FINALPASSHINT" >CONFIRMATION PASSWORD IS MUST BE SAME WITH PASSWORD</p>
                                     <button type="submit" id="VERIFY" style="font-weight: 1000;" >NEXT</button><br />
                         </form>                 
             </div>
